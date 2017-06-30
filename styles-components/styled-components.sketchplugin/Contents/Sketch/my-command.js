@@ -16354,27 +16354,37 @@ var Page = function (_Component) {
     value: function () {
       function render() {
         return _react2['default'].createElement(
-          _reactSketchapp.Artboard,
-          { name: 'Inital View' },
+          _reactSketchapp.View,
+          null,
           _react2['default'].createElement(
-            Container,
-            { name: 'Inital View Container' },
-            _react2['default'].createElement(_navbarTop2['default'], null),
+            _reactSketchapp.Artboard,
+            { name: 'Inital View',
+              style: {
+                width: 375,
+                height: 667,
+                backgroundColor: 'pink'
+              } },
             _react2['default'].createElement(
-              _reactSketchapp.View,
-              {
-                name: 'Sketch Layer name',
-                style: {
-                  flexDirection: 'row',
-                  width: 375,
-                  height: 120,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  backgroundColor: '#01ffae'
-                } },
-              'Hi Logan!'
-            ),
-            _react2['default'].createElement(_navbarBottom2['default'], null)
+              Container,
+              { name: 'Inital View Container' },
+              _react2['default'].createElement(_navbarTop2['default'], null),
+              _react2['default'].createElement(_navbarBottom2['default'], null)
+            )
+          ),
+          _react2['default'].createElement(
+            _reactSketchapp.Artboard,
+            { name: 'Open View',
+              style: {
+                width: 375,
+                height: 667,
+                backgroundColor: 'pink'
+              } },
+            _react2['default'].createElement(
+              Container,
+              { name: 'Inital View Container' },
+              _react2['default'].createElement(_navbarTop2['default'], null),
+              _react2['default'].createElement(_navbarBottom2['default'], null)
+            )
           )
         );
       }

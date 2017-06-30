@@ -24,24 +24,56 @@ const Container = styled.View`
 export default class Page extends Component{
   render(){
       return(
-        <Artboard name="Inital View">
-          <Container name="Inital View Container">
-            <NavBarTop />
-            <View
-              name='Sketch Layer name'
-              style={{
-                flexDirection: 'row',
-                width: 375,
-                height: 120,
-                justifyContent:'center',
-                alignItems:'center',
-                backgroundColor: '#01ffae',
-              }}>
-              Hi Logan!
-            </View>
-            <NavBarBottom />
-          </Container>
-        </Artboard>
+        <View>
+          <Artboard name="Inital View"
+            style={{
+              width: 375,
+              height: 667,
+              backgroundColor: 'pink',
+            }}>
+            <Container name="Inital View Container">
+              <NavBarTop />
+              {/*<View
+                name='Sketch Layer name'
+                style={{
+                  flexDirection: 'row',
+                  width: 375,
+                  height: 120,
+                  justifyContent:'center',
+                  alignItems:'center',
+                  backgroundColor: '#01ffae',
+                }}>
+                Hi Logan!
+              </View>*/}
+              <NavBarBottom />
+            </Container>
+          </Artboard>
+
+          <Artboard name="Open View"
+            style={{
+              width: 375,
+              height: 667,
+              backgroundColor: 'pink',
+            }}>
+            <Container name="Inital View Container">
+              <NavBarTop />
+              {/*<View
+                name='Sketch Layer name'
+                style={{
+                  flexDirection: 'row',
+                  width: 375,
+                  height: 120,
+                  justifyContent:'center',
+                  alignItems:'center',
+                  backgroundColor: '#01ffae',
+                }}>
+                Hi Logan!
+              </View>*/}
+              <NavBarBottom />
+            </Container>
+          </Artboard>
+
+        </View>
       )
     }
   }
