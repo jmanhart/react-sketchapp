@@ -32,10 +32,12 @@ export default class Page extends Component{
               style={{
                 flexDirection: 'row',
                 width: 375,
-                height: 20,
+                height: 120,
+                justifyContent:'center',
+                alignItems:'center',
                 backgroundColor: '#01ffae',
               }}>
-
+              Hi Logan!
             </View>
             <NavBarBottom />
           </Container>
