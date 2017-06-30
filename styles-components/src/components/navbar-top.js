@@ -23,7 +23,7 @@ const PageTitle = styled.Text`
 export default class NavBarTop extends Component{
   render(){
       return(
-        <NavBarContainer>
+        <NavBarContainer name="NavBar">
           <PageTitle>
             {this.props.pagetitle}
           </PageTitle>

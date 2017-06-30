@@ -16350,29 +16350,60 @@ var Page = function (_Component) {
   }
 
   _createClass(Page, [{
+    key: 'ArtboardOne',
+    value: function () {
+      function ArtboardOne() {
+        return _react2['default'].createElement(
+          _reactSketchapp.Artboard,
+          { name: 'Inital View',
+            style: {
+              width: 375,
+              height: 667,
+              backgroundColor: 'pink'
+            } },
+          _react2['default'].createElement(
+            Container,
+            { name: 'Inital View Container' },
+            _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Inital View' }),
+            _react2['default'].createElement(_navbarBottom2['default'], null)
+          )
+        );
+      }
+
+      return ArtboardOne;
+    }()
+  }, {
+    key: 'ArtboardTwo',
+    value: function () {
+      function ArtboardTwo() {
+        return _react2['default'].createElement(
+          _reactSketchapp.Artboard,
+          { name: 'Inital View',
+            style: {
+              width: 375,
+              height: 667,
+              backgroundColor: 'brown'
+            } },
+          _react2['default'].createElement(
+            Container,
+            { name: 'Inital View Container' },
+            _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Page View' }),
+            _react2['default'].createElement(_navbarBottom2['default'], null)
+          )
+        );
+      }
+
+      return ArtboardTwo;
+    }()
+  }, {
     key: 'render',
     value: function () {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           null,
-          _react2['default'].createElement(
-            _reactSketchapp.Artboard,
-            { name: 'Inital View',
-              style: {
-                width: 375,
-                height: 667,
-                backgroundColor: 'pink'
-              } },
-            _react2['default'].createElement(
-              Container,
-              { name: 'Inital View Container' },
-              _react2['default'].createElement(_navbarTop2['default'], {
-                pagetitle: 'Inital View'
-              }),
-              _react2['default'].createElement(_navbarBottom2['default'], null)
-            )
-          )
+          this.ArtboardOne(),
+          this.ArtboardTwo()
         );
       }
 
@@ -18517,7 +18548,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n  height: ', ';\n  width: ', ';\n  background-color: \'rgba(0,0,0,0.5)\';\n  justify-content: flex-start;\n  align-items: center;\n  flex-direction:row;\n'], ['\n  height: ', ';\n  width: ', ';\n  background-color: \'rgba(0,0,0,0.5)\';\n  justify-content: flex-start;\n  align-items: center;\n  flex-direction:row;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n  height: 60px;\n  width: ', ';\n  background-color: \'rgba(0,0,0,0.5)\';\n  align-items: center;\n  justify-content: space-around;\n'], ['\n  height: 60px;\n  width: ', ';\n  background-color: \'rgba(0,0,0,0.5)\';\n  align-items: center;\n  justify-content: space-around;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  height: 30px;\n  width: 40px;\n  border-radius: 40;\n  background-color:\'rgba(255,255,255,0.5)\';\n'], ['\n  height: 30px;\n  width: 40px;\n  border-radius: 40;\n  background-color:\'rgba(255,255,255,0.5)\';\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  height: 30px;\n  width: 40px;\n'], ['\n  height: 30px;\n  width: 40px;\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n  font-weight: bold;\n  font-size: 12px;\n  color: white;\n'], ['\n  font-weight: bold;\n  font-size: 12px;\n  color: white;\n']);
 
 var _react = __webpack_require__(3);
@@ -18547,7 +18578,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var width = 375;
 var height = 60;
 
-var data = [{ "label": "tab One" }, { "label": "tab Two" }, { "label": "tab Three" }, { "label": "tab Four" }];
+var data = [{ "label": "tab One", "icon": "blue" }, { "label": "tab Two", "icon": "pink" }, { "label": "tab Three", "icon": "red" }, { "label": "tab Four", "icon": "white" }];
 
 var NavBarContainer = _primitives2['default'].View(_templateObject, height, width);
 
@@ -18572,15 +18603,15 @@ var NavBarBottom = function (_Component) {
       function render() {
         return _react2['default'].createElement(
           NavBarContainer,
-          null,
+          { name: 'TabBar' },
           data.map(function (item) {
             return _react2['default'].createElement(
               TabColumn,
-              null,
-              _react2['default'].createElement(TabIcon, null),
+              { name: 'Tab Column' },
+              _react2['default'].createElement(TabIcon, { name: 'Tab Icon', key: item.icon, style: { backgroundColor: item.icon } }),
               _react2['default'].createElement(
                 TabTitle,
-                { key: item.label },
+                { name: 'Tab Label', key: item.label },
                 item.label
               )
             );
@@ -18654,7 +18685,7 @@ var NavBarTop = function (_Component) {
       function render() {
         return _react2['default'].createElement(
           NavBarContainer,
-          null,
+          { name: 'NavBar' },
           _react2['default'].createElement(
             PageTitle,
             null,

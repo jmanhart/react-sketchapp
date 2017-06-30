@@ -22,34 +22,57 @@ const Container = styled.View`
 `;
 
 export default class Page extends Component{
+
+  ArtboardOne(){
+    return(
+      <Artboard name="Inital View"
+        style={{
+          width: 375,
+          height: 667,
+          backgroundColor: 'pink',
+        }}>
+        <Container name="Inital View Container">
+          <NavBarTop pagetitle="Inital View" />
+          {/*<View
+            name='Sketch Layer name'
+            style={{
+              flexDirection: 'row',
+              width: 375,
+              height: 120,
+              justifyContent:'center',
+              alignItems:'center',
+              backgroundColor: '#01ffae',
+            }}>
+            Hi Logan!
+          </View>*/}
+          <NavBarBottom />
+        </Container>
+      </Artboard>
+    )
+  }
+
+  ArtboardTwo(){
+    return(
+      <Artboard name="Inital View"
+        style={{
+          width: 375,
+          height: 667,
+          backgroundColor: 'brown',
+        }}>
+        <Container name="Inital View Container">
+          <NavBarTop pagetitle="Page View" />
+
+          <NavBarBottom />
+        </Container>
+      </Artboard>
+    )
+  }
+
   render(){
       return(
         <View>
-          <Artboard name="Inital View"
-            style={{
-              width: 375,
-              height: 667,
-              backgroundColor: 'pink',
-            }}>
-            <Container name="Inital View Container">
-              <NavBarTop
-                  pagetitle="Inital View"
-                  />
-              {/*<View
-                name='Sketch Layer name'
-                style={{
-                  flexDirection: 'row',
-                  width: 375,
-                  height: 120,
-                  justifyContent:'center',
-                  alignItems:'center',
-                  backgroundColor: '#01ffae',
-                }}>
-                Hi Logan!
-              </View>*/}
-              <NavBarBottom />
-            </Container>
-          </Artboard>
+          {this.ArtboardOne()}
+          {this.ArtboardTwo()}
         </View>
       )
     }

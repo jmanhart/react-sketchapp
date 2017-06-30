@@ -8,10 +8,10 @@ let width = 375;
 let height = 60;
 
 const data = [
-  { "label": "tab One"},
-  { "label": "tab Two"},
-  { "label": "tab Three"},
-  { "label": "tab Four"},
+  { "label": "tab One", "icon":"blue"},
+  { "label": "tab Two", "icon":"pink"},
+  { "label": "tab Three", "icon":"red"},
+  { "label": "tab Four", "icon":"white"},
 ]
 
 const NavBarContainer = styled.View`
@@ -34,8 +34,6 @@ const TabColumn = styled.Text`
 const TabIcon = styled.Text`
   height: 30px;
   width: 40px;
-  border-radius: 40;
-  background-color:'rgba(255,255,255,0.5)';
 `;
 
 const TabTitle = styled.Text`
@@ -48,11 +46,11 @@ const TabTitle = styled.Text`
 export default class NavBarBottom extends Component{
   render(){
       return(
-        <NavBarContainer>
+        <NavBarContainer name= "TabBar" >
           {data.map((item) =>
-            <TabColumn>
-              <TabIcon />
-              <TabTitle key={item.label}>
+            <TabColumn name= "Tab Column">
+              <TabIcon name= "Tab Icon" key={item.icon} style={{ backgroundColor: item.icon }}/>
+              <TabTitle name= "Tab Label" key={item.label}>
                 {item.label}
               </TabTitle>
             </TabColumn>
