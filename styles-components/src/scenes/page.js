@@ -32,7 +32,9 @@ export default class Page extends Component{
               backgroundColor: 'pink',
             }}>
             <Container name="Inital View Container">
-              <NavBarTop />
+              <NavBarTop
+                  pagetitle="Inital View"
+                  />
               {/*<View
                 name='Sketch Layer name'
                 style={{
@@ -48,31 +50,6 @@ export default class Page extends Component{
               <NavBarBottom />
             </Container>
           </Artboard>
-
-          <Artboard name="Open View"
-            style={{
-              width: 375,
-              height: 667,
-              backgroundColor: 'pink',
-            }}>
-            <Container name="Inital View Container">
-              <NavBarTop />
-              {/*<View
-                name='Sketch Layer name'
-                style={{
-                  flexDirection: 'row',
-                  width: 375,
-                  height: 120,
-                  justifyContent:'center',
-                  alignItems:'center',
-                  backgroundColor: '#01ffae',
-                }}>
-                Hi Logan!
-              </View>*/}
-              <NavBarBottom />
-            </Container>
-          </Artboard>
-
         </View>
       )
     }

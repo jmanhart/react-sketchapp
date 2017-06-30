@@ -7,6 +7,12 @@ import chroma from 'chroma-js';
 let width = 375;
 let height = 60;
 
+const data = [
+  { "label": "tab One"},
+  { "label": "tab Two"},
+  { "label": "tab Three"},
+  { "label": "tab Four"},
+]
 
 const NavBarContainer = styled.View`
   height: ${height};
@@ -43,35 +49,14 @@ export default class NavBarBottom extends Component{
   render(){
       return(
         <NavBarContainer>
-
-          <TabColumn>
-            <TabIcon />
-            <TabTitle>
-              Tab 032223
-            </TabTitle>
-          </TabColumn>
-
-          <TabColumn>
-            <TabIcon />
-            <TabTitle>
-              Tab 02
-            </TabTitle>
-          </TabColumn>
-
-          <TabColumn>
-            <TabIcon />
-            <TabTitle>
-              Tab 03
-            </TabTitle>
-          </TabColumn>
-
-          <TabColumn>
-            <TabIcon />
-            <TabTitle>
-              Tab 04
-            </TabTitle>
-          </TabColumn>
-
+          {data.map((item) =>
+            <TabColumn>
+              <TabIcon />
+              <TabTitle key={item.label}>
+                {item.label}
+              </TabTitle>
+            </TabColumn>
+          )}
         </NavBarContainer>
       )
     }

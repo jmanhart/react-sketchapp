@@ -25,7 +25,7 @@ export default class NavBarTop extends Component{
       return(
         <NavBarContainer>
           <PageTitle>
-            Page Title
+            {this.props.pagetitle}
           </PageTitle>
         </NavBarContainer>
       )

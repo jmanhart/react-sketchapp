@@ -4,8 +4,6 @@ import styled from 'styled-components/primitives';
 import { render } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
-//Import Components
-
 // take a hex and give us a nice text color to put over it
 const textColor = (hex) => {
   const vsWhite = chroma.contrast(hex, 'white');
@@ -65,7 +63,6 @@ const Artboard = styled.View`
   flex-wrap: wrap;
   width: ${(96 + 8) * 4}px;
   justify-content: center;
-  background-color:yellow;
 `;
 
 const Document = ({ colors }) => (
@@ -82,7 +79,6 @@ Document.propTypes = {
 export default (context) => {
   const colorList = {
     Classic: '#96324E',
-    Neue: '#21304E',
     Neue: '#21304E',
   };
 

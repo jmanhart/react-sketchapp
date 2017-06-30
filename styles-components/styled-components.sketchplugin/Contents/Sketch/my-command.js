@@ -16367,22 +16367,9 @@ var Page = function (_Component) {
             _react2['default'].createElement(
               Container,
               { name: 'Inital View Container' },
-              _react2['default'].createElement(_navbarTop2['default'], null),
-              _react2['default'].createElement(_navbarBottom2['default'], null)
-            )
-          ),
-          _react2['default'].createElement(
-            _reactSketchapp.Artboard,
-            { name: 'Open View',
-              style: {
-                width: 375,
-                height: 667,
-                backgroundColor: 'pink'
-              } },
-            _react2['default'].createElement(
-              Container,
-              { name: 'Inital View Container' },
-              _react2['default'].createElement(_navbarTop2['default'], null),
+              _react2['default'].createElement(_navbarTop2['default'], {
+                pagetitle: 'Inital View'
+              }),
               _react2['default'].createElement(_navbarBottom2['default'], null)
             )
           )
@@ -18560,6 +18547,8 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var width = 375;
 var height = 60;
 
+var data = [{ "label": "tab One" }, { "label": "tab Two" }, { "label": "tab Three" }, { "label": "tab Four" }];
+
 var NavBarContainer = _primitives2['default'].View(_templateObject, height, width);
 
 var TabColumn = _primitives2['default'].Text(_templateObject2, width / 4);
@@ -18584,46 +18573,18 @@ var NavBarBottom = function (_Component) {
         return _react2['default'].createElement(
           NavBarContainer,
           null,
-          _react2['default'].createElement(
-            TabColumn,
-            null,
-            _react2['default'].createElement(TabIcon, null),
-            _react2['default'].createElement(
-              TabTitle,
+          data.map(function (item) {
+            return _react2['default'].createElement(
+              TabColumn,
               null,
-              'Tab 032223'
-            )
-          ),
-          _react2['default'].createElement(
-            TabColumn,
-            null,
-            _react2['default'].createElement(TabIcon, null),
-            _react2['default'].createElement(
-              TabTitle,
-              null,
-              'Tab 02'
-            )
-          ),
-          _react2['default'].createElement(
-            TabColumn,
-            null,
-            _react2['default'].createElement(TabIcon, null),
-            _react2['default'].createElement(
-              TabTitle,
-              null,
-              'Tab 03'
-            )
-          ),
-          _react2['default'].createElement(
-            TabColumn,
-            null,
-            _react2['default'].createElement(TabIcon, null),
-            _react2['default'].createElement(
-              TabTitle,
-              null,
-              'Tab 04'
-            )
-          )
+              _react2['default'].createElement(TabIcon, null),
+              _react2['default'].createElement(
+                TabTitle,
+                { key: item.label },
+                item.label
+              )
+            );
+          })
         );
       }
 
@@ -18697,7 +18658,7 @@ var NavBarTop = function (_Component) {
           _react2['default'].createElement(
             PageTitle,
             null,
-            'Page Title'
+            this.props.pagetitle
           )
         );
       }
