@@ -11,9 +11,7 @@ const Document = ({ colors }) => (
     <Page />
 );
 
-Document.propTypes = {
-  colors: PropTypes.objectOf(PropTypes.string).isRequired,
-};
+
 
 export default (context) => {
   render(<Document  />, context.document.currentPage());

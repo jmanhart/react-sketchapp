@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import styled from 'styled-components/primitives';
-import { render } from 'react-sketchapp';
+import { render, Image } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
 
@@ -33,7 +33,7 @@ const TabColumn = styled.Text`
 
 const TabIcon = styled.Text`
   height: 30px;
-  width: 40px;
+  width: 30px;
 `;
 
 const TabTitle = styled.Text`
@@ -49,7 +49,9 @@ export default class NavBarBottom extends Component{
         <NavBarContainer name= "TabBar" >
           {data.map((item) =>
             <TabColumn name= "Tab Column">
-              <TabIcon name= "Tab Icon" key={item.icon} style={{ backgroundColor: item.icon }}/>
+              <TabIcon name= "Tab Icon" key={item.icon} style={{ backgroundColor: item.icon }}>
+
+            </TabIcon>
               <TabTitle name= "Tab Label" key={item.label}>
                 {item.label}
               </TabTitle>
