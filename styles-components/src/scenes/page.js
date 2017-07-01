@@ -1,7 +1,9 @@
 import React, { PropTypes, Component } from 'react';
 import styled from 'styled-components/primitives';
-import { render, Artboard, Text, View } from 'react-sketchapp';
+import { render, Artboard, Text, View, StyleSheet } from 'react-sketchapp';
 import chroma from 'chroma-js';
+
+import {global} from '../lib/global_styles/index.js'
 
 //Import Components
 import Card from '../components/card.js'
@@ -22,29 +24,20 @@ const Container = styled.View`
 `;
 
 export default class Page extends Component{
-
   ArtboardOne(){
     return(
       <Artboard name="Inital View"
         style={{
           width: 375,
           height: 667,
-          backgroundColor: 'pink',
+          backgroundColor: 'black',
         }}>
         <Container name="Inital View Container">
           <NavBarTop pagetitle="Inital View" />
-          {/*<View
-            name='Sketch Layer name'
-            style={{
-              flexDirection: 'row',
-              width: 375,
-              height: 120,
-              justifyContent:'center',
-              alignItems:'center',
-              backgroundColor: '#01ffae',
-            }}>
-            Hi Logan!
-          </View>*/}
+          <View
+            style = {global.container}
+            name='Sketch Layer nme'
+             />
           <NavBarBottom />
         </Container>
       </Artboard>
@@ -53,11 +46,11 @@ export default class Page extends Component{
 
   ArtboardTwo(){
     return(
-      <Artboard name="Inital View"
+      <Artboard name="Page View"
         style={{
           width: 375,
           height: 667,
-          backgroundColor: 'brown',
+          backgroundColor: 'blue',
         }}>
         <Container name="Inital View Container">
           <NavBarTop pagetitle="Page View" />
@@ -76,4 +69,14 @@ export default class Page extends Component{
         </View>
       )
     }
+
   }
+
+
+const styles = StyleSheet.create({
+  container:{
+    width: 375,
+    height: 120,
+    backgroundColor:'yellow'
+  },
+});

@@ -16308,6 +16308,8 @@ var _chromaJs = __webpack_require__(26);
 
 var _chromaJs2 = _interopRequireDefault(_chromaJs);
 
+var _index = __webpack_require__(254);
+
 var _card = __webpack_require__(129);
 
 var _card2 = _interopRequireDefault(_card);
@@ -16359,12 +16361,16 @@ var Page = function (_Component) {
             style: {
               width: 375,
               height: 667,
-              backgroundColor: 'pink'
+              backgroundColor: 'black'
             } },
           _react2['default'].createElement(
             Container,
             { name: 'Inital View Container' },
             _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Inital View' }),
+            _react2['default'].createElement(_reactSketchapp.View, {
+              style: _index.global.container,
+              name: 'Sketch Layer nme'
+            }),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
         );
@@ -16378,11 +16384,11 @@ var Page = function (_Component) {
       function ArtboardTwo() {
         return _react2['default'].createElement(
           _reactSketchapp.Artboard,
-          { name: 'Inital View',
+          { name: 'Page View',
             style: {
               width: 375,
               height: 667,
-              backgroundColor: 'brown'
+              backgroundColor: 'blue'
             } },
           _react2['default'].createElement(
             Container,
@@ -16415,6 +16421,15 @@ var Page = function (_Component) {
 }(_react.Component);
 
 exports['default'] = Page;
+
+
+var styles = _reactSketchapp.StyleSheet.create({
+  container: {
+    width: 375,
+    height: 120,
+    backgroundColor: 'yellow'
+  }
+});
 module.exports = exports['default'];
 
 /***/ }),
@@ -31387,6 +31402,51 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 252 */,
+/* 253 */,
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _main = __webpack_require__(255);
+
+Object.keys(_main).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      function get() {
+        return _main[key];
+      }
+
+      return get;
+    }()
+  });
+});
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.global = undefined;
+
+var _reactSketchapp = __webpack_require__(18);
+
+var global = exports.global = _reactSketchapp.StyleSheet.create({
+  container: {
+    width: 375,
+    height: 375,
+    backgroundColor: 'pink'
+  }
+});
 
 /***/ })
 /******/ ]);
