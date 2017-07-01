@@ -16318,6 +16318,10 @@ var _navbarBottom = __webpack_require__(129);
 
 var _navbarBottom2 = _interopRequireDefault(_navbarBottom);
 
+var _cardProfile = __webpack_require__(254);
+
+var _cardProfile2 = _interopRequireDefault(_cardProfile);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -16359,7 +16363,11 @@ var Page = function (_Component) {
             _reactSketchapp.View,
             { style: _index.global.wrapper, name: 'Wrapper' },
             _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Inital View' }),
-            _react2['default'].createElement(_reactSketchapp.View, { style: _index.global.content, name: 'Content' }),
+            _react2['default'].createElement(
+              _reactSketchapp.View,
+              { style: _index.global.content, name: 'Content' },
+              _react2['default'].createElement(_cardProfile2['default'], null)
+            ),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
         );
@@ -18474,7 +18482,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var width = 375;
 var height = 60;
 
-var data = [{ "label": "tab One", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab Two", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab Three", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab Four", "icon": "white", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }];
+var data = [{ "label": "tab 01", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 02", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 03", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 04", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }];
 
 var NavBarContainer = _primitives2['default'].View(_templateObject, height, width);
 
@@ -18659,7 +18667,7 @@ Object.keys(_screenSizes).forEach(function (key) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.global = undefined;
+exports.shadows = exports.global = undefined;
 
 var _reactSketchapp = __webpack_require__(16);
 
@@ -18667,12 +18675,23 @@ var global = exports.global = _reactSketchapp.StyleSheet.create({
   wrapper: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: 'green'
+    backgroundColor: '#CACACA'
   },
   content: {
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: 'rgba(0,0,0,0.05)'
+  }
+});
+
+var shadows = exports.shadows = _reactSketchapp.StyleSheet.create({
+  cardOne: {
+    shadowColor: 'rgba(0,0,0,0.5)',
+    shadowRadius: 5,
+    shadowOffset: {
+      width: 0,
+      height: 3
+    }
   }
 });
 
@@ -31401,6 +31420,86 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['\n\n'], ['\n\n']);
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _primitives = __webpack_require__(34);
+
+var _primitives2 = _interopRequireDefault(_primitives);
+
+var _reactSketchapp = __webpack_require__(16);
+
+var _chromaJs = __webpack_require__(33);
+
+var _chromaJs2 = _interopRequireDefault(_chromaJs);
+
+var _index = __webpack_require__(131);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+//Import Global Styles
+
+
+var Card = _primitives2['default'].Text(_templateObject);
+
+var CardProfile = function (_Component) {
+  _inherits(CardProfile, _Component);
+
+  function CardProfile() {
+    _classCallCheck(this, CardProfile);
+
+    return _possibleConstructorReturn(this, (CardProfile.__proto__ || Object.getPrototypeOf(CardProfile)).apply(this, arguments));
+  }
+
+  _createClass(CardProfile, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(Card, { style: [styles.card, _index.shadows.cardOne] });
+      }
+
+      return render;
+    }()
+  }]);
+
+  return CardProfile;
+}(_react.Component);
+
+exports['default'] = CardProfile;
+
+
+var styles = _reactSketchapp.StyleSheet.create({
+  card: {
+    backgroundColor: 'white',
+    flex: 1,
+    alignSelf: 'stretch',
+    margin: 20,
+    borderRadius: 3
+  }
+});
+module.exports = exports['default'];
 
 /***/ })
 /******/ ]);

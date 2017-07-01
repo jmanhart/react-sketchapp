@@ -8,6 +8,7 @@ import {global, iOSSizes} from '../lib/global_styles/index.js'
 //Import Components
 import NavBarTop from '../components/navbar-top.js'
 import NavBarBottom from '../components/navbar-bottom.js'
+import CardProfile from '../components/card-profile.js'
 
 //Artboard Size
 let scenesize = {
@@ -30,6 +31,7 @@ export default class Page extends Component{
 
           <NavBarTop pagetitle="Inital View" />
             <View style={global.content} name='Content'>
+              <CardProfile />
             </View>
           <NavBarBottom />
 

@@ -8,10 +8,10 @@ let width = 375;
 let height = 60;
 
 const data = [
-  { "label": "tab One", "icon":"blue", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
-  { "label": "tab Two", "icon":"pink", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
-  { "label": "tab Three", "icon":"red", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
-  { "label": "tab Four", "icon":"white", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab 01", "icon":"blue", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab 02", "icon":"pink", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab 03", "icon":"red", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab 04", "icon":"pink", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
 ]
 
 const NavBarContainer = styled.View`
