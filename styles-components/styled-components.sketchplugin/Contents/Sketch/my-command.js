@@ -16292,7 +16292,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  background-color: \'rgba(0,0,0,0.5)\';\n  ', ';\n'], ['\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  background-color: \'rgba(0,0,0,0.5)\';\n  ', ';\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n'], ['\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n']);
 
 var _react = __webpack_require__(3);
 
@@ -16340,7 +16340,7 @@ var scenesize = {
   width: '375px',
   height: '667px'
 };
-var Container = _primitives2['default'].View(_templateObject, scenesize);
+var Container = _primitives2['default'].View(_templateObject);
 
 var Page = function (_Component) {
   _inherits(Page, _Component);
@@ -16357,19 +16357,14 @@ var Page = function (_Component) {
       function ArtboardOne() {
         return _react2['default'].createElement(
           _reactSketchapp.Artboard,
-          { name: 'Inital View',
-            style: {
-              width: 375,
-              height: 667,
-              backgroundColor: 'black'
-            } },
+          { name: 'Inital View', style: _index.iOSSizes.iphone7 },
           _react2['default'].createElement(
-            Container,
-            { name: 'Inital View Container' },
+            _reactSketchapp.View,
+            { style: _index.global.wrapper, name: 'Wrapper' },
             _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Inital View' }),
             _react2['default'].createElement(_reactSketchapp.View, {
-              style: _index.global.container,
-              name: 'Sketch Layer nme'
+              style: _index.global.content,
+              name: 'dude'
             }),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
@@ -16379,37 +16374,13 @@ var Page = function (_Component) {
       return ArtboardOne;
     }()
   }, {
-    key: 'ArtboardTwo',
-    value: function () {
-      function ArtboardTwo() {
-        return _react2['default'].createElement(
-          _reactSketchapp.Artboard,
-          { name: 'Page View',
-            style: {
-              width: 375,
-              height: 667,
-              backgroundColor: 'blue'
-            } },
-          _react2['default'].createElement(
-            Container,
-            { name: 'Inital View Container' },
-            _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Page View' }),
-            _react2['default'].createElement(_navbarBottom2['default'], null)
-          )
-        );
-      }
-
-      return ArtboardTwo;
-    }()
-  }, {
     key: 'render',
     value: function () {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           null,
-          this.ArtboardOne(),
-          this.ArtboardTwo()
+          this.ArtboardOne()
         );
       }
 
@@ -16421,15 +16392,6 @@ var Page = function (_Component) {
 }(_react.Component);
 
 exports['default'] = Page;
-
-
-var styles = _reactSketchapp.StyleSheet.create({
-  container: {
-    width: 375,
-    height: 120,
-    backgroundColor: 'yellow'
-  }
-});
 module.exports = exports['default'];
 
 /***/ }),
@@ -31429,6 +31391,22 @@ Object.keys(_main).forEach(function (key) {
   });
 });
 
+var _screenSizes = __webpack_require__(256);
+
+Object.keys(_screenSizes).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      function get() {
+        return _screenSizes[key];
+      }
+
+      return get;
+    }()
+  });
+});
+
 /***/ }),
 /* 255 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -31441,10 +31419,62 @@ exports.global = undefined;
 var _reactSketchapp = __webpack_require__(18);
 
 var global = exports.global = _reactSketchapp.StyleSheet.create({
-  container: {
+  wrapper: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: 'green'
+  },
+  content: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: 'rgba(0,0,0,0.05)'
+  }
+});
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.android = exports.iOSSizes = undefined;
+
+var _reactSketchapp = __webpack_require__(18);
+
+var iOSSizes = exports.iOSSizes = _reactSketchapp.StyleSheet.create({
+  iphone7: {
     width: 375,
-    height: 375,
-    backgroundColor: 'pink'
+    height: 667,
+    backgroundColor: 'white'
+  },
+  iphone7plus: {
+    width: 414,
+    height: 736,
+    backgroundColor: 'white'
+  },
+  iphoneSE: {
+    width: 320,
+    height: 568,
+    backgroundColor: 'white'
+  },
+  ipad: {
+    width: 768,
+    height: 1024,
+    backgroundColor: 'white'
+  },
+  ipadpro: {
+    width: 1024,
+    height: 1366,
+    backgroundColor: 'white'
+  }
+});
+
+var android = exports.android = _reactSketchapp.StyleSheet.create({
+  mobile: {
+    width: 360,
+    height: 640,
+    backgroundColor: 'white'
   }
 });
 

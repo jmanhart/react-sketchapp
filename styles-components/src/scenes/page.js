@@ -3,7 +3,7 @@ import styled from 'styled-components/primitives';
 import { render, Artboard, Text, View, StyleSheet } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
-import {global} from '../lib/global_styles/index.js'
+import {global, iOSSizes} from '../lib/global_styles/index.js'
 
 //Import Components
 import Card from '../components/card.js'
@@ -19,44 +19,22 @@ const Container = styled.View`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: 'rgba(0,0,0,0.5)';
-  ${scenesize};
 `;
 
 export default class Page extends Component{
   ArtboardOne(){
     return(
-      <Artboard name="Inital View"
-        style={{
-          width: 375,
-          height: 667,
-          backgroundColor: 'black',
-        }}>
-        <Container name="Inital View Container">
+      <Artboard name="Inital View" style={iOSSizes.iphone7}>
+        <View style={global.wrapper} name="Wrapper">
+
           <NavBarTop pagetitle="Inital View" />
           <View
-            style = {global.container}
-            name='Sketch Layer nme'
+            style={global.content}
+            name='dude'
              />
           <NavBarBottom />
-        </Container>
-      </Artboard>
-    )
-  }
 
-  ArtboardTwo(){
-    return(
-      <Artboard name="Page View"
-        style={{
-          width: 375,
-          height: 667,
-          backgroundColor: 'blue',
-        }}>
-        <Container name="Inital View Container">
-          <NavBarTop pagetitle="Page View" />
-
-          <NavBarBottom />
-        </Container>
+        </View>
       </Artboard>
     )
   }
@@ -65,18 +43,8 @@ export default class Page extends Component{
       return(
         <View>
           {this.ArtboardOne()}
-          {this.ArtboardTwo()}
         </View>
       )
     }
 
   }
-
-
-const styles = StyleSheet.create({
-  container:{
-    width: 375,
-    height: 120,
-    backgroundColor:'yellow'
-  },
-});
