@@ -8,10 +8,10 @@ let width = 375;
 let height = 60;
 
 const data = [
-  { "label": "tab One", "icon":"blue", },
-  { "label": "tab Two", "icon":"pink"},
-  { "label": "tab Three", "icon":"red"},
-  { "label": "tab Four", "icon":"white"},
+  { "label": "tab One", "icon":"blue", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab Two", "icon":"pink", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab Three", "icon":"red", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab Four", "icon":"white", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
 ]
 
 const NavBarContainer = styled.View`
@@ -51,7 +51,8 @@ export default class NavBarBottom extends Component{
             <TabColumn name= "Tab Column">
               <TabIcon name= "Tab Icon" key={item.icon} style={{ backgroundColor: item.icon }}>
                 <Image
-                  source='https://jmanhart.github.io/react-sketchapp/public/images/icon.png'
+                  key={item.image}
+                  source={item.image}
                   resizeMode='contain'
                   style={{
                     height: 30,

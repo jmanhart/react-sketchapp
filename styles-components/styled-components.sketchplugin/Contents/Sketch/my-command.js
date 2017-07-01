@@ -18474,7 +18474,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var width = 375;
 var height = 60;
 
-var data = [{ "label": "tab One", "icon": "blue" }, { "label": "tab Two", "icon": "pink" }, { "label": "tab Three", "icon": "red" }, { "label": "tab Four", "icon": "white" }];
+var data = [{ "label": "tab One", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab Two", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab Three", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab Four", "icon": "white", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }];
 
 var NavBarContainer = _primitives2['default'].View(_templateObject, height, width);
 
@@ -18508,7 +18508,8 @@ var NavBarBottom = function (_Component) {
                 TabIcon,
                 { name: 'Tab Icon', key: item.icon, style: { backgroundColor: item.icon } },
                 _react2['default'].createElement(_reactSketchapp.Image, {
-                  source: 'https://jmanhart.github.io/react-sketchapp/public/images/icon.png',
+                  key: item.image,
+                  source: item.image,
                   resizeMode: 'contain',
                   style: {
                     height: 30,
