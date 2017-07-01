@@ -8,7 +8,7 @@ let width = 375;
 let height = 60;
 
 const data = [
-  { "label": "tab One", "icon":"blue"},
+  { "label": "tab One", "icon":"blue", },
   { "label": "tab Two", "icon":"pink"},
   { "label": "tab Three", "icon":"red"},
   { "label": "tab Four", "icon":"white"},
@@ -50,7 +50,14 @@ export default class NavBarBottom extends Component{
           {data.map((item) =>
             <TabColumn name= "Tab Column">
               <TabIcon name= "Tab Icon" key={item.icon} style={{ backgroundColor: item.icon }}>
-
+                <Image
+                  source='https://jmanhart.github.io/react-sketchapp/public/images/icon.png'
+                  resizeMode='contain'
+                  style={{
+                    height: 30,
+                    width: 30,
+                  }}
+              />
             </TabIcon>
               <TabTitle name= "Tab Label" key={item.label}>
                 {item.label}

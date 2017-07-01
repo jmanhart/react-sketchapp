@@ -30,14 +30,6 @@ export default class Page extends Component{
 
           <NavBarTop pagetitle="Inital View" />
             <View style={global.content} name='Content'>
-              <Image
-                source='https://blogs-images.forbes.com/robertwood/files/2016/02/Trump1.jpg'
-                resizeMode='contain'
-                style={{
-                  height: 400,
-                  width: 400,
-                }}
-            />
             </View>
           <NavBarBottom />
 

@@ -16359,18 +16359,7 @@ var Page = function (_Component) {
             _reactSketchapp.View,
             { style: _index.global.wrapper, name: 'Wrapper' },
             _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Inital View' }),
-            _react2['default'].createElement(
-              _reactSketchapp.View,
-              { style: _index.global.content, name: 'Content' },
-              _react2['default'].createElement(_reactSketchapp.Image, {
-                source: 'https://blogs-images.forbes.com/robertwood/files/2016/02/Trump1.jpg',
-                resizeMode: 'contain',
-                style: {
-                  height: 400,
-                  width: 400
-                }
-              })
-            ),
+            _react2['default'].createElement(_reactSketchapp.View, { style: _index.global.content, name: 'Content' }),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
         );
@@ -18515,7 +18504,18 @@ var NavBarBottom = function (_Component) {
             return _react2['default'].createElement(
               TabColumn,
               { name: 'Tab Column' },
-              _react2['default'].createElement(TabIcon, { name: 'Tab Icon', key: item.icon, style: { backgroundColor: item.icon } }),
+              _react2['default'].createElement(
+                TabIcon,
+                { name: 'Tab Icon', key: item.icon, style: { backgroundColor: item.icon } },
+                _react2['default'].createElement(_reactSketchapp.Image, {
+                  source: 'https://jmanhart.github.io/react-sketchapp/public/images/icon.png',
+                  resizeMode: 'contain',
+                  style: {
+                    height: 30,
+                    width: 30
+                  }
+                })
+              ),
               _react2['default'].createElement(
                 TabTitle,
                 { name: 'Tab Label', key: item.label },
