@@ -4,11 +4,11 @@ import { render, Image, View, StyleSheet, Text } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
 //Import Global Styles
-import {global, shadows} from '../lib/global_styles/index.js'
+import {global, shadows, labels} from '../lib/global_styles/index.js'
 
 const data = [
   {
-    "name": "John Manhart",
+    "name": "John L.. Manhart",
     "postion":"UX Designer", "image":"https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhIAAAAJDEzOGI0ZmFkLTE5MmYtNDlmYS05ZjM1LTgxZGYyZGMxZWY3ZA.jpg",
   },
   {
@@ -29,25 +29,25 @@ const data = [
 ]
 
 
-export default class CardProfile extends Component{
+export default class RowProfile extends Component{
   render(){
       return(
-        <View style={[styles.card, shadows.cardOne]}>
+        <View >
           {data.map((item) =>
-            <View style={styles.rowContainer}>
-              <View style={styles.avatarContainter}>
+            <View name ="Row Container" style={styles.rowContainer}>
+              <View name ="Avatar Container" style={styles.avatarContainter}>
                 <Image
+                  name ="Profile Image"
                   style={styles.avatar}
                   key={item.image}
                   source={item.image} />
               </View>
-              <View style={styles.copyContainer}>
-                <Text key={item.name} >{item.name}</Text>
-                <Text key={item.position} >{item.postion}</Text>
+              <View name ="Copy Container" style={styles.copyContainer}>
+                <Text name ="Profile Name" style={labels.labelOne} key={item.name}>{item.name}</Text>
+                <Text name ="Profile Position" key={item.position}>{item.postion}</Text>
               </View>
             </View>
             )}
-
         </View>
       )
     }
@@ -71,15 +71,15 @@ const styles = StyleSheet.create({
   },
   avatarContainter:{
     backgroundColor:'rgba(0,0,0,0.15)',
-    margin:10,
+    margin:0,
     flex:1,
     alignItems:'center',
     justifyContent:'center',
   },
   avatar:{
     backgroundColor:'pink',
-    height: 50,
-    width: 50,
+    height: 80,
+    width: 80,
     borderRadius: 40,
   },
   copyContainer:{

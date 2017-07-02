@@ -16316,9 +16316,9 @@ var _navbarBottom = __webpack_require__(129);
 
 var _navbarBottom2 = _interopRequireDefault(_navbarBottom);
 
-var _cardProfile = __webpack_require__(254);
+var _rowProfile = __webpack_require__(255);
 
-var _cardProfile2 = _interopRequireDefault(_cardProfile);
+var _rowProfile2 = _interopRequireDefault(_rowProfile);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -16329,9 +16329,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 //Import Components
-
-
-//Artboard Size
 
 
 var Page = function (_Component) {
@@ -16347,7 +16344,6 @@ var Page = function (_Component) {
     key: 'ArtboardOne',
     value: function () {
       function ArtboardOne() {
-
         return _react2['default'].createElement(
           _reactSketchapp.Artboard,
           { name: 'Inital View', style: _index.iOSSizes.iphone7 },
@@ -16358,7 +16354,7 @@ var Page = function (_Component) {
             _react2['default'].createElement(
               _reactSketchapp.View,
               { style: _index.global.content, name: 'Content' },
-              _react2['default'].createElement(_cardProfile2['default'], null)
+              _react2['default'].createElement(_rowProfile2['default'], null)
             ),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
@@ -18474,7 +18470,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var width = 375;
 var height = 60;
 
-var data = [{ "label": "tab 01", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 02", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 03", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 04", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }];
+var data = [{ "label": "tab 01", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 02", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 03", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }, { "label": "tab 04", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/public/images/icon.png" }];
 
 var NavBarContainer = _primitives2['default'].View(_templateObject, height, width);
 
@@ -18645,6 +18641,22 @@ Object.keys(_screenSizes).forEach(function (key) {
     get: function () {
       function get() {
         return _screenSizes[key];
+      }
+
+      return get;
+    }()
+  });
+});
+
+var _type = __webpack_require__(257);
+
+Object.keys(_type).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      function get() {
+        return _type[key];
       }
 
       return get;
@@ -31414,7 +31426,8 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 254 */
+/* 254 */,
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -31451,7 +31464,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var data = [{
-  "name": "John Manhart",
+  "name": "John L.. Manhart",
   "postion": "UX Designer", "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhIAAAAJDEzOGI0ZmFkLTE5MmYtNDlmYS05ZjM1LTgxZGYyZGMxZWY3ZA.jpg"
 }, {
   "name": "Chris Pearson",
@@ -31467,45 +31480,46 @@ var data = [{
   "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAs0AAAAJDcwYzUxYTdlLTdkY2UtNDVkYy04ODgyLTU1ODQ5ZWE1MWUwZg.jpg"
 }];
 
-var CardProfile = function (_Component) {
-  _inherits(CardProfile, _Component);
+var RowProfile = function (_Component) {
+  _inherits(RowProfile, _Component);
 
-  function CardProfile() {
-    _classCallCheck(this, CardProfile);
+  function RowProfile() {
+    _classCallCheck(this, RowProfile);
 
-    return _possibleConstructorReturn(this, (CardProfile.__proto__ || Object.getPrototypeOf(CardProfile)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (RowProfile.__proto__ || Object.getPrototypeOf(RowProfile)).apply(this, arguments));
   }
 
-  _createClass(CardProfile, [{
+  _createClass(RowProfile, [{
     key: 'render',
     value: function () {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
-          { style: [styles.card, _index.shadows.cardOne] },
+          null,
           data.map(function (item) {
             return _react2['default'].createElement(
               _reactSketchapp.View,
-              { style: styles.rowContainer },
+              { name: 'Row Container', style: styles.rowContainer },
               _react2['default'].createElement(
                 _reactSketchapp.View,
-                { style: styles.avatarContainter },
+                { name: 'Avatar Container', style: styles.avatarContainter },
                 _react2['default'].createElement(_reactSketchapp.Image, {
+                  name: 'Profile Image',
                   style: styles.avatar,
                   key: item.image,
                   source: item.image })
               ),
               _react2['default'].createElement(
                 _reactSketchapp.View,
-                { style: styles.copyContainer },
+                { name: 'Copy Container', style: styles.copyContainer },
                 _react2['default'].createElement(
                   _reactSketchapp.Text,
-                  { key: item.name },
+                  { name: 'Profile Name', style: _index.labels.labelOne, key: item.name },
                   item.name
                 ),
                 _react2['default'].createElement(
                   _reactSketchapp.Text,
-                  { key: item.position },
+                  { name: 'Profile Position', key: item.position },
                   item.postion
                 )
               )
@@ -31518,10 +31532,10 @@ var CardProfile = function (_Component) {
     }()
   }]);
 
-  return CardProfile;
+  return RowProfile;
 }(_react.Component);
 
-exports['default'] = CardProfile;
+exports['default'] = RowProfile;
 
 
 var styles = _reactSketchapp.StyleSheet.create({
@@ -31542,15 +31556,15 @@ var styles = _reactSketchapp.StyleSheet.create({
   },
   avatarContainter: {
     backgroundColor: 'rgba(0,0,0,0.15)',
-    margin: 10,
+    margin: 0,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
   },
   avatar: {
     backgroundColor: 'pink',
-    height: 50,
-    width: 50,
+    height: 80,
+    width: 80,
     borderRadius: 40
   },
   copyContainer: {
@@ -31562,6 +31576,26 @@ var styles = _reactSketchapp.StyleSheet.create({
   }
 });
 module.exports = exports['default'];
+
+/***/ }),
+/* 256 */,
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.labels = undefined;
+
+var _reactSketchapp = __webpack_require__(16);
+
+var labels = exports.labels = _reactSketchapp.StyleSheet.create({
+  labelOne: {
+    fontSize: 20,
+    color: 'rgba(0,0,0,0.8)',
+    fontFamily: 'Avenir'
+  }
+});
 
 /***/ })
 /******/ ]);

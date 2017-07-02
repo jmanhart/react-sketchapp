@@ -8,36 +8,31 @@ import {global, iOSSizes} from '../lib/global_styles/index.js'
 //Import Components
 import NavBarTop from '../components/navbar-top.js'
 import NavBarBottom from '../components/navbar-bottom.js'
-import CardProfile from '../components/card-profile.js'
-
-//Artboard Size
+import RowProfile from '../components/row-profile.js'
 
 
 export default class Page extends Component{
-
   ArtboardOne(){
-
     return(
       <Artboard name="Inital View" style={iOSSizes.iphone7}>
         <View style={global.wrapper} name="Wrapper">
-
           <NavBarTop pagetitle="Inital View" />
-            <View style={global.content} name='Content'>
-              <CardProfile />
-            </View>
-          <NavBarBottom />
 
+            <View style={global.content} name='Content'>
+              <RowProfile />
+            </View>
+
+          <NavBarBottom />
         </View>
       </Artboard>
     )
   }
 
   render(){
-      return(
-        <View>
-          {this.ArtboardOne()}
-        </View>
-      )
-    }
-
+    return(
+      <View>
+        {this.ArtboardOne()}
+      </View>
+    )
   }
+}

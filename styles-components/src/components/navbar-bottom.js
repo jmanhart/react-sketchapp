@@ -11,7 +11,8 @@ const data = [
   { "label": "tab 01", "icon":"blue", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
   { "label": "tab 02", "icon":"pink", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
   { "label": "tab 03", "icon":"red", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
-  { "label": "tab 04", "icon":"pink", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+  { "label": "tab 04", "icon":"red", "image":"https://jmanhart.github.io/react-sketchapp/public/images/icon.png",},
+
 ]
 
 const NavBarContainer = styled.View`
