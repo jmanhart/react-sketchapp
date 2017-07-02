@@ -1,5 +1,4 @@
-## ⚛️ & 💎
-
+# ⚛️ & 💎
 #### This is a proof of concept project to explore the [React Sketch.app](http://airbnb.io/react-sketchapp/) built by Airbnb.
 ----------------
 

@@ -4,7 +4,7 @@ import { render, Image, View, StyleSheet, Text } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
 //Import Global Styles
-import {global, shadows, labels} from '../lib/global_styles/index.js'
+import {global, shadows, labels, fpo} from '../lib/global_styles/index.js'
 
 const data = [
   {
@@ -34,15 +34,15 @@ export default class RowProfile extends Component{
       return(
         <View >
           {data.map((item) =>
-            <View name ="Row Container" style={styles.rowContainer}>
-              <View name ="Avatar Container" style={styles.avatarContainter}>
+            <View name ="Row Container" style={[styles.rowContainer, fpo.placeholder]}>
+              <View name ="Avatar Container" style={[styles.avatarContainter, fpo.placeholder]}>
                 <Image
                   name ="Profile Image"
                   style={styles.avatar}
                   key={item.image}
                   source={item.image} />
               </View>
-              <View name ="Copy Container" style={styles.copyContainer}>
+              <View name ="Copy Container" style={[styles.copyContainer, fpo.placeholder]}>
                 <Text name ="Profile Name" style={labels.labelOne} key={item.name}>{item.name}</Text>
                 <Text name ="Profile Position" key={item.position}>{item.postion}</Text>
               </View>
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     borderRadius: 3,
   },
   rowContainer: {
-    backgroundColor:'rgba(0,0,0,0.15)',
     height: 100,
     flexDirection:'row',
     alignItems:'center',
