@@ -18526,7 +18526,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var width = 375;
 var height = 60;
 
-var data = [{ "label": "tab 01", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/styled-components/public/images/icon.png" }, { "label": "tab 02", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/styled-components/public/images/icon.png" }, { "label": "tab 03", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/styled-components/public/images/icon.png" }, { "label": "tab 05", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/styled-components/public/images/icon.png" }];
+var data = [{ "label": "tab 01", "icon": "blue", "image": "https://jmanhart.github.io/react-sketchapp/styles-components/public/images/icon.png" }, { "label": "tab 02", "icon": "pink", "image": "https://jmanhart.github.io/react-sketchapp/styles-components/public/images/icon.png" }, { "label": "tab 03", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/styles-components/public/images/icon.png" }, { "label": "tab 05", "icon": "red", "image": "https://jmanhart.github.io/react-sketchapp/styles-components/public/images/icon.png" }];
 
 var NavBarContainer = _primitives2['default'].View(_templateObject, height, width);
 
