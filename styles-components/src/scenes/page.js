@@ -11,15 +11,7 @@ import NavBarBottom from '../components/navbar-bottom.js'
 import CardProfile from '../components/card-profile.js'
 
 //Artboard Size
-let scenesize = {
-  width: '375px',
-  height: '667px',
-}
-const Container = styled.View`
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-`;
+
 
 export default class Page extends Component{
 

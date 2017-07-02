@@ -16292,8 +16292,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n'], ['\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n']);
-
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
@@ -16330,17 +16328,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 //Import Components
 
 
 //Artboard Size
-var scenesize = {
-  width: '375px',
-  height: '667px'
-};
-var Container = _primitives2['default'].View(_templateObject);
+
 
 var Page = function (_Component) {
   _inherits(Page, _Component);
@@ -31431,8 +31423,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n\n'], ['\n\n']);
-
 var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
@@ -31457,12 +31447,25 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 //Import Global Styles
 
 
-var Card = _primitives2['default'].Text(_templateObject);
+var data = [{
+  "name": "John Manhart",
+  "postion": "UX Designer", "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhIAAAAJDEzOGI0ZmFkLTE5MmYtNDlmYS05ZjM1LTgxZGYyZGMxZWY3ZA.jpg"
+}, {
+  "name": "Chris Pearson",
+  "postion": "UX Designer",
+  "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAb0AAAAJGJhYTJiZWU0LWQ5ZDAtNDFjNy1iNmI3LWMyZWM2ZGNhNTlmYw.jpg"
+}, {
+  "name": "Jasen Roberts",
+  "postion": "UX Developer",
+  "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/066/23b/28f0e0d.jpg"
+}, {
+  "name": "Nicholas Rickard",
+  "postion": "UX Developer",
+  "image": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAs0AAAAJDcwYzUxYTdlLTdkY2UtNDVkYy04ODgyLTU1ODQ5ZWE1MWUwZg.jpg"
+}];
 
 var CardProfile = function (_Component) {
   _inherits(CardProfile, _Component);
@@ -31477,7 +31480,38 @@ var CardProfile = function (_Component) {
     key: 'render',
     value: function () {
       function render() {
-        return _react2['default'].createElement(Card, { style: [styles.card, _index.shadows.cardOne] });
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { style: [styles.card, _index.shadows.cardOne] },
+          data.map(function (item) {
+            return _react2['default'].createElement(
+              _reactSketchapp.View,
+              { style: styles.rowContainer },
+              _react2['default'].createElement(
+                _reactSketchapp.View,
+                { style: styles.avatarContainter },
+                _react2['default'].createElement(_reactSketchapp.Image, {
+                  style: styles.avatar,
+                  key: item.image,
+                  source: item.image })
+              ),
+              _react2['default'].createElement(
+                _reactSketchapp.View,
+                { style: styles.copyContainer },
+                _react2['default'].createElement(
+                  _reactSketchapp.Text,
+                  { key: item.name },
+                  item.name
+                ),
+                _react2['default'].createElement(
+                  _reactSketchapp.Text,
+                  { key: item.position },
+                  item.postion
+                )
+              )
+            );
+          })
+        );
       }
 
       return render;
@@ -31492,11 +31526,39 @@ exports['default'] = CardProfile;
 
 var styles = _reactSketchapp.StyleSheet.create({
   card: {
-    backgroundColor: 'white',
-    flex: 1,
+    backgroundColor: 'rgba(255,255,255,1)',
+    flex: 3,
     alignSelf: 'stretch',
-    margin: 20,
+    margin: 10,
     borderRadius: 3
+  },
+  rowContainer: {
+    backgroundColor: 'rgba(0,0,0,0.15)',
+    height: 100,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 0
+  },
+  avatarContainter: {
+    backgroundColor: 'rgba(0,0,0,0.15)',
+    margin: 10,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  avatar: {
+    backgroundColor: 'pink',
+    height: 50,
+    width: 50,
+    borderRadius: 40
+  },
+  copyContainer: {
+    backgroundColor: 'rgba(0,0,0,0.15)',
+    height: 50,
+    margin: 10,
+    flex: 3,
+    justifyContent: 'center'
   }
 });
 module.exports = exports['default'];
