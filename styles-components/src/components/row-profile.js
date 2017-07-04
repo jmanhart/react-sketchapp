@@ -26,6 +26,12 @@ const data = [
     "postion":"UX Developer",
     "image":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAs0AAAAJDcwYzUxYTdlLTdkY2UtNDVkYy04ODgyLTU1ODQ5ZWE1MWUwZg.jpg",
   },
+  {
+    "name": "Nicholas Rickard",
+    "postion":"UX Developer",
+    "image":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAs0AAAAJDcwYzUxYTdlLTdkY2UtNDVkYy04ODgyLTU1ODQ5ZWE1MWUwZg.jpg",
+  },
+
 ]
 
 
