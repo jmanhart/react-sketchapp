@@ -9,6 +9,7 @@ import {global, iOSSizes} from '../lib/global_styles/index.js'
 import NavBarTop from '../components/navbar-top.js'
 import NavBarBottom from '../components/navbar-bottom.js'
 import RowProfile from '../components/row-profile.js'
+import RowContainer from '../components/rows/row-container.js'
 
 
 export default class Page extends Component{
@@ -19,7 +20,7 @@ export default class Page extends Component{
           <NavBarTop pagetitle="Inital View" />
 
             <View style={global.content} name='Content'>
-              <RowProfile />
+              <RowContainer />
             </View>
 
           <NavBarBottom />
