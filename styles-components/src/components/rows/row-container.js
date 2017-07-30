@@ -4,52 +4,21 @@ import { render, Image, View, StyleSheet, Text } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
 //Import Global Styles
-import {global, shadows, labels, fpo} from './../../lib/global_styles/index.js'
+import {global, shadows, labels, fpo, rowcontainer} from './../../lib/global_styles/index.js'
 
 
 export default class RowContainer extends Component{
   render(){
       return(
-        <View >
-          <Text>Hello</Text>
+        <View name="Row Wrapper" style={rowcontainer.wrapper}>
+            <View name="Icon Container" style={rowcontainer.iconContainer}>
+              <View name="Icon Content" style={rowcontainer.icon}/>
+            </View>
+            <View name="Label Container" style={rowcontainer.labelContainer}>
+              <Text name="Label String" style={rowcontainer.label}>{this.props.label}</Text>
+              <View name="Enclosure Arrow" style={rowcontainer.enclosureArrow}/>
+            </View>
         </View>
       )
     }
   }
-
-const rowcontainer = StyleSheet.create({
-  card:{
-    backgroundColor:'rgba(255,255,255,1)',
-    flex: 3,
-    alignSelf: 'stretch',
-    margin: 10,
-    borderRadius: 3,
-  },
-  rowContainer: {
-    height: 100,
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-between',
-    padding: 0,
-  },
-  avatarContainter:{
-    backgroundColor:'rgba(0,0,0,0.15)',
-    margin:0,
-    flex:1,
-    alignItems:'center',
-    justifyContent:'center',
-  },
-  avatar:{
-    backgroundColor:'pink',
-    height: 80,
-    width: 80,
-    borderRadius: 40,
-  },
-  copyContainer:{
-    backgroundColor:'rgba(0,0,0,0.15)',
-    height: 50,
-    margin:10,
-    flex:3,
-    justifyContent:'center',
-  },
-});

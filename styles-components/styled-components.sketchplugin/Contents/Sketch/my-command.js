@@ -7111,6 +7111,22 @@ Object.keys(_fpo).forEach(function (key) {
   });
 });
 
+var _row = __webpack_require__(136);
+
+Object.keys(_row).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      function get() {
+        return _row[key];
+      }
+
+      return get;
+    }()
+  });
+});
+
 /***/ }),
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -16422,15 +16438,15 @@ var Page = function (_Component) {
       function ArtboardOne() {
         return _react2['default'].createElement(
           _reactSketchapp.Artboard,
-          { name: 'Inital View', style: _index.iOSSizes.iphone7 },
+          { name: 'Inital View', style: _index.iphone7 },
           _react2['default'].createElement(
             _reactSketchapp.View,
             { style: _index.global.wrapper, name: 'Wrapper' },
-            _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Inital View' }),
+            _react2['default'].createElement(_navbarTop2['default'], { pagetitle: 'Initial View' }),
             _react2['default'].createElement(
               _reactSketchapp.View,
               { style: _index.global.content, name: 'Content' },
-              _react2['default'].createElement(_rowContainer2['default'], null)
+              _react2['default'].createElement(_rowContainer2['default'], { label: 'hello' })
             ),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
@@ -18890,11 +18906,21 @@ var RowContainer = function (_Component) {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
-          null,
+          { name: 'Row Wrapper', style: _index.rowcontainer.wrapper },
           _react2['default'].createElement(
-            _reactSketchapp.Text,
-            null,
-            'Hello'
+            _reactSketchapp.View,
+            { name: 'Icon Container', style: _index.rowcontainer.iconContainer },
+            _react2['default'].createElement(_reactSketchapp.View, { name: 'Icon Content', style: _index.rowcontainer.icon })
+          ),
+          _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'Label Container', style: _index.rowcontainer.labelContainer },
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { name: 'Label String', style: _index.rowcontainer.label },
+              this.props.label
+            ),
+            _react2['default'].createElement(_reactSketchapp.View, { name: 'Enclosure Arrow', style: _index.rowcontainer.enclosureArrow })
           )
         );
       }
@@ -18907,44 +18933,6 @@ var RowContainer = function (_Component) {
 }(_react.Component);
 
 exports['default'] = RowContainer;
-
-
-var rowcontainer = _reactSketchapp.StyleSheet.create({
-  card: {
-    backgroundColor: 'rgba(255,255,255,1)',
-    flex: 3,
-    alignSelf: 'stretch',
-    margin: 10,
-    borderRadius: 3
-  },
-  rowContainer: {
-    height: 100,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 0
-  },
-  avatarContainter: {
-    backgroundColor: 'rgba(0,0,0,0.15)',
-    margin: 0,
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  avatar: {
-    backgroundColor: 'pink',
-    height: 80,
-    width: 80,
-    borderRadius: 40
-  },
-  copyContainer: {
-    backgroundColor: 'rgba(0,0,0,0.15)',
-    height: 50,
-    margin: 10,
-    flex: 3,
-    justifyContent: 'center'
-  }
-});
 module.exports = exports['default'];
 
 /***/ }),
@@ -19002,52 +18990,110 @@ var shadows = exports.shadows = _reactSketchapp.StyleSheet.create({
 });
 
 /***/ }),
-/* 136 */,
-/* 137 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.android = exports.iOSSizes = undefined;
+exports.rowcontainer = undefined;
 
 var _reactSketchapp = __webpack_require__(8);
 
-var iOSSizes = exports.iOSSizes = _reactSketchapp.StyleSheet.create({
-  iphone7: {
-    width: 375,
-    height: 667,
-    backgroundColor: 'white'
+var borderWidth = 2;
+
+var rowcontainer = exports.rowcontainer = _reactSketchapp.StyleSheet.create({
+  wrapper: {
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    maxHeight: 70,
+    flex: 1,
+    borderTopWidth: borderWidth,
+    borderTopColor: "white",
+    borderBottomWidth: borderWidth,
+    borderBottomColor: "white",
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
-  iphone7plus: {
-    width: 414,
-    height: 736,
-    backgroundColor: 'white'
+
+  // Label Container Content
+  labelContainer: {
+    flex: 3,
+    alignSelf: 'stretch',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexDirection: 'row'
   },
-  iphoneSE: {
-    width: 320,
-    height: 568,
-    backgroundColor: 'white'
+  label: {
+    fontSize: 15,
+    color: "white"
   },
-  ipad: {
-    width: 768,
-    height: 1024,
-    backgroundColor: 'white'
+  enclosureArrow: {
+    height: 20,
+    width: 20,
+    backgroundColor: 'red',
+    marginRight: 20
   },
-  ipadpro: {
-    width: 1024,
-    height: 1366,
-    backgroundColor: 'white'
+
+  iconContainer: {
+    backgroundColor: 'teal',
+    flex: 1,
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  // Icon Container Content
+  icon: {
+    height: 30,
+    width: 30,
+    backgroundColor: "pink"
   }
+
 });
 
-var android = exports.android = _reactSketchapp.StyleSheet.create({
-  mobile: {
-    width: 360,
-    height: 640,
-    backgroundColor: 'white'
-  }
+/***/ }),
+/* 137 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+var iphone7 = exports.iphone7 = {
+  width: 375,
+  height: 667,
+  backgroundColor: 'white'
+};
+
+var iphone7p = exports.iphone7p = {
+  width: 414,
+  height: 736,
+  backgroundColor: 'white'
+};
+
+var iphoneSE = exports.iphoneSE = {
+  width: 320,
+  height: 568,
+  backgroundColor: 'white'
+};
+
+var ipad = exports.ipad = {
+  width: 768,
+  height: 1024,
+  backgroundColor: 'white'
+};
+
+var ipadpro = exports.ipadpro = {
+  width: 1024,
+  height: 1366,
+  backgroundColor: 'white'
+};
+
+var android = exports.android = {
+  width: 360,
+  height: 640,
+  backgroundColor: 'white'
+};
 
 /***/ }),
 /* 138 */

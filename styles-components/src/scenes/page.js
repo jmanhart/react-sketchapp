@@ -3,7 +3,7 @@ import styled from 'styled-components/primitives';
 import { render, Artboard, Text, View, StyleSheet, Image } from 'react-sketchapp';
 import chroma from 'chroma-js';
 
-import {global, iOSSizes} from '../lib/global_styles/index.js'
+import {global, iOSSizes, iphone7, iphoneSE} from '../lib/global_styles/index.js'
 
 //Import Components
 import NavBarTop from '../components/navbar-top.js'
@@ -15,12 +15,12 @@ import RowContainer from '../components/rows/row-container.js'
 export default class Page extends Component{
   ArtboardOne(){
     return(
-      <Artboard name="Inital View" style={iOSSizes.iphone7}>
+      <Artboard name="Inital View" style={iphone7}>
         <View style={global.wrapper} name="Wrapper">
-          <NavBarTop pagetitle="Inital View" />
+          <NavBarTop pagetitle="Initial View" />
 
             <View style={global.content} name='Content'>
-              <RowContainer />
+              <RowContainer label="hello"/>
             </View>
 
           <NavBarBottom />
