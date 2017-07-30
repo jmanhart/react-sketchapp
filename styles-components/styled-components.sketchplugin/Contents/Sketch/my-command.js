@@ -16446,7 +16446,7 @@ var Page = function (_Component) {
             _react2['default'].createElement(
               _reactSketchapp.View,
               { style: _index.global.content, name: 'Content' },
-              _react2['default'].createElement(_rowContainer2['default'], { label: 'hello' })
+              _react2['default'].createElement(_rowContainer2['default'], { label: 'has', rowType: 'Copy' })
             ),
             _react2['default'].createElement(_navbarBottom2['default'], null)
           )
@@ -18901,12 +18901,12 @@ var RowContainer = function (_Component) {
   }
 
   _createClass(RowContainer, [{
-    key: 'render',
+    key: 'rowTypeCopy',
     value: function () {
-      function render() {
+      function rowTypeCopy() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
-          { name: 'Row Wrapper', style: _index.rowcontainer.wrapper },
+          { name: 'Copy' },
           _react2['default'].createElement(
             _reactSketchapp.View,
             { name: 'Icon Container', style: _index.rowcontainer.iconContainer },
@@ -18922,6 +18922,41 @@ var RowContainer = function (_Component) {
             ),
             _react2['default'].createElement(_reactSketchapp.View, { name: 'Enclosure Arrow', style: _index.rowcontainer.enclosureArrow })
           )
+        );
+      }
+
+      return rowTypeCopy;
+    }()
+  }, {
+    key: 'rowTypeNoIcon',
+    value: function () {
+      function rowTypeNoIcon() {
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { name: 'Copy' },
+          _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'Label Container', style: _index.rowcontainer.labelContainer },
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { name: 'Label String', style: _index.rowcontainer.label },
+              this.props.label
+            ),
+            _react2['default'].createElement(_reactSketchapp.View, { name: 'Enclosure Arrow', style: _index.rowcontainer.enclosureArrow })
+          )
+        );
+      }
+
+      return rowTypeNoIcon;
+    }()
+  }, {
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { name: 'Row Wrapper', style: _index.rowcontainer.wrapper },
+          this.rowTypeNoIcon()
         );
       }
 

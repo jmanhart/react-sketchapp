@@ -20,7 +20,7 @@ export default class Page extends Component{
           <NavBarTop pagetitle="Initial View" />
 
             <View style={global.content} name='Content'>
-              <RowContainer label="hello"/>
+              <RowContainer label="has" rowType="Copy"/>
             </View>
 
           <NavBarBottom />
