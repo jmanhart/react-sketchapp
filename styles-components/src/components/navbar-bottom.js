@@ -51,19 +51,16 @@ export default class NavBarBottom extends Component{
           {data.map((item) =>
             <TabColumn name= "Tab Column">
               <TabIcon name= "Tab Icon">
-                <Image
+                {/*<Image
                   key={item.image}
                   source={item.image}
                   resizeMode='contain'
                   style={{
                     height: 30,
                     width: 30,
-                  }}
-              />
+                  }} />*/}
             </TabIcon>
-              <TabTitle name= "Tab Label" key={item.label}>
-                {item.label}
-              </TabTitle>
+
             </TabColumn>
           )}
         </NavBarContainer>
