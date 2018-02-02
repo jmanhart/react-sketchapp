@@ -8368,7 +8368,6 @@ var Swatch = function Swatch(_ref) {
     )
   );
 };
-
 var Color = {
   hex: _propTypes2['default'].string.isRequired,
   name: _propTypes2['default'].string.isRequired
@@ -8398,16 +8397,11 @@ Document.propTypes = {
   colors: _propTypes2['default'].objectOf(_propTypes2['default'].string).isRequired
 };
 
-exports['default'] = function () {
+exports['default'] = function (context) {
   var colorList = {
     Haus: '#F3F4F4',
     Night: '#333',
-    Sur: '#96DBE4',
-    'Sur Dark': '#24828F',
-    Peach: '#EFADA0',
-    'Peach Dark': '#E37059',
-    Pear: '#93DAAB',
-    'Pear Dark': '#2E854B'
+    Sur: '#96DBE4'
   };
 
   (0, _reactSketchapp.render)(_react2['default'].createElement(Document, { colors: colorList }), context.document.currentPage());
