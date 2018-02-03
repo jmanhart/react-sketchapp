@@ -47,12 +47,27 @@ const Row = () => (
     <View
       name="Right Side"
       style={{
-        // backgroundColor:'yellow',
+        backgroundColor:'yellow',
         flex:.25,
         width: 100,
         height: 44,
         alignSelf: 'center',
+        alignItems:'flex-end',
+        justifyContent:'center',
+
       }}>
+      <View
+        name="Chevron"
+        style={{
+          height: 15,
+          width: 15,
+          marginRight: 15,
+          backgroundColor:'green',
+          // transform:{ rotateX: '45deg' }
+
+
+        }}>
+      </View>
 
     </View>
 

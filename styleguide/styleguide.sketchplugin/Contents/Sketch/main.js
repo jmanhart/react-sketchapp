@@ -34635,15 +34635,32 @@ var Row = function Row() {
         'Hello'
       )
     ),
-    _react2['default'].createElement(_reactSketchapp.View, {
-      name: 'Right Side',
-      style: {
-        // backgroundColor:'yellow',
-        flex: .25,
-        width: 100,
-        height: 44,
-        alignSelf: 'center'
-      } })
+    _react2['default'].createElement(
+      _reactSketchapp.View,
+      {
+        name: 'Right Side',
+        style: {
+          backgroundColor: 'yellow',
+          flex: .25,
+          width: 100,
+          height: 44,
+          alignSelf: 'center',
+          alignItems: 'flex-end',
+          justifyContent: 'center'
+
+        } },
+      _react2['default'].createElement(_reactSketchapp.View, {
+        name: 'Chevron',
+        style: {
+          height: 15,
+          width: 15,
+          marginRight: 15,
+          backgroundColor: 'green'
+          // transform:{ rotateX: '45deg' }
+
+
+        } })
+    )
   );
 };
 
