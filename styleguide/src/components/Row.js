@@ -48,7 +48,7 @@ const Row = () => (
           fontFamily: 'SF UI Text',
           marginLeft: 15,
         }}>
-        Hello
+        Hell
       </Text>
     </View>
 

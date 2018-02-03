@@ -8,6 +8,7 @@ import type { DesignSystem } from './designSystem';
 
 
 import Row from './components/Row';
+import SettingsRow from './components/Rows/SettingsRow.js';
 
 import Label from './components/Label';
 import Palette from './components/Palette';
@@ -18,7 +19,7 @@ const Document = ({ system }: { system: DesignSystem }) => (
   <View>
 
 
-    <Row />
+    <SettingsRow />
 
   </View>
 );
