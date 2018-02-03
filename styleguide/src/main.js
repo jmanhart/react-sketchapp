@@ -15,11 +15,32 @@ import Palette from './components/Palette';
 import Section from './components/Section';
 import TypeSpecimen from './components/TypeSpecimen';
 
+
+const data = [1, 2, 3];
+
+
 const Document = ({ system }: { system: DesignSystem }) => (
   <View>
 
-
     <SettingsRow />
+
+
+
+
+    {/*
+      {data.map((item) => {
+        return (
+          <SettingsRow  type="dude"/>
+        )
+      })}
+      {Object.keys(rows).map(name => <SettingsRow />)}
+      <Link className="card" key={item.link} to={item.link}>
+        <div className="card-content">
+          <span className="card-city" key={item.city} >{item.city}</span>
+          <span className="card-state" key={item.state} >{item.state}</span>
+        </div>
+      </Link>
+    */}
 
   </View>
 );

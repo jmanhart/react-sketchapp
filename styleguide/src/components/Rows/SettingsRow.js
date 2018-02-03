@@ -1,6 +1,6 @@
 /* @flow */
 import React from 'react';
-import { Text, View } from 'react-sketchapp';
+import { Text, View, StyleSheet } from 'react-sketchapp';
 
 import {
   Svg,
@@ -14,35 +14,38 @@ import {
 import Copy from './Overrides/Left/Copy.js'
 import Chevron from './Overrides/Right/Chevron.js'
 
+import LeftSide from './LeftSide.js'
+
 const SettingsRow = () => (
 
   <View
     name="Row Container"
-    style={{
-      backgroundColor:'#121212',
-      height: 44,
-      width: 375,
-      alignItems: 'flex-start',
-      justifyContent: 'center',
-      flex:1,
-      flexDirection:'row',
-      borderTopWidth: .5,
-      borderBottomWidth:.5,
-      borderColor: '#555555',
-    }}>
+    style={styles.container}>
 
-    <Copy />
+    <LeftSide type="dude"/>
     <Chevron />
-
-
-
-
 
   </View>
 
 );
 
 export default SettingsRow;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor:'#121212',
+    height: 44,
+    width: 375,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    flex:1,
+    flexDirection:'row',
+    borderTopWidth: .5,
+    borderBottomWidth:.5,
+    borderColor: '#555555',
+  }
+
+});
 
 
 {/*

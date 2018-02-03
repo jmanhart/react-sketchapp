@@ -11,7 +11,7 @@ import {
   Polygon
 } from 'react-primitives-svg';
 
-const Copy = () => (
+const Copy = (props) => (
 
     <View
       name="Left Side"
@@ -32,7 +32,8 @@ const Copy = () => (
           fontFamily: 'SF UI Text',
           marginLeft: 15,
         }}>
-        Hello
+        {/*this.props.label*/}
+        Hi
       </Text>
     </View>
 

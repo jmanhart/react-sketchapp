@@ -19,7 +19,7 @@ const Chevron = () => (
     <View
       name="Right Side"
       style={{
-        backgroundColor:'green',
+        // backgroundColor:'green',
         flex:.25,
         width: 100,
         height: 44,
@@ -34,7 +34,7 @@ const Chevron = () => (
           height: 44,
           width: 44,
           marginRight: 0,
-          backgroundColor:'pink',
+          // backgroundColor:'pink',
           justifyContent:'center',
           alignItems:'center',
         }} >
@@ -47,7 +47,7 @@ const Chevron = () => (
                 </G>
             </G>
         </Svg>
-        
+
       </View>
 
     </View>
