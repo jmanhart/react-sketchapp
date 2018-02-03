@@ -34589,6 +34589,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactSketchapp = __webpack_require__(13);
 
+var _reactPrimitivesSvg = __webpack_require__(192);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var Row = function Row() {
@@ -34649,21 +34651,35 @@ var Row = function Row() {
           justifyContent: 'center'
 
         } },
-      _react2['default'].createElement(_reactSketchapp.View, {
-        name: 'Chevron',
-        style: {
-          height: 15,
-          width: 15,
-          marginRight: 15,
-          backgroundColor: 'green'
-          // transform:{ rotateX: '45deg' }
-
-
-        } })
+      _react2['default'].createElement(
+        _reactSketchapp.View,
+        {
+          name: 'Chevron',
+          style: {
+            height: 44,
+            width: 44,
+            marginRight: 15,
+            backgroundColor: 'pink',
+            justifyContent: 'center',
+            alignItems: 'center'
+          } },
+        _react2['default'].createElement(
+          _reactPrimitivesSvg.Svg,
+          {
+            width: '20',
+            height: '30' },
+          _react2['default'].createElement(_reactPrimitivesSvg.Rect, {
+            width: '20',
+            height: '30',
+            stroke: 'blue',
+            strokeWidth: '2',
+            fill: 'teal'
+          })
+        )
+      )
     )
   );
 };
-
 exports['default'] = Row;
 
 
@@ -34687,6 +34703,53 @@ exports['default'] = Row;
      {children}
    </Text>
    */}
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(193);
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _reactSketchapp = __webpack_require__(13);
+
+var Circle = _reactSketchapp.Svg.Circle,
+    Ellipse = _reactSketchapp.Svg.Ellipse,
+    G = _reactSketchapp.Svg.G,
+    LinearGradient = _reactSketchapp.Svg.LinearGradient,
+    RadialGradient = _reactSketchapp.Svg.RadialGradient,
+    Line = _reactSketchapp.Svg.Line,
+    Path = _reactSketchapp.Svg.Path,
+    Polygon = _reactSketchapp.Svg.Polygon,
+    Polyline = _reactSketchapp.Svg.Polyline,
+    Rect = _reactSketchapp.Svg.Rect,
+    _Symbol = _reactSketchapp.Svg.Symbol,
+    Text = _reactSketchapp.Svg.Text,
+    Use = _reactSketchapp.Svg.Use,
+    Defs = _reactSketchapp.Svg.Defs,
+    Stop = _reactSketchapp.Svg.Stop; /* eslint-disable import/no-named-as-default */
+
+module.exports = {
+  Svg: _reactSketchapp.Svg,
+  Circle: Circle,
+  Ellipse: Ellipse,
+  G: G,
+  LinearGradient: LinearGradient,
+  RadialGradient: RadialGradient,
+  Line: Line,
+  Path: Path,
+  Polygon: Polygon,
+  Polyline: Polyline,
+  Rect: Rect,
+  Symbol: _Symbol,
+  Text: Text,
+  Use: Use,
+  Defs: Defs,
+  Stop: Stop
+};
 
 /***/ })
 /******/ ]);

@@ -2,6 +2,11 @@
 import React from 'react';
 import { Text, View } from 'react-sketchapp';
 
+import {
+  Svg,
+  Circle,
+  Rect,
+} from 'react-primitives-svg';
 
 const Row = () => (
 
@@ -59,14 +64,26 @@ const Row = () => (
       <View
         name="Chevron"
         style={{
-          height: 15,
-          width: 15,
+          height: 44,
+          width: 44,
           marginRight: 15,
-          backgroundColor:'green',
-          // transform:{ rotateX: '45deg' }
-
-
+          backgroundColor:'pink',
+          justifyContent:'center',
+          alignItems:'center',
         }}>
+
+        <Svg
+          width="20"
+          height="30">
+          <Rect
+            width="20"
+            height="30"
+            stroke="blue"
+            strokeWidth="2"
+            fill="teal"
+          />
+        </Svg>
+
       </View>
 
     </View>
