@@ -6,6 +6,9 @@ import {
   Svg,
   Circle,
   Rect,
+  Line,
+  G,
+  Polygon
 } from 'react-primitives-svg';
 
 const Row = () => (
@@ -66,22 +69,20 @@ const Row = () => (
         style={{
           height: 44,
           width: 44,
-          marginRight: 15,
+          marginRight: 0,
           backgroundColor:'pink',
           justifyContent:'center',
           alignItems:'center',
         }}>
 
-        <Svg
-          width="20"
-          height="30">
-          <Rect
-            width="20"
-            height="30"
-            stroke="blue"
-            strokeWidth="2"
-            fill="teal"
-          />
+
+        {/* Adding in SVG */}
+        <Svg width="8px" height="14px" >
+            <G id="O/Chevron" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-100.000000, -15.000000)">
+                <G id="Pin" transform="translate(100.000000, 15.500000)" fill="#555555">
+                    <Polygon id="Disclosure-Indicator" points="0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5"></Polygon>
+                </G>
+            </G>
         </Svg>
 
       </View>
@@ -97,6 +98,14 @@ export default Row;
 
 
 {/*
+
+<Line x1="10" x2="50" y1="0" y2="0" stroke="orange" stroke-width="5"/>
+  <Rect
+    width="10"
+    height="10"
+    fill="red"
+    transform="rotate(45)"
+  />
 
   paddingLeft: 15,
   borderTopWidth: .5,

@@ -34658,23 +34658,23 @@ var Row = function Row() {
           style: {
             height: 44,
             width: 44,
-            marginRight: 15,
+            marginRight: 0,
             backgroundColor: 'pink',
             justifyContent: 'center',
             alignItems: 'center'
           } },
         _react2['default'].createElement(
           _reactPrimitivesSvg.Svg,
-          {
-            width: '20',
-            height: '30' },
-          _react2['default'].createElement(_reactPrimitivesSvg.Rect, {
-            width: '20',
-            height: '30',
-            stroke: 'blue',
-            strokeWidth: '2',
-            fill: 'teal'
-          })
+          { width: '8px', height: '14px' },
+          _react2['default'].createElement(
+            _reactPrimitivesSvg.G,
+            { id: 'O/Chevron', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd', transform: 'translate(-100.000000, -15.000000)' },
+            _react2['default'].createElement(
+              _reactPrimitivesSvg.G,
+              { id: 'Pin', transform: 'translate(100.000000, 15.500000)', fill: '#555555' },
+              _react2['default'].createElement(_reactPrimitivesSvg.Polygon, { id: 'Disclosure-Indicator', points: '0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5' })
+            )
+          )
         )
       )
     )
@@ -34684,6 +34684,13 @@ exports['default'] = Row;
 
 
 {/*
+  <Line x1="10" x2="50" y1="0" y2="0" stroke="orange" stroke-width="5"/>
+   <Rect
+     width="10"
+     height="10"
+     fill="red"
+     transform="rotate(45)"
+   />
     paddingLeft: 15,
    borderTopWidth: .5,
    borderBottomWidth:.5,
