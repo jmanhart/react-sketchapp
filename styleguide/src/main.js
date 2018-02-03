@@ -16,7 +16,7 @@ import Section from './components/Section';
 import TypeSpecimen from './components/TypeSpecimen';
 
 
-const data = [1, 2, 3];
+
 
 
 const Document = ({ system }: { system: DesignSystem }) => (

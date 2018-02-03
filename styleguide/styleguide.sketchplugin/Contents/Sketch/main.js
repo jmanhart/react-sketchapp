@@ -8466,9 +8466,6 @@ var _TypeSpecimen2 = _interopRequireDefault(_TypeSpecimen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var data = [1, 2, 3];
-/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
-
 var Document = function Document(_ref) {
   var system = _ref.system;
   return _react2['default'].createElement(
@@ -8477,6 +8474,7 @@ var Document = function Document(_ref) {
     _react2['default'].createElement(_SettingsRow2['default'], null)
   );
 };
+/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
 
 exports['default'] = function () {
   _reactSketchapp.TextStyles.create({
@@ -34522,7 +34520,7 @@ var SettingsRow = function SettingsRow() {
     {
       name: 'Row Container',
       style: styles.container },
-    _react2['default'].createElement(_LeftSide2['default'], { type: 'dude' }),
+    _react2['default'].createElement(_LeftSide2['default'], { type: 'check-mark' }),
     _react2['default'].createElement(_Chevron2['default'], null)
   );
 };
@@ -34726,30 +34724,35 @@ var LeftSide = function (_Component) {
         if (this.props.type == "dude") {
           return _react2['default'].createElement(
             _reactSketchapp.Text,
-            {
-              style: {
-                color: 'white',
-                fontSize: 17,
-                flex: .5,
-                alignSelf: 'flex-start',
-                fontFamily: 'SF UI Text',
-                marginLeft: 15
-              } },
+            { style: styles.copy },
             'This is Left Awesome!'
+          );
+        }
+
+        if (this.props.type == "hamhawk") {
+          return _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { style: styles.copy },
+            'Ham Hawks!!!'
+          );
+        }
+
+        if (this.props.type == "check-mark") {
+          return _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'Check Mark', style: checkMark.container },
+            _react2['default'].createElement(_reactSketchapp.View, { style: checkMark.checkMark }),
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { style: styles.copy },
+              'Check Mark Type'
+            )
           );
         } else {
           return _react2['default'].createElement(
             _reactSketchapp.Text,
-            {
-              style: {
-                color: 'white',
-                fontSize: 17,
-                flex: .5,
-                alignSelf: 'flex-start',
-                fontFamily: 'SF UI Text',
-                marginLeft: 15
-              } },
-            'Fart Hole'
+            { style: styles.copy },
+            'Something Done Broke! :('
           );
         }
       }
@@ -34785,6 +34788,34 @@ var LeftSide = function (_Component) {
 
 exports['default'] = LeftSide;
 
+
+var styles = _reactSketchapp.StyleSheet.create({
+  copy: {
+    color: 'white',
+    fontSize: 17,
+
+    alignSelf: 'flex-start',
+    fontFamily: 'SF UI Text',
+    marginLeft: 15
+  }
+});
+
+var checkMark = _reactSketchapp.StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: 'pink'
+  },
+  checkMark: {
+    height: 25,
+    width: 25,
+    borderRadius: 20,
+    backgroundColor: 'green'
+  }
+
+});
 
 {/*
    const LeftSide = (props) => (

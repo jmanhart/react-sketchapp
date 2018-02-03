@@ -22,7 +22,7 @@ const SettingsRow = () => (
     name="Row Container"
     style={styles.container}>
 
-    <LeftSide type="dude"/>
+    <LeftSide type="check-mark"/>
     <Chevron />
 
   </View>
