@@ -8463,27 +8463,6 @@ var Document = function Document(_ref) {
   return _react2['default'].createElement(
     _reactSketchapp.View,
     null,
-    _react2['default'].createElement(
-      _reactSketchapp.View,
-      { name: 'Intro', style: { width: 420, marginBottom: system.spacing * 4 } },
-      _react2['default'].createElement(
-        _Label2['default'],
-        null,
-        'This is an example react-sketchapp document, showing how to render a styleguide from a data representation of your design system.'
-      )
-    ),
-    _react2['default'].createElement(
-      _Section2['default'],
-      { title: 'Type Styles' },
-      Object.keys(system.fonts).map(function (name) {
-        return _react2['default'].createElement(_TypeSpecimen2['default'], { name: name, style: _reactSketchapp.TextStyles.get(name) });
-      })
-    ),
-    _react2['default'].createElement(
-      _Section2['default'],
-      { title: 'Color Palette' },
-      _react2['default'].createElement(_Palette2['default'], { colors: system.colors })
-    ),
     _react2['default'].createElement(_Row2['default'], null)
   );
 };
@@ -8496,6 +8475,23 @@ exports['default'] = function () {
 
   (0, _reactSketchapp.render)(_react2['default'].createElement(Document, { system: _designSystem2['default'] }), context.document.currentPage());
 };
+
+{/*
+   <View name="Intro" style={{ width: 420, marginBottom: system.spacing * 4 }}>
+     <Label>
+       This is an example react-sketchapp document, showing how to render a
+       styleguide from a data representation of your design system.
+     </Label>
+   </View>
+    <Section title="Type Styles">
+     {Object.keys(system.fonts).map(name => (
+       <TypeSpecimen name={name} style={TextStyles.get(name)} />
+     ))}
+   </Section>
+    <Section title="Color Palette">
+     <Palette colors={system.colors} />
+   </Section>
+  */}
 
 /***/ }),
 /* 79 */
@@ -34595,17 +34591,59 @@ var _reactSketchapp = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var Row = function Row(_ref) {
-  var bold = _ref.bold,
-      children = _ref.children;
+var Row = function Row() {
   return _react2['default'].createElement(
     _reactSketchapp.View,
-    { style: { backgroundColor: 'red' } },
+    {
+      name: 'Row Container',
+      style: {
+        backgroundColor: '#121212',
+        height: 44,
+        width: 375,
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        flex: 1,
+        flexDirection: 'row',
+        borderTopWidth: .5,
+        borderBottomWidth: .5,
+        borderColor: '#555555'
+
+      } },
     _react2['default'].createElement(
-      _reactSketchapp.Text,
-      null,
-      'Hello'
-    )
+      _reactSketchapp.View,
+      {
+        name: 'Left Side',
+        style: {
+          // backgroundColor:'red',
+          flex: .75,
+          height: 44,
+          justifyContent: 'center',
+          alignSelf: 'center'
+        }
+      },
+      _react2['default'].createElement(
+        _reactSketchapp.Text,
+        {
+          style: {
+            color: 'white',
+            fontSize: 17,
+            flex: .5,
+            alignSelf: 'flex-start',
+            fontFamily: 'SF UI Text',
+            marginLeft: 15
+          } },
+        'Hello'
+      )
+    ),
+    _react2['default'].createElement(_reactSketchapp.View, {
+      name: 'Right Side',
+      style: {
+        // backgroundColor:'yellow',
+        flex: .25,
+        width: 100,
+        height: 44,
+        alignSelf: 'center'
+      } })
   );
 };
 
@@ -34613,6 +34651,14 @@ exports['default'] = Row;
 
 
 {/*
+    paddingLeft: 15,
+   borderTopWidth: .5,
+   borderBottomWidth:.5,
+   borderColor: '#555555',
+    type P = {
+     bold?: boolean,
+     children?: any,
+   };
    <Text
      style={{
        color: '#333',
