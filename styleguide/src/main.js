@@ -21,26 +21,8 @@ import TypeSpecimen from './components/TypeSpecimen';
 
 const Document = ({ system }: { system: DesignSystem }) => (
   <View>
-
-    <SettingsRow />
-
-
-
-
-    {/*
-      {data.map((item) => {
-        return (
-          <SettingsRow  type="dude"/>
-        )
-      })}
-      {Object.keys(rows).map(name => <SettingsRow />)}
-      <Link className="card" key={item.link} to={item.link}>
-        <div className="card-content">
-          <span className="card-city" key={item.city} >{item.city}</span>
-          <span className="card-state" key={item.state} >{item.state}</span>
-        </div>
-      </Link>
-    */}
+    <SettingsRow Left='copy' Right='chevron' />
+    <SettingsRow Left='copy' Right='poop' />
 
   </View>
 );
@@ -74,4 +56,18 @@ export default () => {
   <Section title="Color Palette">
     <Palette colors={system.colors} />
   </Section>
-*/}
+
+  {/*
+    {data.map((item) => {
+      return (
+        <SettingsRow  type="dude"/>
+      )
+    })}
+    {Object.keys(rows).map(name => <SettingsRow />)}
+    <Link className="card" key={item.link} to={item.link}>
+      <div className="card-content">
+        <span className="card-city" key={item.city} >{item.city}</span>
+        <span className="card-state" key={item.state} >{item.state}</span>
+      </div>
+    </Link>
+  */}

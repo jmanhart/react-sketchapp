@@ -8471,7 +8471,8 @@ var Document = function Document(_ref) {
   return _react2['default'].createElement(
     _reactSketchapp.View,
     null,
-    _react2['default'].createElement(_SettingsRow2['default'], null)
+    _react2['default'].createElement(_SettingsRow2['default'], { Left: 'copy', Right: 'chevron' }),
+    _react2['default'].createElement(_SettingsRow2['default'], { Left: 'copy', Right: 'poop' })
   );
 };
 /* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
@@ -8500,7 +8501,20 @@ exports['default'] = function () {
     <Section title="Color Palette">
      <Palette colors={system.colors} />
    </Section>
-  */}
+    {/*
+     {data.map((item) => {
+       return (
+         <SettingsRow  type="dude"/>
+       )
+     })}
+     {Object.keys(rows).map(name => <SettingsRow />)}
+     <Link className="card" key={item.link} to={item.link}>
+       <div className="card-content">
+         <span className="card-city" key={item.city} >{item.city}</span>
+         <span className="card-state" key={item.state} >{item.state}</span>
+       </div>
+     </Link>
+   */}
 
 /***/ }),
 /* 80 */
@@ -34492,6 +34506,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -34512,18 +34528,45 @@ var _LeftSide = __webpack_require__(191);
 
 var _LeftSide2 = _interopRequireDefault(_LeftSide);
 
+var _RightSide = __webpack_require__(198);
+
+var _RightSide2 = _interopRequireDefault(_RightSide);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var SettingsRow = function SettingsRow() {
-  return _react2['default'].createElement(
-    _reactSketchapp.View,
-    {
-      name: 'Row Container',
-      style: styles.container },
-    _react2['default'].createElement(_LeftSide2['default'], { type: 'check-mark' }),
-    _react2['default'].createElement(_Chevron2['default'], null)
-  );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SettingsRow = function (_Component) {
+  _inherits(SettingsRow, _Component);
+
+  function SettingsRow() {
+    _classCallCheck(this, SettingsRow);
+
+    return _possibleConstructorReturn(this, (SettingsRow.__proto__ || Object.getPrototypeOf(SettingsRow)).apply(this, arguments));
+  }
+
+  _createClass(SettingsRow, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { name: 'Row Container', style: styles.container },
+          _react2['default'].createElement(_LeftSide2['default'], { type: this.props.Left }),
+          _react2['default'].createElement(_RightSide2['default'], { type: this.props.Right })
+        );
+      }
+
+      return render;
+    }()
+  }]);
+
+  return SettingsRow;
+}(_react.Component);
 
 exports['default'] = SettingsRow;
 
@@ -34545,6 +34588,15 @@ var styles = _reactSketchapp.StyleSheet.create({
 });
 
 {/*
+    const SettingsRow = () => (
+      <View
+       name="Row Container"
+       style={styles.container}>
+        <LeftSide type='copy'/>
+       <Chevron />
+      </View>
+    );
+    export default SettingsRow;
   <Line x1="10" x2="50" y1="0" y2="0" stroke="orange" stroke-width="5"/>
    <Rect
      width="10"
@@ -34721,11 +34773,11 @@ var LeftSide = function (_Component) {
     key: 'renderLeftSide',
     value: function () {
       function renderLeftSide() {
-        if (this.props.type == "dude") {
+        if (this.props.type == "copy") {
           return _react2['default'].createElement(
             _reactSketchapp.Text,
             { style: styles.copy },
-            'This is Left Awesome!'
+            'This is Left Awesome!!!!!!'
           );
         }
 
@@ -35121,6 +35173,132 @@ var TypeSpecimen = function TypeSpecimen(_ref) {
   );
 };
 exports['default'] = TypeSpecimen;
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(6);
+
+var _reactPrimitivesSvg = __webpack_require__(24);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RightSide = function (_Component) {
+  _inherits(RightSide, _Component);
+
+  function RightSide() {
+    _classCallCheck(this, RightSide);
+
+    return _possibleConstructorReturn(this, (RightSide.__proto__ || Object.getPrototypeOf(RightSide)).apply(this, arguments));
+  }
+
+  _createClass(RightSide, [{
+    key: 'renderRightSide',
+    value: function () {
+      function renderRightSide() {
+        if (this.props.type == "chevron") {
+          return _react2['default'].createElement(
+            _reactSketchapp.View,
+            null,
+            _react2['default'].createElement(
+              _reactPrimitivesSvg.Svg,
+              { width: '8px', height: '14px' },
+              _react2['default'].createElement(
+                _reactPrimitivesSvg.G,
+                { id: 'O/Chevron', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd', transform: 'translate(-100.000000, -15.000000)' },
+                _react2['default'].createElement(
+                  _reactPrimitivesSvg.G,
+                  { id: 'Pin', transform: 'translate(100.000000, 15.500000)', fill: '#555555' },
+                  _react2['default'].createElement(_reactPrimitivesSvg.Polygon, { id: 'Disclosure-Indicator', points: '0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5' })
+                )
+              )
+            )
+          );
+        } else {
+          return _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { style: styles.copy },
+            ':('
+          );
+        }
+      }
+
+      return renderRightSide;
+    }()
+  }, {
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          {
+            name: 'Right Side',
+            style: {
+              // backgroundColor:'green',
+              flex: .25,
+              width: 100,
+              height: 44,
+              alignSelf: 'center',
+              alignItems: 'flex-end',
+              justifyContent: 'center'
+            } },
+          this.renderRightSide()
+        );
+      }
+
+      return render;
+    }()
+  }]);
+
+  return RightSide;
+}(_react.Component);
+
+exports['default'] = RightSide;
+
+
+var styles = _reactSketchapp.StyleSheet.create({
+  copy: {
+    color: 'white',
+    fontSize: 17,
+    alignSelf: 'flex-start',
+    fontFamily: 'SF UI Text',
+    marginLeft: 15
+  }
+});
+
+var checkMark = _reactSketchapp.StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: 'pink'
+  },
+  checkMark: {
+    height: 25,
+    width: 25,
+    borderRadius: 20,
+    backgroundColor: 'green'
+  }
+
+});
 
 /***/ })
 /******/ ]);

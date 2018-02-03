@@ -14,12 +14,11 @@ import {
 
 export default class LeftSide extends Component{
 
-
   renderLeftSide() {
-      if(this.props.type == "dude"){
+      if(this.props.type == "copy"){
         return(
           <Text style={styles.copy}>
-            This is Left Awesome!
+            This is Left Awesome!!!!!!
           </Text>
         )
       }

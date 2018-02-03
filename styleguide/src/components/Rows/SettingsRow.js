@@ -1,6 +1,6 @@
 /* @flow */
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-sketchapp';
+import React, { PropTypes, Component } from 'react';
+import { Text, View, StyleSheet, } from 'react-sketchapp';
 
 import {
   Svg,
@@ -15,21 +15,22 @@ import Copy from './Overrides/Left/Copy.js'
 import Chevron from './Overrides/Right/Chevron.js'
 
 import LeftSide from './LeftSide.js'
+import RightSide from './RightSide.js'
 
-const SettingsRow = () => (
 
-  <View
-    name="Row Container"
-    style={styles.container}>
+export default class SettingsRow extends Component{
+  render(){
+    return(
+      <View name="Row Container" style={styles.container}>
 
-    <LeftSide type="check-mark"/>
-    <Chevron />
+        <LeftSide type={this.props.Left}/>
+        <RightSide type={this.props.Right}/>
 
-  </View>
 
-);
-
-export default SettingsRow;
+      </View>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -49,6 +50,21 @@ const styles = StyleSheet.create({
 
 
 {/*
+
+  const SettingsRow = () => (
+
+    <View
+      name="Row Container"
+      style={styles.container}>
+
+      <LeftSide type='copy'/>
+      <Chevron />
+
+    </View>
+
+  );
+
+  export default SettingsRow;
 
 <Line x1="10" x2="50" y1="0" y2="0" stroke="orange" stroke-width="5"/>
   <Rect
