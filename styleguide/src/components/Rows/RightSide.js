@@ -17,8 +17,7 @@ export default class RightSide extends Component{
   renderRightSide() {
       if(this.props.type == "chevron"){
         return(
-          <View >
-
+          <View style={chevron.container}>
             {/* Adding in SVG */}
             <Svg width="8px" height="14px" >
                 <G id="O/Chevron" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-100.000000, -15.000000)">
@@ -27,13 +26,21 @@ export default class RightSide extends Component{
                     </G>
                 </G>
             </Svg>
-
+          </View>
+        )
+      }
+      if(this.props.type == "label"){
+        return(
+          <View style={label.container}>
+            <Text style={label.copy}>
+               {this.props.RightSideCopy}
+            </Text>
           </View>
         )
       }
       else {
         return(
-          <Text style={styles.copy}>
+          <Text style={rightSide.copy}>
              :(
           </Text>
         )
@@ -44,22 +51,23 @@ export default class RightSide extends Component{
     return(
       <View
         name="Right Side"
-        style={{
-          // backgroundColor:'green',
-          flex:.25,
-          width: 100,
-          height: 44,
-          alignSelf: 'center',
-          alignItems:'flex-end',
-          justifyContent:'center',
-        }}>
+        style={rightSide.container}>
         {this.renderRightSide()}
       </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
+{/* Right side styles*/}
+const rightSide = StyleSheet.create({
+  container: {
+    //backgroundColor:'pink',
+    flex:.25,
+    height: 44,
+    alignSelf: 'center',
+    alignItems:'flex-end',
+    justifyContent:'center',
+  },
   copy: {
     color: 'white',
     fontSize: 17,
@@ -69,19 +77,32 @@ const styles = StyleSheet.create({
   },
 });
 
-const checkMark = StyleSheet.create({
+{/* Chevron Styles */}
+const chevron = StyleSheet.create({
   container:{
     flex:1,
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'flex-start',
-    backgroundColor:'pink',
+    //backgroundColor:'blue',
+    marginRight: 22,
   },
-  checkMark:{
-    height: 25,
-    width: 25,
-    borderRadius: 20,
-    backgroundColor:'green'
-  }
+});
 
+{/* Label Styles */}
+const label = StyleSheet.create({
+  container:{
+    height: 44,
+    alignSelf: 'center',
+    alignItems:'flex-end',
+    justifyContent:'center',
+    // backgroundColor:'teal',
+  },
+  copy: {
+    color: 'white',
+    fontSize: 17,
+    alignSelf: 'flex-start',
+    fontFamily: 'SF UI Text',
+    marginLeft: 15,
+  },
 });

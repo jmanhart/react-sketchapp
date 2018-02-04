@@ -11,45 +11,105 @@ import {
   Polygon
 } from 'react-primitives-svg';
 
-import Copy from './Overrides/Left/Copy.js'
-import Chevron from './Overrides/Right/Chevron.js'
+
 
 import LeftSide from './LeftSide.js'
 import RightSide from './RightSide.js'
+import Divider from './Divider.js'
 
 
 export default class SettingsRow extends Component{
+
+  renderRowType(){
+    if(this.props.type == "top"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider]} />
+      )
+    }
+    if(this.props.type == "middle"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
+      )
+    }
+    if(this.props.type == "bottom"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider, divider.inset02]} />
+      )
+    } else {
+      return(
+        <View name="Row Divider Top" style={[divider.divider, divider.inset03]} />
+      )
+    }
+  }
+
+  renderRowContent(){
+    return(
+      <View name="Row Content" style={styles.content}>
+        <LeftSide
+          type={this.props.Left}
+          LeftSideCopy={this.props.LeftSideCopy}
+          />
+        <RightSide
+          type={this.props.Right}
+          RightSideCopy={this.props.RightSideCopy}
+          />
+      </View>
+    )
+  }
+
   render(){
     return(
-      <View name="Row Container" style={styles.container}>
-
-        <LeftSide type={this.props.Left}/>
-        <RightSide type={this.props.Right}/>
-
-
+      <View name="Row Wrapper" style={styles.wrapper}>
+          <Divider />
+            {this.renderRowContent()}
+          <Divider />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  wrapper: {
     backgroundColor:'#121212',
     height: 44,
     width: 375,
     alignItems: 'flex-start',
     justifyContent: 'center',
     flex:1,
+    flexDirection:'column',
+    // borderTopWidth: .5,
+    // borderBottomWidth:.5,
+    // borderColor: '#555555',
+  },
+  content:{
+    //backgroundColor:'pink',
     flexDirection:'row',
-    borderTopWidth: .5,
-    borderBottomWidth:.5,
-    borderColor: '#555555',
+    flex:1,
   }
-
 });
 
+const divider = StyleSheet.create({
+  divider: {
+    height: 1,
+    backgroundColor:'yellow',
+    alignSelf:'stretch',
+  },
+  inset:{
+    marginLeft: 16,
+  },
+  inset02:{
+    marginLeft: 26,
+  },
+  inset03:{
+    marginLeft: 36,
+  },
+});
 
 {/*
+
+<View name="Row Divider Top" style={divider.divider} />
+
+<View name="Row Divider Bottom" style={[divider.divider, divider.inset]} />
 
   const SettingsRow = () => (
 

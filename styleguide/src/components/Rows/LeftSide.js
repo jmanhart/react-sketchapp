@@ -18,7 +18,7 @@ export default class LeftSide extends Component{
       if(this.props.type == "copy"){
         return(
           <Text style={styles.copy}>
-            This is Left Awesome!!!!!!
+            {this.props.LeftSideCopy}
           </Text>
         )
       }
@@ -56,7 +56,7 @@ export default class LeftSide extends Component{
       <View
         name="Left Side"
         style={{
-          // backgroundColor:'red',
+          //backgroundColor:'red',
           flex:.75,
           height: 44,
           justifyContent:'center',

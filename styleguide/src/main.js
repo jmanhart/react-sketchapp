@@ -21,8 +21,28 @@ import TypeSpecimen from './components/TypeSpecimen';
 
 const Document = ({ system }: { system: DesignSystem }) => (
   <View>
-    <SettingsRow Left='copy' Right='chevron' />
-    <SettingsRow Left='copy' Right='poop' />
+
+    <SettingsRow
+      RowKind= 'Top'
+      Left='copy'
+      LeftSideCopy='Setting One'
+      Right='chevron'
+      />
+    {/*
+      <SettingsRow
+        Left='copy'
+        LeftSideCopy='Setting Two'
+        Right='label'
+        RightSideCopy='2000'
+        />
+
+      <SettingsRow
+        Left='copy'
+        LeftSideCopy='Setting Three'
+        Right='chevron'
+        />
+    */}
+
 
   </View>
 );
