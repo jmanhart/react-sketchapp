@@ -25,11 +25,11 @@ export default class Divider extends Component{
 const divider = StyleSheet.create({
   divider: {
     height: 1,
-    backgroundColor:'yellow',
+    backgroundColor:'#555555',
     alignSelf:'stretch',
   },
   inset:{
-    marginLeft: 16,
+    marginLeft: 0,
   }
 });
 

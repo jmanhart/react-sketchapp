@@ -7,8 +7,10 @@ import designSystem from './designSystem';
 import type { DesignSystem } from './designSystem';
 
 
+
 import Row from './components/Row';
 import SettingsRow from './components/Rows/SettingsRow.js';
+import GroupHeader from './components/Rows/GroupHeader.js';
 
 import Label from './components/Label';
 import Palette from './components/Palette';
@@ -20,8 +22,9 @@ import TypeSpecimen from './components/TypeSpecimen';
 const settings = [
     {
       "Left":"copy",
-      "LeftSideCopy":"Setting One",
-      "Right":"chevron",
+      "LeftSideCopy":"Setting oooOne",
+      "Right":"label",
+      "RightSideCopy":"1000",
     },
     {
       "Left":"copy",
@@ -38,20 +41,26 @@ const Document = ({ system }: { system: DesignSystem }) => (
       style={{
         width: 375,
         height: 667,
-        backgroundColor:'green',
+        backgroundColor:'#121212',
+        justifyContent:'center',
       }}
     >
-    {settings.map((item) => {
-      return(
-        <SettingsRow
-          Left={item.Left}
-          LeftSideCopy={item.LeftSideCopy}
-          Right={item.Right}
-          />
-      )
-    })}
 
-    
+    <View>
+
+      <GroupHeader GroupHeader="settings group"/>
+
+      {settings.map((item) => {
+        return(
+          <SettingsRow
+            Left={item.Left}
+            LeftSideCopy={item.LeftSideCopy}
+            Right={item.Right}
+            RightSideCopy={item.RightSideCopy}
+            />
+        )
+      })}
+    </View>
     </Artboard>
 
 

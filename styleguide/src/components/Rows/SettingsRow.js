@@ -48,12 +48,12 @@ export default class SettingsRow extends Component{
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor:'#121212',
+    backgroundColor:'#1A1A1A',
     height: 44,
     width: 375,
     alignItems: 'flex-start',
     justifyContent: 'center',
-    flex:1,
+
     flexDirection:'column',
     // borderTopWidth: .5,
     // borderBottomWidth:.5,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 const divider = StyleSheet.create({
   divider: {
     height: 1,
-    backgroundColor:'yellow',
+    backgroundColor:'#555555',
     alignSelf:'stretch',
   },
   inset:{
