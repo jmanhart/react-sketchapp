@@ -8466,20 +8466,38 @@ var _TypeSpecimen2 = _interopRequireDefault(_TypeSpecimen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+var settings = [{
+  "Left": "copy",
+  "LeftSideCopy": "Setting One",
+  "Right": "chevron"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Two",
+  "Right": "chevron"
+}];
+/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
+
 var Document = function Document(_ref) {
   var system = _ref.system;
   return _react2['default'].createElement(
-    _reactSketchapp.View,
-    null,
-    _react2['default'].createElement(_SettingsRow2['default'], {
-      RowKind: 'Top',
-      Left: 'copy',
-      LeftSideCopy: 'Setting One',
-      Right: 'chevron'
+    _reactSketchapp.Artboard,
+    {
+      name: 'My Artboard',
+      style: {
+        width: 375,
+        height: 667,
+        backgroundColor: 'green'
+      }
+    },
+    settings.map(function (item) {
+      return _react2['default'].createElement(_SettingsRow2['default'], {
+        Left: item.Left,
+        LeftSideCopy: item.LeftSideCopy,
+        Right: item.Right
+      });
     })
   );
 };
-/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
 
 exports['default'] = function () {
   _reactSketchapp.TextStyles.create({
@@ -8491,7 +8509,14 @@ exports['default'] = function () {
 };
 
 {/*
-   <View name="Intro" style={{ width: 420, marginBottom: system.spacing * 4 }}>
+    const settings2 = [
+     settingOne: {
+       Left: "copy",
+       LeftSideCopy: "Setting Twsdcsdo",
+       Right: "chevron",
+     }
+   ]
+    <View name="Intro" style={{ width: 420, marginBottom: system.spacing * 4 }}>
      <Label>
        This is an example react-sketchapp document, showing how to render a
        styleguide from a data representation of your design system.
@@ -34550,25 +34575,6 @@ var SettingsRow = function (_Component) {
   }
 
   _createClass(SettingsRow, [{
-    key: 'renderRowType',
-    value: function () {
-      function renderRowType() {
-        if (this.props.type == "top") {
-          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider] });
-        }
-        if (this.props.type == "middle") {
-          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider, divider.inset] });
-        }
-        if (this.props.type == "bottom") {
-          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider, divider.inset02] });
-        } else {
-          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider, divider.inset03] });
-        }
-      }
-
-      return renderRowType;
-    }()
-  }, {
     key: 'renderRowContent',
     value: function () {
       function renderRowContent() {
@@ -34649,6 +34655,39 @@ var divider = _reactSketchapp.StyleSheet.create({
 });
 
 {/*
+    renderRowContent(){
+     return(
+       <View name="Row Content" style={styles.content}>
+         <LeftSide
+           type={this.props.Left}
+           LeftSideCopy={this.props.LeftSideCopy}
+           />
+         <RightSide
+           type={this.props.Right}
+           RightSideCopy={this.props.RightSideCopy}
+           />
+       </View>
+     )
+   }
+    renderRowType(){
+     if(this.props.RowKind == "top"){
+       return(
+         <View>
+           <View name="Row Divider Top" style={[divider.divider]} />
+           {this.renderRowContent()}
+         </View>
+       )
+     }
+     if(this.props.type == "bottom"){
+       return(
+         <View>
+           {this.renderRowContent()}
+           <View name="Row Divider Bottom" style={[divider.divider, divider.inset]} />
+         </View>
+       )
+     }
+   }
+  
   <View name="Row Divider Top" style={divider.divider} />
   <View name="Row Divider Bottom" style={[divider.divider, divider.inset]} />
     const SettingsRow = () => (
@@ -35342,6 +35381,7 @@ var divider = _reactSketchapp.StyleSheet.create({
 });
 
 {/*
+   <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
    renderDividerType(){
         if(this.props.type == "top"){
          return(

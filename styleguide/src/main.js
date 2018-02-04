@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
 
 import React from 'react';
-import { render, TextStyles, View, Text } from 'react-sketchapp';
+import { render, TextStyles, View, Text, Artboard } from 'react-sketchapp';
 import designSystem from './designSystem';
 import type { DesignSystem } from './designSystem';
 
@@ -17,34 +17,47 @@ import TypeSpecimen from './components/TypeSpecimen';
 
 
 
-
+const settings = [
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Setting One",
+      "Right":"chevron",
+    },
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Setting Two",
+      "Right":"chevron",
+    },
+]
 
 const Document = ({ system }: { system: DesignSystem }) => (
-  <View>
-
-    <SettingsRow
-      RowKind= 'Top'
-      Left='copy'
-      LeftSideCopy='Setting One'
-      Right='chevron'
-      />
-    {/*
-      <SettingsRow
-        Left='copy'
-        LeftSideCopy='Setting Two'
-        Right='label'
-        RightSideCopy='2000'
-        />
-
-      <SettingsRow
-        Left='copy'
-        LeftSideCopy='Setting Three'
-        Right='chevron'
-        />
-    */}
 
 
-  </View>
+    <Artboard
+      name='My Artboard'
+      style={{
+        width: 375,
+        height: 667,
+        backgroundColor:'green',
+      }}
+    >
+    {settings.map((item) => {
+      return(
+        <SettingsRow
+          Left={item.Left}
+          LeftSideCopy={item.LeftSideCopy}
+          Right={item.Right}
+          />
+      )
+    })}
+
+    
+    </Artboard>
+
+
+
+
+
 );
 
 export default () => {
@@ -60,6 +73,15 @@ export default () => {
 };
 
 {/*
+
+  const settings2 = [
+    settingOne: {
+      Left: "copy",
+      LeftSideCopy: "Setting Twsdcsdo",
+      Right: "chevron",
+    }
+  ]
+
   <View name="Intro" style={{ width: 420, marginBottom: system.spacing * 4 }}>
     <Label>
       This is an example react-sketchapp document, showing how to render a

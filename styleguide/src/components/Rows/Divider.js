@@ -34,6 +34,7 @@ const divider = StyleSheet.create({
 });
 
 {/*
+  <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
   renderDividerType(){
 
       if(this.props.type == "top"){

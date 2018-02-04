@@ -20,28 +20,6 @@ import Divider from './Divider.js'
 
 export default class SettingsRow extends Component{
 
-  renderRowType(){
-    if(this.props.type == "top"){
-      return(
-        <View name="Row Divider Top" style={[divider.divider]} />
-      )
-    }
-    if(this.props.type == "middle"){
-      return(
-        <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
-      )
-    }
-    if(this.props.type == "bottom"){
-      return(
-        <View name="Row Divider Top" style={[divider.divider, divider.inset02]} />
-      )
-    } else {
-      return(
-        <View name="Row Divider Top" style={[divider.divider, divider.inset03]} />
-      )
-    }
-  }
-
   renderRowContent(){
     return(
       <View name="Row Content" style={styles.content}>
@@ -60,9 +38,9 @@ export default class SettingsRow extends Component{
   render(){
     return(
       <View name="Row Wrapper" style={styles.wrapper}>
-          <Divider />
-            {this.renderRowContent()}
-          <Divider />
+        <Divider />
+          {this.renderRowContent()}
+        <Divider />
       </View>
     )
   }
@@ -106,6 +84,41 @@ const divider = StyleSheet.create({
 });
 
 {/*
+
+  renderRowContent(){
+    return(
+      <View name="Row Content" style={styles.content}>
+        <LeftSide
+          type={this.props.Left}
+          LeftSideCopy={this.props.LeftSideCopy}
+          />
+        <RightSide
+          type={this.props.Right}
+          RightSideCopy={this.props.RightSideCopy}
+          />
+      </View>
+    )
+  }
+
+  renderRowType(){
+    if(this.props.RowKind == "top"){
+      return(
+        <View>
+          <View name="Row Divider Top" style={[divider.divider]} />
+          {this.renderRowContent()}
+        </View>
+      )
+    }
+    if(this.props.type == "bottom"){
+      return(
+        <View>
+          {this.renderRowContent()}
+          <View name="Row Divider Bottom" style={[divider.divider, divider.inset]} />
+        </View>
+      )
+    }
+  }
+
 
 <View name="Row Divider Top" style={divider.divider} />
 
