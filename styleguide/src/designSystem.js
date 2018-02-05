@@ -1,5 +1,3 @@
-import processColor from './processColor';
-import type { Color } from './processColor';
 
 export const colors = {
   Delta: '#11A9ED',
@@ -71,17 +69,7 @@ export const fonts = {
   },
 };
 
-export default {
-  colors: Object.keys(colors).reduce(
-    (acc, name) => ({
-      ...acc,
-      [name]: processColor(colors[name]),
-    }),
-    {},
-  ),
-  fonts,
-  spacing,
-};
+
 
 export type DesignSystem = {
   fonts: any,

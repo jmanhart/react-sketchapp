@@ -10,39 +10,17 @@ import type { DesignSystem } from './designSystem';
 import ArtboardOne from './components/Rows/ArtboardOne.js'
 import ArtboardTwo from './components/Rows/ArtboardOne.js'
 
-// import Row from './components/Row';
-// import SettingsRow from './components/Rows/SettingsRow.js';
-// import GroupHeader from './components/Rows/GroupHeader.js';
-// import SupportText from './components/Rows/SupportText.js';
-// import NavBar from './components/NavBar.js';
-
-// import Label from './components/Label';
-// import Palette from './components/Palette';
-// import Section from './components/Section';
-
-
-
 
 const Document = ({ system }: { system: DesignSystem }) => (
   <ArtboardOne />
 );
 
-
-const dude = StyleSheet.create({
-
-});
-
 export default () => {
-  TextStyles.create(
-    {
-      context,
-      clearExistingStyles: true,
-    },
-    designSystem.fonts
-  );
-
   render(<Document system={designSystem} />, context.document.currentPage());
 };
+
+
+
 
 {/*
 

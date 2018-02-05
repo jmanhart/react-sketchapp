@@ -12,7 +12,7 @@ import NavBar from './../NavBar.js';
 const settings = [
     {
       "Left":"copy",
-      "LeftSideCopy":"farting",
+      "LeftSideCopy":"farting hardzzzzz",
       "Right":"label",
       "RightSideCopy":"76578",
     },
