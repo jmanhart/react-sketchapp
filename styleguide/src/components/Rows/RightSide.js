@@ -11,22 +11,15 @@ import {
   Polygon
 } from 'react-primitives-svg';
 
+// Importing Assets
+import Chevron from '../../svg/Chevron.js'
 
 export default class RightSide extends Component{
 
   renderRightSide() {
       if(this.props.type == "chevron"){
         return(
-          <View style={chevron.container}>
-            {/* Adding in SVG */}
-            <Svg width="8px" height="14px" >
-                <G id="O/Chevron" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-100.000000, -15.000000)">
-                    <G id="Pin" transform="translate(100.000000, 15.500000)" fill="#555555">
-                        <Polygon id="Disclosure-Indicator" points="0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5"></Polygon>
-                    </G>
-                </G>
-            </Svg>
-          </View>
+          <Chevron />
         )
       }
       if(this.props.type == "label"){

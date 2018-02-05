@@ -8484,15 +8484,20 @@ var settings = [{
   "Left": "copy",
   "LeftSideCopy": "Setting One",
   "Right": "label",
-  "RightSideCopy": "1000"
+  "RightSideCopy": "8609"
 }, {
   "Left": "copy",
   "LeftSideCopy": "Setting Two",
   "Right": "chevron"
 }, {
   "Left": "copy",
-  "LeftSideCopy": "Setting Two",
+  "LeftSideCopy": "Setting Three",
   "Right": "chevron"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Getting drunk on wine",
+  "Right": "label",
+  "RightSideCopy": "YEAHH"
 }];
 
 var Document = function Document(_ref) {
@@ -8508,11 +8513,19 @@ var Document = function Document(_ref) {
         //justifyContent:'center',
       }
     },
-    _react2['default'].createElement(_NavBar2['default'], null),
+    _react2['default'].createElement(_NavBar2['default'], {
+      leftSideCopy: 'Back',
+      navBarTitle: 'Activity Options',
+      rightSideCopy: 'Help'
+    }),
     _react2['default'].createElement(
       _reactSketchapp.View,
       { name: 'View Content',
-        style: { marginTop: 20 } },
+        style: {
+          paddingTop: 20,
+          //backgroundColor: 'pink',
+          flex: 1
+        } },
       _react2['default'].createElement(
         _reactSketchapp.View,
         { name: 'Settings Grouping' },
@@ -8525,7 +8538,7 @@ var Document = function Document(_ref) {
             RightSideCopy: item.RightSideCopy
           });
         }),
-        _react2['default'].createElement(_SupportText2['default'], { supportText: 'This is supporting copy for a setting group. I wonder what it looks like 2 rows.' })
+        _react2['default'].createElement(_SupportText2['default'], { supportText: 'Hello Julie Cannon' })
       )
     )
   );
@@ -34633,7 +34646,6 @@ var SettingsRow = function (_Component) {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           { name: 'Row Wrapper', style: styles.wrapper },
-          _react2['default'].createElement(_Divider2['default'], null),
           this.renderRowContent(),
           _react2['default'].createElement(_Divider2['default'], null)
         );
@@ -34869,7 +34881,6 @@ var styles = _reactSketchapp.StyleSheet.create({
   copy: {
     color: 'white',
     fontSize: 17,
-
     alignSelf: 'flex-start',
     fontFamily: 'SF UI Text',
     marginLeft: 15
@@ -34939,6 +34950,10 @@ var _reactSketchapp = __webpack_require__(6);
 
 var _reactPrimitivesSvg = __webpack_require__(18);
 
+var _Chevron = __webpack_require__(201);
+
+var _Chevron2 = _interopRequireDefault(_Chevron);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34946,6 +34961,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// Importing Assets
+
 
 var RightSide = function (_Component) {
   _inherits(RightSide, _Component);
@@ -34961,23 +34979,7 @@ var RightSide = function (_Component) {
     value: function () {
       function renderRightSide() {
         if (this.props.type == "chevron") {
-          return _react2['default'].createElement(
-            _reactSketchapp.View,
-            { style: chevron.container },
-            _react2['default'].createElement(
-              _reactPrimitivesSvg.Svg,
-              { width: '8px', height: '14px' },
-              _react2['default'].createElement(
-                _reactPrimitivesSvg.G,
-                { id: 'O/Chevron', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd', transform: 'translate(-100.000000, -15.000000)' },
-                _react2['default'].createElement(
-                  _reactPrimitivesSvg.G,
-                  { id: 'Pin', transform: 'translate(100.000000, 15.500000)', fill: '#555555' },
-                  _react2['default'].createElement(_reactPrimitivesSvg.Polygon, { id: 'Disclosure-Indicator', points: '0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5' })
-                )
-              )
-            )
-          );
+          return _react2['default'].createElement(_Chevron2['default'], null);
         }
         if (this.props.type == "label") {
           return _react2['default'].createElement(
@@ -35593,6 +35595,10 @@ var _reactSketchapp = __webpack_require__(6);
 
 var _reactPrimitivesSvg = __webpack_require__(18);
 
+var _Chevron = __webpack_require__(201);
+
+var _Chevron2 = _interopRequireDefault(_Chevron);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35600,6 +35606,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// Importing Assets
+
 
 var NavBar = function (_Component) {
   _inherits(NavBar, _Component);
@@ -35611,10 +35620,47 @@ var NavBar = function (_Component) {
   }
 
   _createClass(NavBar, [{
+    key: 'renderNavBar',
+    value: function () {
+      function renderNavBar() {}
+
+      return renderNavBar;
+    }()
+  }, {
     key: 'render',
     value: function () {
       function render() {
-        return _react2['default'].createElement(_reactSketchapp.View, { name: 'Nav Bar', style: navBar.wrapper });
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { name: 'Nav Bar', style: navBar.wrapper },
+          _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'Nav Bar Left', style: navBar.navBarColumnSides },
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { style: [navBar.sideTitle, { textAlign: 'left' }] },
+              this.props.leftSideCopy
+            )
+          ),
+          _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'Nav Bar Center', style: navBar.navBarColumnTitle },
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { name: 'Nav Bar Title', style: [navBar.title, { textAlign: 'center' }] },
+              this.props.navBarTitle || 'Need Title'
+            )
+          ),
+          _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'Nav Bar Right', style: navBar.navBarColumnSides },
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { style: [navBar.sideTitle, { textAlign: 'right' }] },
+              this.props.rightSideCopy
+            )
+          )
+        );
       }
 
       return render;
@@ -35633,7 +35679,133 @@ var navBar = _reactSketchapp.StyleSheet.create({
     width: 375,
     backgroundColor: '#0C0C0C',
     borderBottomWidth: 1,
-    borderColor: '#11A9ED'
+    borderColor: '#11A9ED',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    paddingBottom: 10,
+    paddingTop: 0,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+
+  navBarColumnSides: {
+    flex: .15
+    // backgroundColor:'red',
+  },
+
+  navBarColumnTitle: {
+    flex: .65
+    // backgroundColor:'pink',
+  },
+
+  title: {
+    color: 'white',
+    fontSize: 17
+  },
+
+  sideTitle: {
+    color: 'white',
+    fontSize: 15
+  }
+
+});
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(6);
+
+var _reactPrimitivesSvg = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Chevron = function (_Component) {
+  _inherits(Chevron, _Component);
+
+  function Chevron() {
+    _classCallCheck(this, Chevron);
+
+    return _possibleConstructorReturn(this, (Chevron.__proto__ || Object.getPrototypeOf(Chevron)).apply(this, arguments));
+  }
+
+  _createClass(Chevron, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { style: chevron.container },
+          _react2['default'].createElement(
+            _reactPrimitivesSvg.Svg,
+            { width: '8px', height: '14px' },
+            _react2['default'].createElement(
+              _reactPrimitivesSvg.G,
+              { id: 'O/Chevron', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd', transform: 'translate(-100.000000, -15.000000)' },
+              _react2['default'].createElement(
+                _reactPrimitivesSvg.G,
+                { id: 'Pin', transform: 'translate(100.000000, 15.500000)', fill: '#555555' },
+                _react2['default'].createElement(_reactPrimitivesSvg.Polygon, { id: 'Disclosure-Indicator', points: '0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5' })
+              )
+            )
+          )
+        );
+      }
+
+      return render;
+    }()
+  }]);
+
+  return Chevron;
+}(_react.Component);
+
+exports['default'] = Chevron;
+
+
+{/* Chevron Styles */}
+var chevron = _reactSketchapp.StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    //backgroundColor:'blue',
+    marginRight: 22
+  }
+});
+
+{/* Label Styles */}
+var label = _reactSketchapp.StyleSheet.create({
+  container: {
+    height: 44,
+    alignSelf: 'center',
+    alignItems: 'flex-end',
+    justifyContent: 'center'
+    // backgroundColor:'teal',
+  },
+  copy: {
+    color: 'white',
+    fontSize: 17,
+    alignSelf: 'flex-start',
+    fontFamily: 'SF UI Text',
+    marginLeft: 15
   }
 });
 

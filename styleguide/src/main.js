@@ -26,7 +26,7 @@ const settings = [
       "Left":"copy",
       "LeftSideCopy":"Setting One",
       "Right":"label",
-      "RightSideCopy":"1000",
+      "RightSideCopy":"8609",
     },
     {
       "Left":"copy",
@@ -35,8 +35,14 @@ const settings = [
     },
     {
       "Left":"copy",
-      "LeftSideCopy":"Setting Two",
+      "LeftSideCopy":"Setting Three",
       "Right":"chevron",
+    },
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Getting drunk on wine",
+      "Right":"label",
+      "RightSideCopy":"YEAHH",
     },
 ]
 
@@ -50,10 +56,18 @@ const Document = ({ system }: { system: DesignSystem }) => (
         //justifyContent:'center',
       }}
     >
-    <NavBar />
+    <NavBar
+      leftSideCopy="Back"
+      navBarTitle="Activity Options"
+      rightSideCopy="Help"
+      />
 
     <View name="View Content"
-      style={{marginTop: 20}}>
+      style={{
+        paddingTop: 20,
+        //backgroundColor: 'pink',
+        flex:1,
+      }}>
       <View name="Settings Grouping">
         <GroupHeader GroupHeader="settings group"/>
         {settings.map((item) => {
@@ -66,7 +80,7 @@ const Document = ({ system }: { system: DesignSystem }) => (
               />
           )
         })}
-        <SupportText supportText="This is supporting copy for a setting group. I wonder what it looks like 2 rows."/>
+        <SupportText supportText="Hello Julie Cannon"/>
       </View>
     </View>
 

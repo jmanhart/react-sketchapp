@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
   copy: {
     color: 'white',
     fontSize: 17,
-
     alignSelf: 'flex-start',
     fontFamily: 'SF UI Text',
     marginLeft: 15,
