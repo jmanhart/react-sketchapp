@@ -38,7 +38,7 @@ export default class SettingsRow extends Component{
   render(){
     return(
       <View name="Row Wrapper" style={styles.wrapper}>
-        
+        <Divider />
           {this.renderRowContent()}
         <Divider />
       </View>

@@ -8440,25 +8440,9 @@ var _designSystem = __webpack_require__(182);
 
 var _designSystem2 = _interopRequireDefault(_designSystem);
 
-var _Row = __webpack_require__(186);
+var _ArtboardOne = __webpack_require__(202);
 
-var _Row2 = _interopRequireDefault(_Row);
-
-var _SettingsRow = __webpack_require__(188);
-
-var _SettingsRow2 = _interopRequireDefault(_SettingsRow);
-
-var _GroupHeader = __webpack_require__(192);
-
-var _GroupHeader2 = _interopRequireDefault(_GroupHeader);
-
-var _SupportText = __webpack_require__(199);
-
-var _SupportText2 = _interopRequireDefault(_SupportText);
-
-var _NavBar = __webpack_require__(200);
-
-var _NavBar2 = _interopRequireDefault(_NavBar);
+var _ArtboardOne2 = _interopRequireDefault(_ArtboardOne);
 
 var _Label = __webpack_require__(33);
 
@@ -8478,71 +8462,35 @@ var _TypeSpecimen2 = _interopRequireDefault(_TypeSpecimen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
+// import Row from './components/Row';
+// import SettingsRow from './components/Rows/SettingsRow.js';
+// import GroupHeader from './components/Rows/GroupHeader.js';
+// import SupportText from './components/Rows/SupportText.js';
+// import NavBar from './components/NavBar.js';
 
-var settings = [{
-  "Left": "copy",
-  "LeftSideCopy": "Setting One",
-  "Right": "label",
-  "RightSideCopy": "8609"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Two",
-  "Right": "chevron"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Three",
-  "Right": "chevron"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Getting drunk on wine",
-  "Right": "label",
-  "RightSideCopy": "YEAHH"
-}];
-
+//Import Artboards
 var Document = function Document(_ref) {
   var system = _ref.system;
   return _react2['default'].createElement(
-    _reactSketchapp.Artboard,
+    _reactSketchapp.View,
     {
-      name: 'My Artboard',
+      name: 'Settings Group',
       style: {
-        width: 375,
-        height: 667,
-        backgroundColor: '#121212'
-        //justifyContent:'center',
-      }
-    },
-    _react2['default'].createElement(_NavBar2['default'], {
-      leftSideCopy: 'Back',
-      navBarTitle: 'Activity Options',
-      rightSideCopy: 'Help'
-    }),
-    _react2['default'].createElement(
-      _reactSketchapp.View,
-      { name: 'View Content',
-        style: {
-          paddingTop: 20,
-          //backgroundColor: 'pink',
-          flex: 1
-        } },
-      _react2['default'].createElement(
-        _reactSketchapp.View,
-        { name: 'Settings Grouping' },
-        _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
-        settings.map(function (item) {
-          return _react2['default'].createElement(_SettingsRow2['default'], {
-            Left: item.Left,
-            LeftSideCopy: item.LeftSideCopy,
-            Right: item.Right,
-            RightSideCopy: item.RightSideCopy
-          });
-        }),
-        _react2['default'].createElement(_SupportText2['default'], { supportText: 'Hello Julie Cannon' })
-      )
-    )
+        width: 2000,
+        height: 1200,
+        backgroundColor: 'gray',
+        flexDirection: 'row',
+        // justifyContent:'space-between',
+        padding: 50
+      } },
+    _react2['default'].createElement(_ArtboardOne2['default'], null),
+    _react2['default'].createElement(_ArtboardOne2['default'], null),
+    _react2['default'].createElement(_ArtboardOne2['default'], null)
   );
 };
+/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
+
+var dude = _reactSketchapp.StyleSheet.create({});
 
 exports['default'] = function () {
   _reactSketchapp.TextStyles.create({
@@ -8588,7 +8536,34 @@ exports['default'] = function () {
          <span className="card-state" key={item.state} >{item.state}</span>
        </div>
      </Link>
-   */}
+      <NavBar
+       leftSideCopy="Back"
+       navBarTitle="Activity Options"
+       rightSideCopy="Help"
+       />
+      <View name="View Content"
+       style={{
+         paddingTop: 20,
+         // backgroundColor: 'pink',
+         flex:1,
+       }}>
+       <View name="Settings Grouping">
+         <GroupHeader GroupHeader="settings group"/>
+         {settings.map((item) => {
+           return(
+             <SettingsRow
+               Left={item.Left}
+               LeftSideCopy={item.LeftSideCopy}
+               Right={item.Right}
+               RightSideCopy={item.RightSideCopy}
+               />
+           )
+         })}
+         <SupportText supportText="Hello Julie Cannssnoddn"/>
+       </View>
+     </View>
+  
+    */}
 
 /***/ }),
 /* 80 */
@@ -34396,142 +34371,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactSketchapp = __webpack_require__(6);
-
-var _reactPrimitivesSvg = __webpack_require__(18);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var Row = function Row() {
-  return _react2['default'].createElement(
-    _reactSketchapp.View,
-    {
-      name: 'Row Container',
-      style: {
-        backgroundColor: '#121212',
-        height: 44,
-        width: 375,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        flex: 1,
-        flexDirection: 'row',
-        borderTopWidth: .5,
-        borderBottomWidth: .5,
-        borderColor: '#555555'
-
-      } },
-    _react2['default'].createElement(
-      _reactSketchapp.View,
-      {
-        name: 'Left Side',
-        style: {
-          // backgroundColor:'red',
-          flex: .75,
-          height: 44,
-          justifyContent: 'center',
-          alignSelf: 'center'
-        }
-      },
-      _react2['default'].createElement(
-        _reactSketchapp.Text,
-        {
-          style: {
-            color: 'white',
-            fontSize: 17,
-            flex: .5,
-            alignSelf: 'flex-start',
-            fontFamily: 'SF UI Text',
-            marginLeft: 15
-          } },
-        'Hell'
-      )
-    ),
-    _react2['default'].createElement(
-      _reactSketchapp.View,
-      {
-        name: 'Right Side',
-        style: {
-          backgroundColor: 'yellow',
-          flex: .25,
-          width: 100,
-          height: 44,
-          alignSelf: 'center',
-          alignItems: 'flex-end',
-          justifyContent: 'center'
-
-        } },
-      _react2['default'].createElement(
-        _reactSketchapp.View,
-        {
-          name: 'Chevron',
-          style: {
-            height: 44,
-            width: 44,
-            marginRight: 0,
-            backgroundColor: 'pink',
-            justifyContent: 'center',
-            alignItems: 'center'
-          } },
-        _react2['default'].createElement(
-          _reactPrimitivesSvg.Svg,
-          { width: '8px', height: '14px' },
-          _react2['default'].createElement(
-            _reactPrimitivesSvg.G,
-            { id: 'O/Chevron', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd', transform: 'translate(-100.000000, -15.000000)' },
-            _react2['default'].createElement(
-              _reactPrimitivesSvg.G,
-              { id: 'Pin', transform: 'translate(100.000000, 15.500000)', fill: '#555555' },
-              _react2['default'].createElement(_reactPrimitivesSvg.Polygon, { id: 'Disclosure-Indicator', points: '0 1.5 1.5 0 8 6.5 1.5 13 0 11.5 5 6.5' })
-            )
-          )
-        )
-      )
-    )
-  );
-};
-exports['default'] = Row;
-
-
-{/*
-  <Line x1="10" x2="50" y1="0" y2="0" stroke="orange" stroke-width="5"/>
-   <Rect
-     width="10"
-     height="10"
-     fill="red"
-     transform="rotate(45)"
-   />
-    paddingLeft: 15,
-   borderTopWidth: .5,
-   borderBottomWidth:.5,
-   borderColor: '#555555',
-    type P = {
-     bold?: boolean,
-     children?: any,
-   };
-   <Text
-     style={{
-       color: '#333',
-       fontWeight: bold ? 'bold' : 'normal',
-       fontSize: 15,
-       lineHeight: 24,
-     }}
-   >
-     {children}
-   </Text>
-   */}
-
-/***/ }),
+/* 186 */,
 /* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34646,6 +34486,7 @@ var SettingsRow = function (_Component) {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           { name: 'Row Wrapper', style: styles.wrapper },
+          _react2['default'].createElement(_Divider2['default'], null),
           this.renderRowContent(),
           _react2['default'].createElement(_Divider2['default'], null)
         );
@@ -35808,6 +35649,134 @@ var label = _reactSketchapp.StyleSheet.create({
     marginLeft: 15
   }
 });
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(6);
+
+var _SettingsRow = __webpack_require__(188);
+
+var _SettingsRow2 = _interopRequireDefault(_SettingsRow);
+
+var _GroupHeader = __webpack_require__(192);
+
+var _GroupHeader2 = _interopRequireDefault(_GroupHeader);
+
+var _SupportText = __webpack_require__(199);
+
+var _SupportText2 = _interopRequireDefault(_SupportText);
+
+var _NavBar = __webpack_require__(200);
+
+var _NavBar2 = _interopRequireDefault(_NavBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import Row from './components/Row';
+
+
+var settings = [{
+  "Left": "copy",
+  "LeftSideCopy": "Setting One",
+  "Right": "label",
+  "RightSideCopy": "8609"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Two",
+  "Right": "chevron"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Three",
+  "Right": "chevron"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Getting drunk on wine",
+  "Right": "label",
+  "RightSideCopy": "1045"
+}];
+
+var ArtboardOne = function (_Component) {
+  _inherits(ArtboardOne, _Component);
+
+  function ArtboardOne() {
+    _classCallCheck(this, ArtboardOne);
+
+    return _possibleConstructorReturn(this, (ArtboardOne.__proto__ || Object.getPrototypeOf(ArtboardOne)).apply(this, arguments));
+  }
+
+  _createClass(ArtboardOne, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(
+          _reactSketchapp.Artboard,
+          {
+            name: 'My Artboard',
+            style: {
+              width: 375,
+              height: 667,
+              backgroundColor: '#121212',
+              marginRight: 200
+              //justifyContent:'center',
+            }
+          },
+          _react2['default'].createElement(_NavBar2['default'], {
+            leftSideCopy: 'Back',
+            navBarTitle: 'Activity Options',
+            rightSideCopy: 'Help'
+          }),
+          _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'View Content',
+              style: {
+                paddingTop: 20,
+                // backgroundColor: 'pink',
+                flex: 1
+              } },
+            _react2['default'].createElement(
+              _reactSketchapp.View,
+              { name: 'Settings Grouping' },
+              _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
+              settings.map(function (item) {
+                return _react2['default'].createElement(_SettingsRow2['default'], {
+                  Left: item.Left,
+                  LeftSideCopy: item.LeftSideCopy,
+                  Right: item.Right,
+                  RightSideCopy: item.RightSideCopy
+                });
+              }),
+              _react2['default'].createElement(_SupportText2['default'], { supportText: 'Hello Julie Cannssnoddn' })
+            )
+          )
+        );
+      }
+
+      return render;
+    }()
+  }]);
+
+  return ArtboardOne;
+}(_react.Component);
+
+exports['default'] = ArtboardOne;
 
 /***/ })
 /******/ ]);
