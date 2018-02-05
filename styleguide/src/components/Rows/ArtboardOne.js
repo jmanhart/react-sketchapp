@@ -12,9 +12,9 @@ import NavBar from './../NavBar.js';
 const settings = [
     {
       "Left":"copy",
-      "LeftSideCopy":"Setting One",
+      "LeftSideCopy":"farting",
       "Right":"label",
-      "RightSideCopy":"8609",
+      "RightSideCopy":"76578",
     },
     {
       "Left":"copy",
@@ -51,7 +51,7 @@ export default class ArtboardOne extends Component{
 
       <NavBar
         leftSideCopy="Back"
-        navBarTitle="Activity Options"
+        navBarTitle="Running Zones"
         rightSideCopy="Help"
         />
 
@@ -63,6 +63,7 @@ export default class ArtboardOne extends Component{
           }}>
           <View name="Settings Grouping">
             <GroupHeader GroupHeader="settings group"/>
+
             {settings.map((item) => {
               return(
                 <SettingsRow
@@ -73,7 +74,8 @@ export default class ArtboardOne extends Component{
                   />
               )
             })}
-            <SupportText supportText="Hello Julie Cannssnoddn"/>
+
+            <SupportText supportText="Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant."/>
           </View>
         </View>
 

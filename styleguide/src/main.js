@@ -16,28 +16,15 @@ import ArtboardTwo from './components/Rows/ArtboardOne.js'
 // import SupportText from './components/Rows/SupportText.js';
 // import NavBar from './components/NavBar.js';
 
-import Label from './components/Label';
-import Palette from './components/Palette';
-import Section from './components/Section';
-import TypeSpecimen from './components/TypeSpecimen';
+// import Label from './components/Label';
+// import Palette from './components/Palette';
+// import Section from './components/Section';
+
 
 
 
 const Document = ({ system }: { system: DesignSystem }) => (
-  <View
-    name="Settings Group"
-    style={{
-      width: 2000,
-      height: 1200,
-      backgroundColor:'gray',
-      flexDirection: 'row',
-      // justifyContent:'space-between',
-      padding: 50
-    }}>
-    <ArtboardOne />
-    <ArtboardOne />
-    <ArtboardTwo />
-  </View>
+  <ArtboardOne />
 );
 
 
@@ -58,6 +45,20 @@ export default () => {
 };
 
 {/*
+
+  <View
+    name="Settings Group"
+    style={{
+      width: 2000,
+      height: 1200,
+      backgroundColor:'gray',
+      flexDirection: 'row',
+      // justifyContent:'space-between',
+      padding: 50
+    }}>
+    <ArtboardOne />
+
+  </View>
 
   const settings2 = [
     settingOne: {
