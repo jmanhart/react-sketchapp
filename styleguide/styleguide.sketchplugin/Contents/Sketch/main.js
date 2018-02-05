@@ -8456,6 +8456,10 @@ var _SupportText = __webpack_require__(199);
 
 var _SupportText2 = _interopRequireDefault(_SupportText);
 
+var _NavBar = __webpack_require__(200);
+
+var _NavBar2 = _interopRequireDefault(_NavBar);
+
 var _Label = __webpack_require__(33);
 
 var _Label2 = _interopRequireDefault(_Label);
@@ -8474,17 +8478,22 @@ var _TypeSpecimen2 = _interopRequireDefault(_TypeSpecimen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
+
 var settings = [{
   "Left": "copy",
-  "LeftSideCopy": "Setting oooOne",
+  "LeftSideCopy": "Setting One",
   "Right": "label",
   "RightSideCopy": "1000"
 }, {
   "Left": "copy",
   "LeftSideCopy": "Setting Two",
   "Right": "chevron"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Two",
+  "Right": "chevron"
 }];
-/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
 
 var Document = function Document(_ref) {
   var system = _ref.system;
@@ -8495,23 +8504,29 @@ var Document = function Document(_ref) {
       style: {
         width: 375,
         height: 667,
-        backgroundColor: '#121212',
-        justifyContent: 'center'
+        backgroundColor: '#121212'
+        //justifyContent:'center',
       }
     },
+    _react2['default'].createElement(_NavBar2['default'], null),
     _react2['default'].createElement(
       _reactSketchapp.View,
-      null,
-      _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
-      settings.map(function (item) {
-        return _react2['default'].createElement(_SettingsRow2['default'], {
-          Left: item.Left,
-          LeftSideCopy: item.LeftSideCopy,
-          Right: item.Right,
-          RightSideCopy: item.RightSideCopy
-        });
-      }),
-      _react2['default'].createElement(_SupportText2['default'], { supportText: 'This is awesome copy' })
+      { name: 'View Content',
+        style: { marginTop: 20 } },
+      _react2['default'].createElement(
+        _reactSketchapp.View,
+        { name: 'Settings Grouping' },
+        _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
+        settings.map(function (item) {
+          return _react2['default'].createElement(_SettingsRow2['default'], {
+            Left: item.Left,
+            LeftSideCopy: item.LeftSideCopy,
+            Right: item.Right,
+            RightSideCopy: item.RightSideCopy
+          });
+        }),
+        _react2['default'].createElement(_SupportText2['default'], { supportText: 'This is supporting copy for a setting group. I wonder what it looks like 2 rows.' })
+      )
     )
   );
 };
@@ -35531,7 +35546,7 @@ var SupportText = function (_Component) {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
-          { name: 'Row Divider Top' },
+          { name: 'Support Text', style: supportText.wrapper },
           _react2['default'].createElement(
             _reactSketchapp.Text,
             { style: supportText.copy },
@@ -35551,8 +35566,74 @@ exports['default'] = SupportText;
 
 
 var supportText = _reactSketchapp.StyleSheet.create({
+  wrapper: {},
   copy: {
-    color: 'white'
+    color: '#888888',
+    fontSize: 13,
+    marginLeft: 16,
+    marginTop: 9
+  }
+});
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(6);
+
+var _reactPrimitivesSvg = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NavBar = function (_Component) {
+  _inherits(NavBar, _Component);
+
+  function NavBar() {
+    _classCallCheck(this, NavBar);
+
+    return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
+  }
+
+  _createClass(NavBar, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(_reactSketchapp.View, { name: 'Nav Bar', style: navBar.wrapper });
+      }
+
+      return render;
+    }()
+  }]);
+
+  return NavBar;
+}(_react.Component);
+
+exports['default'] = NavBar;
+
+
+var navBar = _reactSketchapp.StyleSheet.create({
+  wrapper: {
+    height: 64,
+    width: 375,
+    backgroundColor: '#0C0C0C',
+    borderBottomWidth: 1,
+    borderColor: '#11A9ED'
   }
 });
 

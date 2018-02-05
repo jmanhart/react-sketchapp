@@ -16,7 +16,7 @@ export default class SupportText extends Component{
 
   render(){
     return(
-      <View name="Row Divider Top" >
+      <View name="Support Text" style={supportText.wrapper}>
         <Text style={supportText.copy}>{this.props.supportText}</Text>
       </View>
     )
@@ -25,7 +25,13 @@ export default class SupportText extends Component{
 
 
 const supportText = StyleSheet.create({
+  wrapper:{
+
+  },
   copy:{
-    color:'white',
+    color:'#888888',
+    fontSize: 13,
+    marginLeft: 16,
+    marginTop: 9,
   }
 });

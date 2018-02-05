@@ -12,6 +12,7 @@ import Row from './components/Row';
 import SettingsRow from './components/Rows/SettingsRow.js';
 import GroupHeader from './components/Rows/GroupHeader.js';
 import SupportText from './components/Rows/SupportText.js';
+import NavBar from './components/NavBar.js';
 
 import Label from './components/Label';
 import Palette from './components/Palette';
@@ -23,9 +24,14 @@ import TypeSpecimen from './components/TypeSpecimen';
 const settings = [
     {
       "Left":"copy",
-      "LeftSideCopy":"Setting oooOne",
+      "LeftSideCopy":"Setting One",
       "Right":"label",
       "RightSideCopy":"1000",
+    },
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Setting Two",
+      "Right":"chevron",
     },
     {
       "Left":"copy",
@@ -35,41 +41,36 @@ const settings = [
 ]
 
 const Document = ({ system }: { system: DesignSystem }) => (
-
-
     <Artboard
       name='My Artboard'
       style={{
         width: 375,
         height: 667,
         backgroundColor:'#121212',
-        justifyContent:'center',
+        //justifyContent:'center',
       }}
     >
+    <NavBar />
 
-    <View>
-
-      <GroupHeader GroupHeader="settings group"/>
-
-      {settings.map((item) => {
-        return(
-          <SettingsRow
-            Left={item.Left}
-            LeftSideCopy={item.LeftSideCopy}
-            Right={item.Right}
-            RightSideCopy={item.RightSideCopy}
-            />
-        )
-      })}
-
-      <SupportText supportText="This is awesome copy"/>
-
+    <View name="View Content"
+      style={{marginTop: 20}}>
+      <View name="Settings Grouping">
+        <GroupHeader GroupHeader="settings group"/>
+        {settings.map((item) => {
+          return(
+            <SettingsRow
+              Left={item.Left}
+              LeftSideCopy={item.LeftSideCopy}
+              Right={item.Right}
+              RightSideCopy={item.RightSideCopy}
+              />
+          )
+        })}
+        <SupportText supportText="This is supporting copy for a setting group. I wonder what it looks like 2 rows."/>
+      </View>
     </View>
+
     </Artboard>
-
-
-
-
 
 );
 
