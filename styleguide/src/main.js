@@ -11,6 +11,7 @@ import type { DesignSystem } from './designSystem';
 import Row from './components/Row';
 import SettingsRow from './components/Rows/SettingsRow.js';
 import GroupHeader from './components/Rows/GroupHeader.js';
+import SupportText from './components/Rows/SupportText.js';
 
 import Label from './components/Label';
 import Palette from './components/Palette';
@@ -60,6 +61,9 @@ const Document = ({ system }: { system: DesignSystem }) => (
             />
         )
       })}
+
+      <SupportText supportText="This is awesome copy"/>
+
     </View>
     </Artboard>
 
