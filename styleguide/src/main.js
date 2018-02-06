@@ -8,7 +8,7 @@ import type { DesignSystem } from './designSystem';
 
 //Import Artboards
 import ArtboardOne from './components/Rows/ArtboardOne.js'
-import ArtboardTwo from './components/Rows/ArtboardOne.js'
+
 
 
 const Document = ({ system }: { system: DesignSystem }) => (

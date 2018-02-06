@@ -6,31 +6,7 @@ import { Text, View, StyleSheet, Artboard } from 'react-sketchapp';
 import SettingsRow from './SettingsRow.js';
 import GroupHeader from './GroupHeader.js';
 import SupportText from './SupportText.js';
-
-const settings = [
-    {
-      "Left":"copy",
-      "LeftSideCopy":"Setting Onne",
-      "Right":"label",
-      "RightSideCopy":"76578",
-    },
-    {
-      "Left":"copy",
-      "LeftSideCopy":"Setting Two",
-      "Right":"label",
-      "RightSideCopy":"76578",
-    },
-    {
-      "Left":"copy",
-      "LeftSideCopy":"Setting Three",
-      "Right":"chevron",
-    },
-    {
-      "Left":"copy",
-      "LeftSideCopy":"Setting Three",
-      "Right":"chevron",
-    },
-]
+import settingsData from './SettingsData.js';
 
 export default class SettingsGroup extends Component{
 
@@ -54,7 +30,7 @@ export default class SettingsGroup extends Component{
     return(
       <View name="Settings Grouping">
         {this.renderGroupHeader()}
-        {settings.map((item) => {
+        {settingsData.map((item) => {
           return(
             <View>
               <SettingsRow

@@ -39,7 +39,7 @@ export default class ArtboardOne extends Component{
           }}>
 
           <SettingsGroup
-            groupHeader= {false}
+            groupHeader= {true}
             supportText= {false}
             />
 

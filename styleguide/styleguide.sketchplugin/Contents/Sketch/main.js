@@ -8859,12 +8859,14 @@ var _ArtboardOne2 = _interopRequireDefault(_ArtboardOne);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-//Import Artboards
+/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
+
 var Document = function Document(_ref) {
   var system = _ref.system;
   return _react2['default'].createElement(_ArtboardOne2['default'], null);
 };
-/* eslint-disable react/jsx-filename-extension, import/no-named-as-default-member */
+
+//Import Artboards
 
 exports['default'] = function () {
   (0, _reactSketchapp.render)(_react2['default'].createElement(Document, { system: _designSystem2['default'] }), context.document.currentPage());
@@ -32005,7 +32007,7 @@ var ArtboardOne = function (_Component) {
                 flex: 1
               } },
             _react2['default'].createElement(_SettingsGroup2['default'], {
-              groupHeader: false,
+              groupHeader: true,
               supportText: false
             })
           )
@@ -32049,6 +32051,10 @@ var _SupportText = __webpack_require__(81);
 
 var _SupportText2 = _interopRequireDefault(_SupportText);
 
+var _SettingsData = __webpack_require__(193);
+
+var _SettingsData2 = _interopRequireDefault(_SettingsData);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32059,26 +32065,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import Row from './components/Row';
 
-
-var settings = [{
-  "Left": "copy",
-  "LeftSideCopy": "Setting Onne",
-  "Right": "label",
-  "RightSideCopy": "76578"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Two",
-  "Right": "label",
-  "RightSideCopy": "76578"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Three",
-  "Right": "chevron"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Three",
-  "Right": "chevron"
-}];
 
 var SettingsGroup = function (_Component) {
   _inherits(SettingsGroup, _Component);
@@ -32119,7 +32105,7 @@ var SettingsGroup = function (_Component) {
           _reactSketchapp.View,
           { name: 'Settings Grouping' },
           this.renderGroupHeader(),
-          settings.map(function (item) {
+          _SettingsData2['default'].map(function (item) {
             return _react2['default'].createElement(
               _reactSketchapp.View,
               null,
@@ -32701,6 +32687,28 @@ var navBar = _reactSketchapp.StyleSheet.create({
   }
 
 });
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = settingsData = [{
+  "Left": "copy",
+  "LeftSideCopy": "Setting One",
+  "Right": "label",
+  "RightSideCopy": "8609"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Two",
+  "Right": "chevron"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Three",
+  "Right": "chevron"
+}];
 
 /***/ })
 /******/ ]);
