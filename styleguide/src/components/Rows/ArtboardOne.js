@@ -13,7 +13,6 @@ import NavBar from './../NavBar.js';
 
 
 export default class ArtboardOne extends Component{
-
   render(){
     return(
       <Artboard
@@ -36,13 +35,12 @@ export default class ArtboardOne extends Component{
         <View name="View Content"
           style={{
             paddingTop: 20,
-            // backgroundColor: 'pink',
             flex:1,
           }}>
 
           <SettingsGroup
-            groupHeader= {true}
-            supportText= {true}
+            groupHeader= {false}
+            supportText= {false}
             />
 
         </View>

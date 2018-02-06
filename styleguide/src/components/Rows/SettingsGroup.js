@@ -24,7 +24,11 @@ const settings = [
       "Left":"copy",
       "LeftSideCopy":"Setting Three",
       "Right":"chevron",
-      "RightSideCopy":"76578",
+    },
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Setting Three",
+      "Right":"chevron",
     },
 ]
 
