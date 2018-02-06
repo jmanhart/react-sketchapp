@@ -16,6 +16,7 @@ import {
 import LeftSide from './LeftSide.js'
 import RightSide from './RightSide.js'
 import Divider from './Divider.js'
+import GroupHeader from './GroupHeader.js'
 
 
 export default class SettingsRow extends Component{
@@ -37,6 +38,8 @@ export default class SettingsRow extends Component{
 
   render(){
     return(
+
+
       <View name="Row Wrapper" style={styles.wrapper}>
         <Divider />
           {this.renderRowContent()}

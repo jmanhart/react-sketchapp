@@ -8521,7 +8521,24 @@ exports['default'] = function () {
 };
 
 {/*
-    <View
+    <View name="Settings Grouping">
+      <GroupHeader GroupHeader="settings group"/>
+     {settings.map((item) => {
+       return(
+         <View>
+           <SettingsRow
+             Left={item.Left}
+             LeftSideCopy={item.LeftSideCopy}
+             Right={item.Right}
+             RightSideCopy={item.RightSideCopy}
+             />
+         </View>
+       )
+     })}
+     <SupportText supportText="amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant."/>
+   </View>
+  
+   <View
      name="Settings Group"
      style={{
        width: 2000,
@@ -31572,6 +31589,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactSketchapp = __webpack_require__(8);
 
+var _SettingsGroup = __webpack_require__(192);
+
+var _SettingsGroup2 = _interopRequireDefault(_SettingsGroup);
+
 var _SettingsRow = __webpack_require__(184);
 
 var _SettingsRow2 = _interopRequireDefault(_SettingsRow);
@@ -31595,29 +31616,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import Row from './components/Row';
-
-
-var settings = [{
-  "Left": "copy",
-  "LeftSideCopy": "farting hardzzzzz",
-  "Right": "label",
-  "RightSideCopy": "76578"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Two",
-  "Right": "chevron"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Setting Three",
-  "Right": "chevron"
-}, {
-  "Left": "copy",
-  "LeftSideCopy": "Getting drunk on wine",
-  "Right": "label",
-  "RightSideCopy": "1045"
-}];
 
 var ArtboardOne = function (_Component) {
   _inherits(ArtboardOne, _Component);
@@ -31657,20 +31655,7 @@ var ArtboardOne = function (_Component) {
                 // backgroundColor: 'pink',
                 flex: 1
               } },
-            _react2['default'].createElement(
-              _reactSketchapp.View,
-              { name: 'Settings Grouping' },
-              _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
-              settings.map(function (item) {
-                return _react2['default'].createElement(_SettingsRow2['default'], {
-                  Left: item.Left,
-                  LeftSideCopy: item.LeftSideCopy,
-                  Right: item.Right,
-                  RightSideCopy: item.RightSideCopy
-                });
-              }),
-              _react2['default'].createElement(_SupportText2['default'], { supportText: 'Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant.' })
-            )
+            _react2['default'].createElement(_SettingsGroup2['default'], null)
           )
         );
       }
@@ -31713,6 +31698,10 @@ var _RightSide2 = _interopRequireDefault(_RightSide);
 var _Divider = __webpack_require__(188);
 
 var _Divider2 = _interopRequireDefault(_Divider);
+
+var _GroupHeader = __webpack_require__(189);
+
+var _GroupHeader2 = _interopRequireDefault(_GroupHeader);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -32587,6 +32576,94 @@ var navBar = _reactSketchapp.StyleSheet.create({
   }
 
 });
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(8);
+
+var _SettingsRow = __webpack_require__(184);
+
+var _SettingsRow2 = _interopRequireDefault(_SettingsRow);
+
+var _GroupHeader = __webpack_require__(189);
+
+var _GroupHeader2 = _interopRequireDefault(_GroupHeader);
+
+var _SupportText = __webpack_require__(190);
+
+var _SupportText2 = _interopRequireDefault(_SupportText);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import Row from './components/Row';
+
+
+var settings = [{
+  "Left": "copy",
+  "LeftSideCopy": "Setting Onne",
+  "Right": "label",
+  "RightSideCopy": "76578"
+}];
+
+var SettingsGroup = function (_Component) {
+  _inherits(SettingsGroup, _Component);
+
+  function SettingsGroup() {
+    _classCallCheck(this, SettingsGroup);
+
+    return _possibleConstructorReturn(this, (SettingsGroup.__proto__ || Object.getPrototypeOf(SettingsGroup)).apply(this, arguments));
+  }
+
+  _createClass(SettingsGroup, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { name: 'Settings Grouping' },
+          _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
+          settings.map(function (item) {
+            return _react2['default'].createElement(
+              _reactSketchapp.View,
+              null,
+              _react2['default'].createElement(_SettingsRow2['default'], {
+                Left: item.Left,
+                LeftSideCopy: item.LeftSideCopy,
+                Right: item.Right,
+                RightSideCopy: item.RightSideCopy
+              })
+            );
+          }),
+          _react2['default'].createElement(_SupportText2['default'], { supportText: 'Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant.' })
+        );
+      }
+
+      return render;
+    }()
+  }]);
+
+  return SettingsGroup;
+}(_react.Component);
+
+exports['default'] = SettingsGroup;
 
 /***/ })
 /******/ ]);

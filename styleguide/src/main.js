@@ -24,6 +24,25 @@ export default () => {
 
 {/*
 
+  <View name="Settings Grouping">
+
+    <GroupHeader GroupHeader="settings group"/>
+    {settings.map((item) => {
+      return(
+        <View>
+          <SettingsRow
+            Left={item.Left}
+            LeftSideCopy={item.LeftSideCopy}
+            Right={item.Right}
+            RightSideCopy={item.RightSideCopy}
+            />
+        </View>
+      )
+    })}
+    <SupportText supportText="amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant."/>
+  </View>
+
+
   <View
     name="Settings Group"
     style={{
