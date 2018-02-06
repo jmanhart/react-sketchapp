@@ -31655,7 +31655,10 @@ var ArtboardOne = function (_Component) {
                 // backgroundColor: 'pink',
                 flex: 1
               } },
-            _react2['default'].createElement(_SettingsGroup2['default'], null)
+            _react2['default'].createElement(_SettingsGroup2['default'], {
+              groupHeader: true,
+              supportText: true
+            })
           )
         );
       }
@@ -32621,6 +32624,16 @@ var settings = [{
   "LeftSideCopy": "Setting Onne",
   "Right": "label",
   "RightSideCopy": "76578"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Two",
+  "Right": "label",
+  "RightSideCopy": "76578"
+}, {
+  "Left": "copy",
+  "LeftSideCopy": "Setting Three",
+  "Right": "chevron",
+  "RightSideCopy": "76578"
 }];
 
 var SettingsGroup = function (_Component) {
@@ -32633,13 +32646,35 @@ var SettingsGroup = function (_Component) {
   }
 
   _createClass(SettingsGroup, [{
+    key: 'renderGroupHeader',
+    value: function () {
+      function renderGroupHeader() {
+        if (this.props.groupHeader === true) {
+          return _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' });
+        }
+      }
+
+      return renderGroupHeader;
+    }()
+  }, {
+    key: 'renderSupportText',
+    value: function () {
+      function renderSupportText() {
+        if (this.props.supportText === true) {
+          return _react2['default'].createElement(_SupportText2['default'], { supportText: 'Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant.' });
+        }
+      }
+
+      return renderSupportText;
+    }()
+  }, {
     key: 'render',
     value: function () {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           { name: 'Settings Grouping' },
-          _react2['default'].createElement(_GroupHeader2['default'], { GroupHeader: 'settings group' }),
+          this.renderGroupHeader(),
           settings.map(function (item) {
             return _react2['default'].createElement(
               _reactSketchapp.View,
@@ -32652,7 +32687,7 @@ var SettingsGroup = function (_Component) {
               })
             );
           }),
-          _react2['default'].createElement(_SupportText2['default'], { supportText: 'Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant.' })
+          this.renderSupportText()
         );
       }
 

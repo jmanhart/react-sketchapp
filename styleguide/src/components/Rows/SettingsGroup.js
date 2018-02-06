@@ -13,16 +13,43 @@ const settings = [
       "LeftSideCopy":"Setting Onne",
       "Right":"label",
       "RightSideCopy":"76578",
-    }
+    },
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Setting Two",
+      "Right":"label",
+      "RightSideCopy":"76578",
+    },
+    {
+      "Left":"copy",
+      "LeftSideCopy":"Setting Three",
+      "Right":"chevron",
+      "RightSideCopy":"76578",
+    },
 ]
 
 export default class SettingsGroup extends Component{
 
+  renderGroupHeader(){
+    if(this.props.groupHeader === true){
+      return(
+        <GroupHeader GroupHeader="settings group"/>
+      )
+    }
+  }
+
+  renderSupportText(){
+    if(this.props.supportText === true){
+      return(
+        <SupportText supportText="Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant."/>
+      )
+    }
+  }
+
   render(){
     return(
-
       <View name="Settings Grouping">
-        <GroupHeader GroupHeader="settings group"/>
+        {this.renderGroupHeader()}
         {settings.map((item) => {
           return(
             <View>
@@ -35,7 +62,7 @@ export default class SettingsGroup extends Component{
             </View>
           )
         })}
-        <SupportText supportText="Lorem ipsum dolor amet put a bird on it roof party disrupt bicycle rights. Portland kitsch freegan, swag coloring book biodiesel salvia cronut trust fund. Mixtape woke yuccie, banjo cornhole subway tile meh vinyl vice air plant."/>
+        {this.renderSupportText()}
       </View>
 
     )

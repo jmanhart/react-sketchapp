@@ -11,6 +11,7 @@ import NavBar from './../NavBar.js';
 
 
 
+
 export default class ArtboardOne extends Component{
 
   render(){
@@ -39,7 +40,10 @@ export default class ArtboardOne extends Component{
             flex:1,
           }}>
 
-          <SettingsGroup/>
+          <SettingsGroup
+            groupHeader= {true}
+            supportText= {true}
+            />
 
         </View>
 
