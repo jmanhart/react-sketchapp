@@ -46,7 +46,7 @@ export default class SettingsGroup extends Component{
               <SettingsRow
                 leftSideType={this.props.leftSideType}
                 leftSideString={this.props.leftSideString}
-                
+
                 rightSideType={this.props.rightSideType}
                 rightSideString={this.props.rightSideString}
                 />

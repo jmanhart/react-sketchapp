@@ -4,16 +4,26 @@ export default settingsGroup = [
     SuppotTextString:"Supporting text and such super awesome",
     rows:[
       {
-        "leftSideType":"copy",
-        "leftSideString":"Setting One",
+        leftSideType: "copy",
+        leftSideString: "Setting Osne",
       },
       {
-        "leftSideType":"copy",
-        "leftSideString":"Setting Two",
+        leftSideType: "copy",
+        leftSideString: "Setting Ossne",
+      },
+    ]
+  },
+  {
+    GroupHeaderString:"Group headeree",
+    SuppotTextString:"Supporting text and such super awesome",
+    rows:[
+      {
+        leftSideType: "copy",
+        leftSideString: "Setting Osne",
       },
       {
-        "leftSideType":"copy",
-        "leftSideString":"Setting Two",
+        leftSideType: "copy",
+        leftSideString: "Setting Ossne",
       },
     ]
   },
