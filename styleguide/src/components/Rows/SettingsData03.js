@@ -1,31 +1,16 @@
 export default settingsGroup = [
   {
-    GroupHeaderString:"Group headeree",
-    SuppotTextString:"Supporting text and such super awesome",
+    isGroupHeaderVisible: true,
+    GroupHeaderString:"ummm I dont know",
+    isSupportTextVisible: true,
+    SuppotTextString:"Best feature ever. Alli is doing a great job.",
     rows:[
       {
         leftSideType: "copy",
-        leftSideString: "Setting Osne",
-      },
-      {
-        leftSideType: "copy",
-        leftSideString: "Setting Ossne",
+        leftSideString: "SOS",
+        rightSideType: "chevron",
+        rightSideString: "",
       },
     ]
   },
-  {
-    GroupHeaderString:"Group headeree",
-    SuppotTextString:"Supporting text and such super awesome",
-    rows:[
-      {
-        leftSideType: "copy",
-        leftSideString: "Setting Osne",
-      },
-      {
-        leftSideType: "copy",
-        leftSideString: "Setting Ossne",
-      },
-    ]
-  },
-
 ]

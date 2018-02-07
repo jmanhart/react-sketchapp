@@ -32,19 +32,19 @@ export default class ArtboardOne extends Component{
           navBarTitle="Runnng Zones"
           rightSideCopy="Help"
           />
-          <View name="View Content" style={{ paddingTop: 20, flex:1}}>
+        <View name="View Content" style={{ paddingTop: 20, flex:1}}>
 
             <SettingsGroup
-              isGroupHeaderVisible= {true}
+              isGroupHeaderVisible={settingsGroup[0].isGroupHeaderVisible}
               GroupHeaderString={settingsGroup[0].GroupHeaderString}
 
-              leftSideType={settingsGroup[0].rows[0].leftSideType}
-              leftSideString={settingsGroup[0].rows[0].leftSideString}
+              leftSideType={settingsGroup[0].rows.leftSideType}
+              leftSideString={settingsGroup[0].rows.leftSideString}
 
-              rightSideType={settingsGroup[0].rows[0].rightSideType}
-              rightSideString={settingsGroup[0].rows[0].rightSideString}
+              rightSideType={settingsGroup[0].rightSideType}
+              rightSideString={settingsGroup[0].rightSideString}
 
-              isSupportTextVisible= {true}
+              isSupportTextVisible= {settingsGroup[0].isSupportTextVisible}
               SuppotTextString={settingsGroup[0].SuppotTextString}
               />
 

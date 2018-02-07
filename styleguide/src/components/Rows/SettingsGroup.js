@@ -17,10 +17,6 @@ export default class SettingsGroup extends Component{
       return(
         <GroupHeader GroupHeaderString={this.props.GroupHeaderString}/>
       )
-    } else {
-      return(
-        <Text style={{color:'white'}}>Nope</Text>
-      )
     }
   }
 
@@ -29,11 +25,7 @@ export default class SettingsGroup extends Component{
       return(
         <SupportText supportText={this.props.SuppotTextString}/>
       )
-    } else {
-      return(
-        <Text style={{color:'white'}}>Nope</Text>
-      )
-    }
+    } 
   }
 
   render(){
@@ -44,11 +36,11 @@ export default class SettingsGroup extends Component{
           return(
             <View>
               <SettingsRow
-                leftSideType={this.props.leftSideType}
-                leftSideString={this.props.leftSideString}
+                leftSideType={item.leftSideType}
+                leftSideString={item.leftSideString}
 
-                rightSideType={this.props.rightSideType}
-                rightSideString={this.props.rightSideString}
+                rightSideType={item.rightSideType}
+                rightSideString={item.rightSideString}
                 />
             </View>
           )

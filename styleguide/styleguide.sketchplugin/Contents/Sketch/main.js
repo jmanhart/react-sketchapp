@@ -8843,24 +8843,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = settingsGroup = [{
-  GroupHeaderString: "Group headeree",
-  SuppotTextString: "Supporting text and such super awesome",
+  isGroupHeaderVisible: true,
+  GroupHeaderString: "ummm I dont know",
+  isSupportTextVisible: true,
+  SuppotTextString: "Best feature ever. Alli is doing a great job.",
   rows: [{
     leftSideType: "copy",
-    leftSideString: "Setting Osne"
-  }, {
-    leftSideType: "copy",
-    leftSideString: "Setting Ossne"
-  }]
-}, {
-  GroupHeaderString: "Group headeree",
-  SuppotTextString: "Supporting text and such super awesome",
-  rows: [{
-    leftSideType: "copy",
-    leftSideString: "Setting Osne"
-  }, {
-    leftSideType: "copy",
-    leftSideString: "Setting Ossne"
+    leftSideString: "SOS",
+    rightSideType: "chevron",
+    rightSideString: ""
   }]
 }];
 
@@ -32037,16 +32028,16 @@ var ArtboardOne = function (_Component) {
             _reactSketchapp.View,
             { name: 'View Content', style: { paddingTop: 20, flex: 1 } },
             _react2['default'].createElement(_SettingsGroup2['default'], {
-              isGroupHeaderVisible: true,
+              isGroupHeaderVisible: _SettingsData2['default'][0].isGroupHeaderVisible,
               GroupHeaderString: _SettingsData2['default'][0].GroupHeaderString,
 
-              leftSideType: _SettingsData2['default'][0].rows[0].leftSideType,
-              leftSideString: _SettingsData2['default'][0].rows[0].leftSideString,
+              leftSideType: _SettingsData2['default'][0].rows.leftSideType,
+              leftSideString: _SettingsData2['default'][0].rows.leftSideString,
 
-              rightSideType: _SettingsData2['default'][0].rows[0].rightSideType,
-              rightSideString: _SettingsData2['default'][0].rows[0].rightSideString,
+              rightSideType: _SettingsData2['default'][0].rightSideType,
+              rightSideString: _SettingsData2['default'][0].rightSideString,
 
-              isSupportTextVisible: true,
+              isSupportTextVisible: _SettingsData2['default'][0].isSupportTextVisible,
               SuppotTextString: _SettingsData2['default'][0].SuppotTextString
             })
           )
@@ -32141,12 +32132,6 @@ var SettingsGroup = function (_Component) {
       function renderGroupHeader() {
         if (this.props.isGroupHeaderVisible === true) {
           return _react2['default'].createElement(_GroupHeader2['default'], { GroupHeaderString: this.props.GroupHeaderString });
-        } else {
-          return _react2['default'].createElement(
-            _reactSketchapp.Text,
-            { style: { color: 'white' } },
-            'Nope'
-          );
         }
       }
 
@@ -32158,12 +32143,6 @@ var SettingsGroup = function (_Component) {
       function renderSupportText() {
         if (this.props.isSupportTextVisible === true) {
           return _react2['default'].createElement(_SupportText2['default'], { supportText: this.props.SuppotTextString });
-        } else {
-          return _react2['default'].createElement(
-            _reactSketchapp.Text,
-            { style: { color: 'white' } },
-            'Nope'
-          );
         }
       }
 
@@ -32173,8 +32152,6 @@ var SettingsGroup = function (_Component) {
     key: 'render',
     value: function () {
       function render() {
-        var _this2 = this;
-
         return _react2['default'].createElement(
           _reactSketchapp.View,
           { name: 'Settings Grouping' },
@@ -32184,11 +32161,11 @@ var SettingsGroup = function (_Component) {
               _reactSketchapp.View,
               null,
               _react2['default'].createElement(_SettingsRow2['default'], {
-                leftSideType: _this2.props.leftSideType,
-                leftSideString: _this2.props.leftSideString,
+                leftSideType: item.leftSideType,
+                leftSideString: item.leftSideString,
 
-                rightSideType: _this2.props.rightSideType,
-                rightSideString: _this2.props.rightSideString
+                rightSideType: item.rightSideType,
+                rightSideString: item.rightSideString
               })
             );
           }),
