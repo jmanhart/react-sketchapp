@@ -8,45 +8,64 @@ import GroupHeader from './GroupHeader.js';
 import SupportText from './SupportText.js';
 import NavBar from './../NavBar.js';
 
-
-
+import settingsGroup from './SettingsData03.js';
 
 
 export default class ArtboardOne extends Component{
+
+
   render(){
-    return(
-      <Artboard
-        name='My Artboard'
-        style={{
-          width: 375,
-          height: 667,
-          backgroundColor:'#121212',
-          marginRight:200,
-          //justifyContent:'center',
-        }}
-      >
 
-      <NavBar
-        leftSideCopy="Back"
-        navBarTitle="Running Zones"
-        rightSideCopy="Help"
-        />
-
-        <View name="View Content"
+      return(
+        <Artboard
+          name='My Artboard'
           style={{
-            paddingTop: 20,
-            flex:1,
-          }}>
+            width: 375,
+            height: 667,
+            backgroundColor:'#121212',
+            marginRight:200,
+            //justifyContent:'center',
+          }}
+        >
+        <NavBar
+          leftSideCopy="Back"
+          navBarTitle="Runnng Zones"
+          rightSideCopy="Help"
+          />
+          <View name="View Content" style={{ paddingTop: 20, flex:1}}>
 
-          <SettingsGroup
-            groupHeader= {true}
-            supportText= {false}
-            />
+            <SettingsGroup
+              isGroupHeaderVisible= {true}
+              GroupHeaderString={settingsGroup[0].GroupHeaderString}
 
-        </View>
+              leftSideType={settingsGroup[0].rows[0].leftSideType}
+              leftSideString={settingsGroup[0].rows[0].leftSideString}
 
+              rightSideType={settingsGroup[0].rows[0].rightSideType}
+              rightSideString={settingsGroup[0].rows[0].rightSideString}
 
-      </Artboard>
-    )
+              isSupportTextVisible= {true}
+              SuppotTextString={settingsGroup[0].SuppotTextString}
+              />
+
+          </View>
+        </Artboard>
+      )
   }
 }
+
+{/*
+<GroupHeader GroupHeader={true} GroupHeaderText="settings group"/>
+{
+  "leftSideType":"copy",
+  "leftSideString":"Setting One",
+  "rightSideType":"chevron",
+  "rightSideString":"1276"
+},
+{
+  "leftSideType":"copy",
+  "leftSideString":"Setting Two",
+  "rightSideType":"label",
+  "rightSideString":"1276"
+},
+*/}

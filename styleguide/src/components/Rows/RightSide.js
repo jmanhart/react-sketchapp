@@ -17,16 +17,16 @@ import Chevron from '../../svg/Chevron.js'
 export default class RightSide extends Component{
 
   renderRightSide() {
-      if(this.props.type == "chevron"){
+      if(this.props.rightSideType === "chevron"){
         return(
           <Chevron />
         )
       }
-      if(this.props.type == "label"){
+      if(this.props.rightSideType === "label"){
         return(
           <View style={label.container}>
             <Text style={label.copy}>
-               {this.props.RightSideCopy}
+               {this.props.rightSideString}
             </Text>
           </View>
         )

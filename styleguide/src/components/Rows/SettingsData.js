@@ -1,19 +1,8 @@
 export default settingsData = [
     {
       "Left":"copy",
-      "LeftSideCopy":"Setting One",
+      "LeftSideCopy":"Settinng One",
       "Right":"label",
-      "RightSideCopy":"8609",
+      "RightSideCopy":"86j9",
     },
-    {
-      "Left":"copy",
-      "LeftSideCopy":"Setting Two",
-      "Right":"chevron",
-    },
-    {
-      "Left":"copy",
-      "LeftSideCopy":"Setting Three",
-      "Right":"chevron",
-    },
-
 ]

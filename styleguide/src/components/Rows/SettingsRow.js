@@ -25,12 +25,12 @@ export default class SettingsRow extends Component{
     return(
       <View name="Row Content" style={styles.content}>
         <LeftSide
-          type={this.props.Left}
-          LeftSideCopy={this.props.LeftSideCopy}
+          leftSideType={this.props.leftSideType}
+          leftSideString={this.props.leftSideString}
           />
         <RightSide
-          type={this.props.Right}
-          RightSideCopy={this.props.RightSideCopy}
+          rightSideType={this.props.rightSideType}
+          rightSideString={this.props.rightSideString}
           />
       </View>
     )

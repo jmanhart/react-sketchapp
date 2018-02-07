@@ -14,24 +14,15 @@ import {
 
 export default class LeftSide extends Component{
 
-  renderLeftSide() {
-      if(this.props.type == "copy"){
+  renderLeftSideType() {
+      if(this.props.leftSideType === "copy"){
         return(
           <Text style={styles.copy}>
-            {this.props.LeftSideCopy}
+            {this.props.leftSideString}
           </Text>
         )
       }
-
-      if(this.props.type == "hamhawk"){
-        return(
-          <Text style={styles.copy}>
-            Ham Hawks!!!
-          </Text>
-        )
-      }
-
-      if(this.props.type == "check-mark"){
+      if(this.props.leftSideType == "check-mark"){
         return(
           <View name="Check Mark" style={checkMark.container}>
             <View style={checkMark.checkMark} />
@@ -41,7 +32,6 @@ export default class LeftSide extends Component{
           </View>
         )
       }
-
       else {
         return(
           <Text style={styles.copy}>
@@ -54,7 +44,7 @@ export default class LeftSide extends Component{
   render() {
     return(
       <View
-        name="Left Side"
+        name="Left Side Type"
         style={{
           //backgroundColor:'red',
           flex:.75,
@@ -63,7 +53,7 @@ export default class LeftSide extends Component{
           alignSelf: 'center',
         }}
         >
-        {this.renderLeftSide()}
+        {this.renderLeftSideType()}
       </View>
     )
   }

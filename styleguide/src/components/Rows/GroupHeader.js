@@ -14,11 +14,12 @@ import {
 
 export default class GroupHeader extends Component{
 
+
   render(){
     return(
       <View name="Group Header" style={rowHeader.wrapper}>
         <Text style={rowHeader.rowHeaderLabel}>
-          {this.props.GroupHeader}
+          {this.props.GroupHeaderString}
         </Text>
       </View>
     )
