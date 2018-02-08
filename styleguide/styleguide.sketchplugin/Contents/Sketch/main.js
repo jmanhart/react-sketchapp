@@ -8851,19 +8851,19 @@ exports["default"] = settingsGroup = [{
     rightSideString: "",
     dividerBottomType: "inset"
   }, {
-    dividerTopType: "",
+    dividerTopType: "full",
     leftSideType: "copy",
-    leftSideString: "Setting Two",
+    leftSideString: "Setting One",
     rightSideType: "chevron",
     rightSideString: "",
     dividerBottomType: "inset"
   }, {
-    dividerTopType: "",
+    dividerTopType: "full",
     leftSideType: "copy",
-    leftSideString: "Setting Three",
+    leftSideString: "Setting One",
     rightSideType: "chevron",
     rightSideString: "",
-    dividerBottomType: "full"
+    dividerBottomType: "inset"
   }]
 }];
 
@@ -32020,33 +32020,36 @@ var ArtboardOne = function (_Component) {
       function render() {
 
         return _react2['default'].createElement(
-          _reactSketchapp.Artboard,
-          { name: 'My Artboard', style: artboard.wrapper },
-          _react2['default'].createElement(_NavBar2['default'], {
-            leftSideCopy: 'Back',
-            navBarTitle: 'Runnng ',
-            rightSideCopy: 'Help'
-          }),
+          _reactSketchapp.View,
+          null,
           _react2['default'].createElement(
-            _reactSketchapp.View,
-            { name: 'View Content', style: { paddingTop: 20, flex: 1 } },
-            _react2['default'].createElement(_SettingsGroup2['default'], {
-              isGroupHeaderVisible: _SettingsData2['default'][0].isGroupHeaderVisible,
-              GroupHeaderString: _SettingsData2['default'][0].GroupHeaderString,
-
-              dividerTopType: _SettingsData2['default'][0].rows.dividerTopType,
-
-              leftSideType: _SettingsData2['default'][0].rows.leftSideType,
-              leftSideString: _SettingsData2['default'][0].rows.leftSideString,
-
-              rightSideType: _SettingsData2['default'][0].rightSideType,
-              rightSideString: _SettingsData2['default'][0].rightSideString,
-
-              dividerBottomType: _SettingsData2['default'][0].rows.dividerTopType,
-
-              isSupportTextVisible: _SettingsData2['default'][0].isSupportTextVisible,
-              SuppotTextString: _SettingsData2['default'][0].SuppotTextString
-            })
+            _reactSketchapp.Artboard,
+            { name: 'My Artboard' },
+            _react2['default'].createElement(
+              _reactSketchapp.View,
+              { style: artboard.wrapper },
+              _react2['default'].createElement(_NavBar2['default'], {
+                leftSideCopy: 'Back',
+                navBarTitle: 'Runnng ',
+                rightSideCopy: 'Help'
+              }),
+              _react2['default'].createElement(
+                _reactSketchapp.View,
+                { name: 'View Content', style: { paddingTop: 20, flex: 1 } },
+                _react2['default'].createElement(_SettingsGroup2['default'], {
+                  isGroupHeaderVisible: _SettingsData2['default'][0].isGroupHeaderVisible,
+                  GroupHeaderString: _SettingsData2['default'][0].GroupHeaderString,
+                  dividerTopType: _SettingsData2['default'][0].rows.dividerTopType,
+                  leftSideType: _SettingsData2['default'][0].rows.leftSideType,
+                  leftSideString: _SettingsData2['default'][0].rows.leftSideString,
+                  rightSideType: _SettingsData2['default'][0].rightSideType,
+                  rightSideString: _SettingsData2['default'][0].rightSideString,
+                  dividerBottomType: _SettingsData2['default'][0].rows.dividerTopType,
+                  isSupportTextVisible: _SettingsData2['default'][0].isSupportTextVisible,
+                  SuppotTextString: _SettingsData2['default'][0].SuppotTextString
+                })
+              )
+            )
           )
         );
       }
@@ -32065,8 +32068,7 @@ var artboard = _reactSketchapp.StyleSheet.create({
   wrapper: {
     width: 375,
     height: 667,
-    backgroundColor: '#121212',
-    marginRight: 200
+    backgroundColor: '#121212'
   }
 });
 
