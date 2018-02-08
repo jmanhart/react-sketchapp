@@ -39,9 +39,9 @@ export default class SettingsRow extends Component{
   render(){
     return(
       <View name="Row Wrapper" style={styles.wrapper}>
-        <Divider />
+        <Divider dividerTopType={this.props.dividerTopType} />
           {this.renderRowContent()}
-        <Divider />
+        <Divider dividerBottomType={this.props.dividerBottomType} />
       </View>
     )
   }
@@ -54,11 +54,7 @@ const styles = StyleSheet.create({
     width: 375,
     alignItems: 'flex-start',
     justifyContent: 'center',
-
     flexDirection:'column',
-    // borderTopWidth: .5,
-    // borderBottomWidth:.5,
-    // borderColor: '#555555',
   },
   content:{
     //backgroundColor:'pink',

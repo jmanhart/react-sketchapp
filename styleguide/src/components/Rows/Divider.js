@@ -14,9 +14,34 @@ import {
 
 export default class Divider extends Component{
 
+  renderDivider(){
+    if(this.props.dividerTopType === "full"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider]} />
+      )
+    }
+    if(this.props.dividerTopType === "inset"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
+      )
+    }
+    if(this.props.dividerBottomType === "inset"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
+      )
+    }
+    if(this.props.dividerBottomType === "full"){
+      return(
+        <View name="Row Divider Top" style={[divider.divider]} />
+      )
+    }
+  }
+
   render(){
     return(
-      <View name="Row Divider Top" style={[divider.divider, divider.inset]} />
+      <View name="Look Here" style={{width:375}}>
+        {this.renderDivider()}
+      </View>
     )
   }
 }
@@ -29,7 +54,7 @@ const divider = StyleSheet.create({
     alignSelf:'stretch',
   },
   inset:{
-    marginLeft: 0,
+    marginLeft: 15,
   }
 });
 

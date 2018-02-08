@@ -1,15 +1,33 @@
 export default settingsGroup = [
   {
     isGroupHeaderVisible: true,
-    GroupHeaderString:"ummm I dont know",
+    GroupHeaderString:"Settings Group",
     isSupportTextVisible: true,
-    SuppotTextString:"Best feature ever. Alli is doing a great job.",
+    SuppotTextString:"This is support copy for settings and is super awesome.",
     rows:[
       {
+        dividerTopType: "full",
         leftSideType: "copy",
-        leftSideString: "SOS",
+        leftSideString: "Setting One",
         rightSideType: "chevron",
         rightSideString: "",
+        dividerBottomType:"inset",
+      },
+      {
+        dividerTopType: "",
+        leftSideType: "copy",
+        leftSideString: "Setting Two",
+        rightSideType: "chevron",
+        rightSideString: "",
+        dividerBottomType:"inset",
+      },
+      {
+        dividerTopType: "",
+        leftSideType: "copy",
+        leftSideString: "Setting Three",
+        rightSideType: "chevron",
+        rightSideString: "",
+        dividerBottomType:"full",
       },
     ]
   },

@@ -31,6 +31,16 @@ export default class RightSide extends Component{
           </View>
         )
       }
+      if(this.props.rightSideType === "labelChevron"){
+        return(
+          <View style={[label.container, {flexDirection:'row', alignItems:'center'}]}>
+            <Text style={label.copy}>
+               {this.props.rightSideString}
+            </Text>
+            <Chevron />
+          </View>
+        )
+      }
       else {
         return(
           <Text style={rightSide.copy}>

@@ -8542,9 +8542,9 @@ var SettingsRow = function (_Component) {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           { name: 'Row Wrapper', style: styles.wrapper },
-          _react2['default'].createElement(_Divider2['default'], null),
+          _react2['default'].createElement(_Divider2['default'], { dividerTopType: this.props.dividerTopType }),
           this.renderRowContent(),
-          _react2['default'].createElement(_Divider2['default'], null)
+          _react2['default'].createElement(_Divider2['default'], { dividerBottomType: this.props.dividerBottomType })
         );
       }
 
@@ -8565,11 +8565,7 @@ var styles = _reactSketchapp.StyleSheet.create({
     width: 375,
     alignItems: 'flex-start',
     justifyContent: 'center',
-
     flexDirection: 'column'
-    // borderTopWidth: .5,
-    // borderBottomWidth:.5,
-    // borderColor: '#555555',
   },
   content: {
     //backgroundColor:'pink',
@@ -8844,14 +8840,30 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = settingsGroup = [{
   isGroupHeaderVisible: true,
-  GroupHeaderString: "ummm I dont know",
+  GroupHeaderString: "Settings Group",
   isSupportTextVisible: true,
-  SuppotTextString: "Best feature ever. Alli is doing a great job.",
+  SuppotTextString: "This is support copy for settings and is super awesome.",
   rows: [{
+    dividerTopType: "full",
     leftSideType: "copy",
-    leftSideString: "SOS",
+    leftSideString: "Setting One",
     rightSideType: "chevron",
-    rightSideString: ""
+    rightSideString: "",
+    dividerBottomType: "inset"
+  }, {
+    dividerTopType: "",
+    leftSideType: "copy",
+    leftSideString: "Setting Two",
+    rightSideType: "chevron",
+    rightSideString: "",
+    dividerBottomType: "inset"
+  }, {
+    dividerTopType: "",
+    leftSideType: "copy",
+    leftSideString: "Setting Three",
+    rightSideType: "chevron",
+    rightSideString: "",
+    dividerBottomType: "full"
   }]
 }];
 
@@ -31977,7 +31989,7 @@ var _SupportText = __webpack_require__(81);
 
 var _SupportText2 = _interopRequireDefault(_SupportText);
 
-var _NavBar = __webpack_require__(194);
+var _NavBar = __webpack_require__(193);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -32009,19 +32021,10 @@ var ArtboardOne = function (_Component) {
 
         return _react2['default'].createElement(
           _reactSketchapp.Artboard,
-          {
-            name: 'My Artboard',
-            style: {
-              width: 375,
-              height: 667,
-              backgroundColor: '#121212',
-              marginRight: 200
-              //justifyContent:'center',
-            }
-          },
+          { name: 'My Artboard', style: artboard.wrapper },
           _react2['default'].createElement(_NavBar2['default'], {
             leftSideCopy: 'Back',
-            navBarTitle: 'Runnng Zones',
+            navBarTitle: 'Runnng ',
             rightSideCopy: 'Help'
           }),
           _react2['default'].createElement(
@@ -32031,11 +32034,15 @@ var ArtboardOne = function (_Component) {
               isGroupHeaderVisible: _SettingsData2['default'][0].isGroupHeaderVisible,
               GroupHeaderString: _SettingsData2['default'][0].GroupHeaderString,
 
+              dividerTopType: _SettingsData2['default'][0].rows.dividerTopType,
+
               leftSideType: _SettingsData2['default'][0].rows.leftSideType,
               leftSideString: _SettingsData2['default'][0].rows.leftSideString,
 
               rightSideType: _SettingsData2['default'][0].rightSideType,
               rightSideString: _SettingsData2['default'][0].rightSideString,
+
+              dividerBottomType: _SettingsData2['default'][0].rows.dividerTopType,
 
               isSupportTextVisible: _SettingsData2['default'][0].isSupportTextVisible,
               SuppotTextString: _SettingsData2['default'][0].SuppotTextString
@@ -32053,6 +32060,15 @@ var ArtboardOne = function (_Component) {
 
 exports['default'] = ArtboardOne;
 
+
+var artboard = _reactSketchapp.StyleSheet.create({
+  wrapper: {
+    width: 375,
+    height: 667,
+    backgroundColor: '#121212',
+    marginRight: 200
+  }
+});
 
 {/*
   <GroupHeader GroupHeader={true} GroupHeaderText="settings group"/>
@@ -32098,13 +32114,9 @@ var _SupportText = __webpack_require__(81);
 
 var _SupportText2 = _interopRequireDefault(_SupportText);
 
-var _SettingsData = __webpack_require__(193);
+var _SettingsData = __webpack_require__(82);
 
 var _SettingsData2 = _interopRequireDefault(_SettingsData);
-
-var _SettingsData3 = __webpack_require__(82);
-
-var _SettingsData4 = _interopRequireDefault(_SettingsData3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -32156,16 +32168,20 @@ var SettingsGroup = function (_Component) {
           _reactSketchapp.View,
           { name: 'Settings Grouping' },
           this.renderGroupHeader(),
-          _SettingsData4['default'][0].rows.map(function (item) {
+          _SettingsData2['default'][0].rows.map(function (item) {
             return _react2['default'].createElement(
               _reactSketchapp.View,
               null,
               _react2['default'].createElement(_SettingsRow2['default'], {
+                dividerTopType: item.dividerTopType,
+
                 leftSideType: item.leftSideType,
                 leftSideString: item.leftSideString,
 
                 rightSideType: item.rightSideType,
-                rightSideString: item.rightSideString
+                rightSideString: item.rightSideString,
+
+                dividerBottomType: item.dividerBottomType
               })
             );
           }),
@@ -32435,6 +32451,18 @@ var RightSide = function (_Component) {
               this.props.rightSideString
             )
           );
+        }
+        if (this.props.rightSideType === "labelChevron") {
+          return _react2['default'].createElement(
+            _reactSketchapp.View,
+            { style: [label.container, { flexDirection: 'row', alignItems: 'center' }] },
+            _react2['default'].createElement(
+              _reactSketchapp.Text,
+              { style: label.copy },
+              this.props.rightSideString
+            ),
+            _react2['default'].createElement(_Chevron2['default'], null)
+          );
         } else {
           return _react2['default'].createElement(
             _reactSketchapp.Text,
@@ -32554,10 +32582,34 @@ var Divider = function (_Component) {
   }
 
   _createClass(Divider, [{
+    key: 'renderDivider',
+    value: function () {
+      function renderDivider() {
+        if (this.props.dividerTopType === "full") {
+          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider] });
+        }
+        if (this.props.dividerTopType === "inset") {
+          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider, divider.inset] });
+        }
+        if (this.props.dividerBottomType === "inset") {
+          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider, divider.inset] });
+        }
+        if (this.props.dividerBottomType === "full") {
+          return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider] });
+        }
+      }
+
+      return renderDivider;
+    }()
+  }, {
     key: 'render',
     value: function () {
       function render() {
-        return _react2['default'].createElement(_reactSketchapp.View, { name: 'Row Divider Top', style: [divider.divider, divider.inset] });
+        return _react2['default'].createElement(
+          _reactSketchapp.View,
+          { name: 'Look Here', style: { width: 375 } },
+          this.renderDivider()
+        );
       }
 
       return render;
@@ -32577,7 +32629,7 @@ var divider = _reactSketchapp.StyleSheet.create({
     alignSelf: 'stretch'
   },
   inset: {
-    marginLeft: 0
+    marginLeft: 15
   }
 });
 
@@ -32599,20 +32651,6 @@ var divider = _reactSketchapp.StyleSheet.create({
 
 /***/ }),
 /* 193 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = settingsData = [{
-  "Left": "copy",
-  "LeftSideCopy": "Settinng One",
-  "Right": "label",
-  "RightSideCopy": "86j9"
-}];
-
-/***/ }),
-/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {

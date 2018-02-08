@@ -6,7 +6,7 @@ import { Text, View, StyleSheet, Artboard } from 'react-sketchapp';
 import SettingsRow from './SettingsRow.js';
 import GroupHeader from './GroupHeader.js';
 import SupportText from './SupportText.js';
-import settingsData from './SettingsData.js';
+
 
 import settingsGroup from './SettingsData03.js';
 
@@ -25,7 +25,7 @@ export default class SettingsGroup extends Component{
       return(
         <SupportText supportText={this.props.SuppotTextString}/>
       )
-    } 
+    }
   }
 
   render(){
@@ -36,11 +36,15 @@ export default class SettingsGroup extends Component{
           return(
             <View>
               <SettingsRow
+                dividerTopType={item.dividerTopType}
+
                 leftSideType={item.leftSideType}
                 leftSideString={item.leftSideString}
 
                 rightSideType={item.rightSideType}
                 rightSideString={item.rightSideString}
+
+                dividerBottomType={item.dividerBottomType}
                 />
             </View>
           )
