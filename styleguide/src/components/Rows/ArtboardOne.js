@@ -13,9 +13,7 @@ import settingsGroup from './SettingsData03.js';
 
 export default class ArtboardOne extends Component{
 
-
   render(){
-
       return(
         <View>
         <Artboard name='My Artboard'>
@@ -26,7 +24,6 @@ export default class ArtboardOne extends Component{
               rightSideCopy="Help"
               />
             <View name="View Content" style={{ paddingTop: 20, flex:1}}>
-
               <SettingsGroup
                 isGroupHeaderVisible={settingsGroup[0].isGroupHeaderVisible}
                 GroupHeaderString={settingsGroup[0].GroupHeaderString}
@@ -39,7 +36,6 @@ export default class ArtboardOne extends Component{
                 isSupportTextVisible= {settingsGroup[0].isSupportTextVisible}
                 SuppotTextString={settingsGroup[0].SuppotTextString}
                 />
-
             </View>
           </View>
         </Artboard>
