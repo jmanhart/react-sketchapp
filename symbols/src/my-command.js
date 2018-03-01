@@ -9,15 +9,16 @@ import {
 } from 'react-sketchapp';
 
 
-
+// Import Components
 import SettingsGroup from './components/SettingsGroup.js'
 
-
-
+// Expose & make the symbol - This adds to the Symbol Page
+const SettingsGroupSym = makeSymbol(SettingsGroup, 'settings / row');
 
 const Document = () => (
   <Artboard name="Swatches" style={{ display: 'flex' }}>
-    <SettingsGroup />
+    <SettingsGroupSym />
+
   </Artboard>
 );
 

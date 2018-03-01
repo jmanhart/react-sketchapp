@@ -4466,11 +4466,17 @@ var _SettingsGroup2 = _interopRequireDefault(_SettingsGroup);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
+// Expose & make the symbol - This adds to the Symbol Page
+var SettingsGroupSym = (0, _reactSketchapp.makeSymbol)(_SettingsGroup2['default'], 'settings / row');
+
+// Import Components
+
+
 var Document = function Document() {
   return _react2['default'].createElement(
     _reactSketchapp.Artboard,
     { name: 'Swatches', style: { display: 'flex' } },
-    _react2['default'].createElement(_SettingsGroup2['default'], null)
+    _react2['default'].createElement(SettingsGroupSym, null)
   );
 };
 
@@ -31780,6 +31786,10 @@ var _SettingsRow = __webpack_require__(113);
 
 var _SettingsRow2 = _interopRequireDefault(_SettingsRow);
 
+var _RowDivider = __webpack_require__(116);
+
+var _RowDivider2 = _interopRequireDefault(_RowDivider);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31807,6 +31817,7 @@ var SettingsGroup = function (_Component) {
         return _react2['default'].createElement(
           _reactSketchapp.View,
           { name: 'Settings Group', style: nestedSym.container },
+          _react2['default'].createElement(_RowDivider2['default'], null),
           _react2['default'].createElement(_SettingsRow2['default'], null)
         );
       }
@@ -31885,12 +31896,12 @@ var SettingsRow = function (_Component) {
           _reactSketchapp.View,
           { name: 'Settings Row', style: settingsRow.container },
           _react2['default'].createElement(LeftSideSym, {
-            name: 'Left Side',
-            style: { flex: 6 }
+            name: 'Left Side'
+
           }),
           _react2['default'].createElement(RightSideSym, {
-            name: 'Right Side',
-            style: { flex: 4 }
+            name: 'Right Side'
+
           })
         );
       }
@@ -31953,14 +31964,11 @@ var LeftSide = function (_Component) {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
-          {
-            name: 'Square',
-            style: leftSide.content
-          },
+          { name: 'Square', style: leftSide.content },
           _react2['default'].createElement(
             _reactSketchapp.Text,
-            { name: 'Left Side Label' },
-            'Left Side'
+            { name: 'Left Side Label', style: leftSide.label },
+            'Left Side Label'
           )
         );
       }
@@ -31977,10 +31985,15 @@ exports['default'] = LeftSide;
 
 var leftSide = _reactSketchapp.StyleSheet.create({
   content: {
-    width: 100,
-    height: 44,
-    backgroundColor: 'blue',
-    flex: 1
+    width: 200,
+    minHeight: 42,
+    backgroundColor: 'green',
+    flex: 1,
+    justifyContent: 'center'
+
+  },
+  label: {
+    marginLeft: 15
   }
 });
 
@@ -32025,12 +32038,12 @@ var RightSide = function (_Component) {
           _reactSketchapp.View,
           {
             name: 'Square',
-            style: divider.square
+            style: rightSide.content
           },
           _react2['default'].createElement(
             _reactSketchapp.Text,
-            { name: 'Right Side Label' },
-            'Righttt Side'
+            { name: 'Right Side Label', style: rightSide.label },
+            'Right Side'
           )
         );
       }
@@ -32045,13 +32058,85 @@ var RightSide = function (_Component) {
 exports['default'] = RightSide;
 
 
-var divider = _reactSketchapp.StyleSheet.create({
-  square: {
+var rightSide = _reactSketchapp.StyleSheet.create({
+  content: {
     display: 'flex',
-    width: 100,
+    width: 175,
     height: 44,
-    backgroundColor: 'yellow'
+    backgroundColor: 'yellow',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  },
+  label: {
+    marginRight: 15,
+    textAlign: 'right',
+    justifyContent: 'center',
+    alignItems: 'center'
 
+  }
+});
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RowDivider = function (_Component) {
+  _inherits(RowDivider, _Component);
+
+  function RowDivider() {
+    _classCallCheck(this, RowDivider);
+
+    return _possibleConstructorReturn(this, (RowDivider.__proto__ || Object.getPrototypeOf(RowDivider)).apply(this, arguments));
+  }
+
+  _createClass(RowDivider, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        return _react2['default'].createElement(_reactSketchapp.View, {
+          name: 'Divider',
+          style: rowDivider.content
+        });
+      }
+
+      return render;
+    }()
+  }]);
+
+  return RowDivider;
+}(_react.Component);
+
+exports['default'] = RowDivider;
+
+
+var rowDivider = _reactSketchapp.StyleSheet.create({
+  content: {
+    display: 'flex',
+    width: 375,
+    height: 1,
+    backgroundColor: 'pink',
+    justifyContent: 'center',
+    alignItems: 'flex-end'
   }
 });
 

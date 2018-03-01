@@ -13,11 +13,8 @@ import {
 export default class LeftSide extends Component{
   render() {
     return(
-      <View
-        name="Square"
-        style={leftSide.content}
-      >
-        <Text name="Left Side Label">Left Side</Text>
+      <View name="Square" style={leftSide.content}>
+        <Text name="Left Side Label" style={leftSide.label}>Left Side Label</Text>
       </View>
     )
   }
@@ -26,9 +23,14 @@ export default class LeftSide extends Component{
 
 const leftSide = StyleSheet.create({
   content:{
-    width: 100,
-    height: 44,
-    backgroundColor:'blue',
+    width: 200,
+    minHeight: 42,
+    backgroundColor:'green',
     flex: 1,
+    justifyContent:'center',
+
+  },
+  label:{
+    marginLeft: 15,
   }
 });

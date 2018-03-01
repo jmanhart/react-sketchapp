@@ -24,11 +24,11 @@ export default class SettingsRow extends Component{
       <View name="Settings Row" style={settingsRow.container}>
         <LeftSideSym
           name="Left Side"
-          style={{flex:6}}
+
         />
         <RightSideSym
             name="Right Side"
-            style={{flex:4}}
+
           />
       </View>
     )

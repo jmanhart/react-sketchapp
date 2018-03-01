@@ -15,22 +15,30 @@ export default class RightSide extends Component{
     return(
       <View
         name="Square"
-        style={divider.square}
+        style={rightSide.content}
       >
-        <Text name="Right Side Label">Righttt Side</Text>
+        <Text name="Right Side Label" style={rightSide.label}>Right Side</Text>
       </View>
     )
   }
 }
 
 
-const divider = StyleSheet.create({
-  square:{
+const rightSide = StyleSheet.create({
+  content:{
     display: 'flex',
-    width: 100,
+    width: 175,
     height:44,
     backgroundColor:'yellow',
+    justifyContent:'center',
+    alignItems:'flex-end',
+  },
+  label:{
+    marginRight: 15,
+    textAlign: 'right',
+    justifyContent:'center',
+    alignItems:'center',
+    
 
-  
   }
 });

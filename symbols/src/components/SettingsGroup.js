@@ -11,6 +11,7 @@ import {
 
 // Import Components
 import SettingsRow from './SettingsRow.js'
+import RowDivider from './RowDivider.js'
 
 
 
@@ -19,7 +20,9 @@ export default class SettingsGroup extends Component{
   render() {
     return(
       <View name="Settings Group" style={nestedSym.container}>
-        <SettingsRow />
+        <RowDivider />
+        <SettingsRow
+          />
       </View>
     )
   }
