@@ -23,7 +23,7 @@ const Nested = () => (
 
 const NestedSym = makeSymbol(Nested);
 
-
+{/* Keep this seperate or you will have a billion pages */}
 const Document = () => (
   <Artboard name="Swatches" style={{ display: 'flex' }}>
     <NestedSym />
@@ -31,7 +31,7 @@ const Document = () => (
 );
 
 export default () => {
-  render(<Document />, context.document.currentPage());
+  render(<Document />);
 };
 
 

@@ -9,6 +9,8 @@ import {
 } from 'react-sketchapp';
 
 
+
+
 export default class RedSquare extends Component{
   render() {
     return(
@@ -16,7 +18,7 @@ export default class RedSquare extends Component{
         name="Square"
         style={{ width: 100, height: 100, backgroundColor: 'red' }}
       >
-        <Text name="Red Square Text">Red u</Text>
+        <Text name="Red Square Text">Redsdssdcsdu</Text>
       </View>
     )
   }

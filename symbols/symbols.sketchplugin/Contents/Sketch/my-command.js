@@ -4481,6 +4481,7 @@ var Nested = function Nested() {
 
 var NestedSym = (0, _reactSketchapp.makeSymbol)(Nested);
 
+{/* Keep this seperate or you will have a billion pages */}
 var Document = function Document() {
   return _react2['default'].createElement(
     _reactSketchapp.Artboard,
@@ -4490,7 +4491,7 @@ var Document = function Document() {
 };
 
 exports['default'] = function () {
-  (0, _reactSketchapp.render)(_react2['default'].createElement(Document, null), context.document.currentPage());
+  (0, _reactSketchapp.render)(_react2['default'].createElement(Document, null));
 };
 
 {/*
@@ -31821,7 +31822,7 @@ var RedSquare = function (_Component) {
           _react2['default'].createElement(
             _reactSketchapp.Text,
             { name: 'Red Square Text' },
-            'Red u'
+            'Redsdssdcsdu'
           )
         );
       }
