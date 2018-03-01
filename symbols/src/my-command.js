@@ -8,25 +8,16 @@ import {
   makeSymbol,
 } from 'react-sketchapp';
 
-import RedSquare from './components/squares.js'
 
-const RedSquareSym = makeSymbol(RedSquare, 'squares/red');
 
-const Nested = () => (
-  <View name="Multi" style={{ display: 'flex', flexDirection: 'column' }}>
-    <RedSquareSym
-      name="Red Square Instance"
-      style={{ width: 75, height: 75 }}
-    />
-  </View>
-);
+import SettingsGroup from './components/SettingsGroup.js'
 
-const NestedSym = makeSymbol(Nested);
 
-{/* Keep this seperate or you will have a billion pages */}
+
+
 const Document = () => (
   <Artboard name="Swatches" style={{ display: 'flex' }}>
-    <NestedSym />
+    <SettingsGroup />
   </Artboard>
 );
 
