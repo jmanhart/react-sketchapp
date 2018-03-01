@@ -12,6 +12,7 @@ import {
 } from 'react-primitives-svg';
 
 // Importing Assets
+import CheckMark from '../../svg/CheckMark.js'
 import Chevron from '../../svg/Chevron.js'
 
 export default class RightSide extends Component{
@@ -19,7 +20,7 @@ export default class RightSide extends Component{
   renderRightSide() {
       if(this.props.rightSideType === "chevron"){
         return(
-          <Chevron />
+          <CheckMark checkMarkType="on" />
         )
       }
       if(this.props.rightSideType === "label"){

@@ -14,7 +14,7 @@ export default settingsGroup = [
         dividerBottomType:"inset",
       },
       {
-        dividerTopType: "full",
+        dividerTopType: "inset",
         leftSideType: "copy",
         leftSideString: "Setting One",
         rightSideType: "chevron",
@@ -22,12 +22,12 @@ export default settingsGroup = [
         dividerBottomType:"inset",
       },
       {
-        dividerTopType: "full",
+        dividerTopType: "inset",
         leftSideType: "copy",
         leftSideString: "Setting One",
         rightSideType: "chevron",
         rightSideString: "",
-        dividerBottomType:"inset",
+        dividerBottomType:"full",
       },
     ]
   },

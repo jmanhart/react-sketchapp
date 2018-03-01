@@ -13,8 +13,6 @@ import {
 
 
 export default class GroupHeader extends Component{
-
-
   render(){
     return(
       <View name="Group Header" style={rowHeader.wrapper}>
@@ -25,7 +23,6 @@ export default class GroupHeader extends Component{
     )
   }
 }
-
 
 const rowHeader = StyleSheet.create({
   wrapper:{
@@ -39,8 +36,3 @@ const rowHeader = StyleSheet.create({
     textTransform:'uppercase'
   }
 });
-
-{/*
-
-
-  */}
