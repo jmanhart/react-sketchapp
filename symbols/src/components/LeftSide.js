@@ -9,6 +9,9 @@ import {
   StyleSheet
 } from 'react-sketchapp';
 
+//Import Global Styles
+import {rowHeights, colors} from './../designSystem';
+
 
 export default class LeftSide extends Component{
   render() {
@@ -24,13 +27,14 @@ export default class LeftSide extends Component{
 const leftSide = StyleSheet.create({
   content:{
     width: 200,
-    minHeight: 42,
-    backgroundColor:'green',
+    minHeight: rowHeights.regular,
+    backgroundColor: null,
     flex: 1,
     justifyContent:'center',
 
   },
   label:{
     marginLeft: 15,
+    color: colors.white,
   }
 });

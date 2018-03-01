@@ -10,19 +10,18 @@ import {
 } from 'react-sketchapp';
 
 // Import Components
-import SettingsRow from './SettingsRow.js'
+import RowContent from './RowContent.js'
 import RowDivider from './RowDivider.js'
 
-
+//Import Global Styles
+import {rowHeights, colors} from './../designSystem';
 
 
 export default class SettingsGroup extends Component{
   render() {
     return(
       <View name="Settings Group" style={nestedSym.container}>
-        <RowDivider />
-        <SettingsRow
-          />
+        <RowContent />
       </View>
     )
   }
@@ -31,7 +30,8 @@ export default class SettingsGroup extends Component{
 const nestedSym = StyleSheet.create({
   container:{
     width: 375,
-    height: 44,
+    height: rowHeights.regular,
+    backgroundColor: colors.gray01,
 
   }
 });

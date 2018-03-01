@@ -9,6 +9,8 @@ import {
   StyleSheet,
 } from 'react-sketchapp';
 
+//Import Global Styles
+import {rowHeights, colors} from './../designSystem';
 
 export default class RightSide extends Component{
   render() {
@@ -28,16 +30,17 @@ const rightSide = StyleSheet.create({
   content:{
     display: 'flex',
     width: 175,
-    height:44,
-    backgroundColor:'yellow',
-    justifyContent:'center',
-    alignItems:'flex-end',
+    minHeight: rowHeights.regular,
+    backgroundColor: null,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
   label:{
     marginRight: 15,
     textAlign: 'right',
     justifyContent:'center',
     alignItems:'center',
+    color: colors.white,
     
 
   }

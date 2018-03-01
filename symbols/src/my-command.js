@@ -9,6 +9,8 @@ import {
 } from 'react-sketchapp';
 
 
+import designSystem from './designSystem';
+
 // Import Components
 import SettingsGroup from './components/SettingsGroup.js'
 
