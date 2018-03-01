@@ -9,6 +9,8 @@ import {
   StyleSheet,
 } from 'react-sketchapp';
 
+//Import Global Styles
+import {rowHeights, colors} from './../../../lib/design-system.js';
 
 export default class RowDivider extends Component{
   render() {

@@ -10,28 +10,28 @@ import {
 } from 'react-sketchapp';
 
 // Import Components
-import LeftSide from './LeftSide.js'
-import RightSide from './RightSide.js'
-import RowDivider from './RowDivider.js'
+import RowLeftSide from './components/row-left-side.js'
+import RowRightSide from './components/row-right-side.js'
+import RowDivider from './components/row-divider.js'
 
 // Expose & make the symbol - This adds to the Symbol Page
-const LeftSideSym = makeSymbol(LeftSide, 'squares / red');
-const RightSideSym = makeSymbol(RightSide, 'squares / blue');
+const RowLeftSideSym = makeSymbol(RowLeftSide, 'squares / red');
+const RowRightSideSym = makeSymbol(RowRightSide, 'squares / blue');
 
 //Import Global Styles
-import {rowHeights, colors} from './../designSystem';
+import {rowHeights, colors} from './../../lib/design-system.js';
 
 
-export default class RowContent extends Component{
+export default class RowRegular extends Component{
   render() {
     return(
       <View name="Settings Row" style={rowContent.container}>
         <RowDivider />
           <View style={rowContent.content}>
-            <LeftSideSym
+            <RowLeftSideSym
               name="Left Side"
             />
-            <RightSideSym
+            <RowRightSideSym
                 name="Right Side"
               />
           </View>

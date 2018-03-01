@@ -10,8 +10,7 @@ import {
 } from 'react-sketchapp';
 
 // Import Components
-import RowContent from './RowContent.js'
-import RowDivider from './RowDivider.js'
+import RowRegular from './row-regular/row-regular.js'
 
 //Import Global Styles
 import {rowHeights, colors} from './../designSystem';
@@ -21,7 +20,7 @@ export default class SettingsGroup extends Component{
   render() {
     return(
       <View name="Settings Group" style={nestedSym.container}>
-        <RowContent />
+        <RowRegular />
       </View>
     )
   }

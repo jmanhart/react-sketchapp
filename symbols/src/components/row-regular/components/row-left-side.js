@@ -10,14 +10,20 @@ import {
 } from 'react-sketchapp';
 
 //Import Global Styles
-import {rowHeights, colors} from './../designSystem';
+import {rowHeights, colors} from './../../../lib/design-system.js';
 
+//Import Components
+import Chevron from  './left-side-overrides/chevron.js'
 
-export default class LeftSide extends Component{
+// Creating & Exposing the Overrides for the Symbol Page
+const ChevronSym = makeSymbol(Chevron, 'dude / boom');
+
+export default class RowLeftSide extends Component{
   render() {
     return(
       <View name="Square" style={leftSide.content}>
-        <Text name="Left Side Label" style={leftSide.label}>Left Side Label</Text>
+        <ChevronSym />
+        {/*<Text name="Left Side Label" style={leftSide.label}>Left Sid label</Text>*/}
       </View>
     )
   }

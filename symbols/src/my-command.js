@@ -20,7 +20,6 @@ const SettingsGroupSym = makeSymbol(SettingsGroup, 'settings / row');
 const Document = () => (
   <Artboard name="Swatches" style={{ display: 'flex' }}>
     <SettingsGroupSym />
-
   </Artboard>
 );
 
