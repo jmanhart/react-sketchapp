@@ -26,7 +26,7 @@ export default class RowRegular extends Component{
   render() {
     return(
       <View name="Settings Row" style={rowContent.container}>
-        <RowDivider />
+
           <View style={rowContent.content}>
             <RowLeftSideSym
               name="Left Side"
@@ -35,7 +35,7 @@ export default class RowRegular extends Component{
                 name="Right Side"
               />
           </View>
-        <RowDivider />
+
       </View>
     )
   }

@@ -9,21 +9,28 @@ import {
   StyleSheet
 } from 'react-sketchapp';
 
+
 //Import Global Styles
 import {rowHeights, colors} from './../../../lib/design-system.js';
 
 //Import Components
-import Chevron from  './left-side-overrides/chevron.js'
+import CheckMarkOn from  './left-side-overrides/checkmark-on.js'
+import CheckMarkOff from  './left-side-overrides/checkmark-off.js'
+import RedBlueAdd from  './left-side-overrides/redblue-add.js'
+import RedBlueRemove from  './left-side-overrides/redblue-remove.js'
 
 // Creating & Exposing the Overrides for the Symbol Page
-const ChevronSym = makeSymbol(Chevron, 'dude / boom');
+const CheckMarkOnSym = makeSymbol(CheckMarkOn, 'icon / check-mark / on');
+const CheckMarkOffSym = makeSymbol(CheckMarkOff, 'icon / check-mark / off');
+const RedBlueAddSym = makeSymbol(RedBlueAdd, 'icon / red-blue / add');
+const RedBlueRemoveSym = makeSymbol(RedBlueRemove, 'icon / red-blue /remove');
 
 export default class RowLeftSide extends Component{
   render() {
     return(
       <View name="Square" style={leftSide.content}>
-        <ChevronSym />
-        {/*<Text name="Left Side Label" style={leftSide.label}>Left Sid label</Text>*/}
+        <CheckMarkOffSym />
+        <Text name="Left Side Label" style={leftSide.label}>Setting Label</Text>
       </View>
     )
   }
@@ -35,8 +42,9 @@ const leftSide = StyleSheet.create({
     width: 200,
     minHeight: rowHeights.regular,
     backgroundColor: null,
-    flex: 1,
-    justifyContent:'center',
+    justifyContent:'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
 
   },
   label:{
