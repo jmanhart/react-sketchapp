@@ -8413,6 +8413,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var rowHeights = exports.rowHeights = {
+  dude: 10,
   regular: 44,
   mega: 100
 };
@@ -8474,7 +8475,7 @@ exports['default'] = function () {
        Photo:
          'https://pbs.twimg.com/profile_images/833785170285178881/loBb32g3.jpg',
      }}
-   />  
+   />
   */}
 
 /***/ }),
@@ -31381,6 +31382,10 @@ var _rowRegular = __webpack_require__(184);
 
 var _rowRegular2 = _interopRequireDefault(_rowRegular);
 
+var _rowDivider = __webpack_require__(193);
+
+var _rowDivider2 = _interopRequireDefault(_rowDivider);
+
 var _designSystem = __webpack_require__(79);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -31430,9 +31435,7 @@ exports['default'] = SettingsGroup;
 var nestedSym = _reactSketchapp.StyleSheet.create({
   container: {
     width: 375,
-    height: _designSystem.rowHeights.regular,
     backgroundColor: _designSystem.colors.gray01
-
   }
 });
 
@@ -31498,16 +31501,25 @@ var RowRegular = function (_Component) {
       function render() {
         return _react2['default'].createElement(
           _reactSketchapp.View,
-          { name: 'Settings Row', style: rowContent.container },
+          { style: { height: 44 } },
           _react2['default'].createElement(
             _reactSketchapp.View,
-            { style: rowContent.content },
-            _react2['default'].createElement(RowLeftSideSym, {
-              name: 'Left Side'
-            }),
-            _react2['default'].createElement(RowRightSideSym, {
-              name: 'Right Side'
-            })
+            { name: 'Settings Row', style: rowContent.container },
+            _react2['default'].createElement(_rowDivider2['default'], null),
+            _react2['default'].createElement(
+              _reactSketchapp.View,
+              null,
+              _react2['default'].createElement(
+                _reactSketchapp.View,
+                { style: rowContent.content },
+                _react2['default'].createElement(RowLeftSideSym, {
+                  name: 'Left Side'
+                }),
+                _react2['default'].createElement(RowRightSideSym, {
+                  name: 'Right Side'
+                })
+              )
+            )
           )
         );
       }
@@ -32283,7 +32295,7 @@ var rowDivider = _reactSketchapp.StyleSheet.create({
   content: {
     display: 'flex',
     width: 375,
-    height: 1,
+    height: _designSystem.rowHeights.dude,
     backgroundColor: 'pink',
     justifyContent: 'center',
     alignItems: 'flex-end'

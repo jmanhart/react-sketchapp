@@ -25,18 +25,23 @@ import {rowHeights, colors} from './../../lib/design-system.js';
 export default class RowRegular extends Component{
   render() {
     return(
-      <View name="Settings Row" style={rowContent.container}>
-
-          <View style={rowContent.content}>
-            <RowLeftSideSym
-              name="Left Side"
-            />
-            <RowRightSideSym
-                name="Right Side"
-              />
-          </View>
-
+      <View style ={{height: 44}}>
+        <View name="Settings Row" style={rowContent.container}>
+            <RowDivider />
+            <View>
+              <View style={rowContent.content}>
+                <RowLeftSideSym     
+                  name="Left Side"
+                />
+                <RowRightSideSym
+                    name="Right Side"
+                  />
+              </View>
+            </View>
+        </View>
+        
       </View>
+
     )
   }
 }

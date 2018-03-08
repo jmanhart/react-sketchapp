@@ -29,7 +29,7 @@ const rowDivider = StyleSheet.create({
   content:{
     display: 'flex',
     width: 375,
-    height:1,
+    height: rowHeights.dude,
     backgroundColor:'pink',
     justifyContent:'center',
     alignItems:'flex-end',

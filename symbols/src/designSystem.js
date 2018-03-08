@@ -1,4 +1,5 @@
 export const rowHeights = {
+  dude: 10,
   regular: 44,
   mega: 100
 }

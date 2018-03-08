@@ -11,6 +11,7 @@ import {
 
 // Import Components
 import RowRegular from './row-regular/row-regular.js'
+import RowDivider from './row-regular/components/row-divider.js'
 
 //Import Global Styles
 import {rowHeights, colors} from './../designSystem';
@@ -20,7 +21,7 @@ export default class SettingsGroup extends Component{
   render() {
     return(
       <View name="Settings Group" style={nestedSym.container}>
-        <RowRegular />
+          <RowRegular />
       </View>
     )
   }
@@ -29,8 +30,6 @@ export default class SettingsGroup extends Component{
 const nestedSym = StyleSheet.create({
   container:{
     width: 375,
-    height: rowHeights.regular,
     backgroundColor: colors.gray01,
-
-  }
+  },
 });
