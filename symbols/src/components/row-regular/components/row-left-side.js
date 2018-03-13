@@ -1,23 +1,15 @@
 import React, { PropTypes, Component } from 'react';
-import {
-  render,
-  Artboard,
-  Text,
-  View,
-  Image,
-  makeSymbol,
-  StyleSheet
-} from 'react-sketchapp';
-
+import { Artboard, makeSymbol, render } from 'react-sketchapp';
+import { Image, View, Text, StyleSheet } from 'react-primitives';
 
 //Import Global Styles
 import {rowHeights, colors} from './../../../lib/design-system.js';
 
 //Import Components
-import CheckMarkOn from  './left-side-overrides/checkmark-on.js'
-import CheckMarkOff from  './left-side-overrides/checkmark-off.js'
-import RedBlueAdd from  './left-side-overrides/redblue-add.js'
-import RedBlueRemove from  './left-side-overrides/redblue-remove.js'
+import CheckMarkOn from './left-side-overrides/checkmark-on.js';
+import CheckMarkOff from './left-side-overrides/checkmark-off.js';
+import RedBlueAdd from './left-side-overrides/redblue-add.js';
+import RedBlueRemove from './left-side-overrides/redblue-remove.js';
 
 // Creating & Exposing the Overrides for the Symbol Page
 const CheckMarkOnSym = makeSymbol(CheckMarkOn, 'icon / check-mark / on');

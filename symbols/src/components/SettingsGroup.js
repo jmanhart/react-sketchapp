@@ -1,13 +1,6 @@
 import React, { PropTypes, Component } from 'react';
-import {
-  render,
-  Artboard,
-  Text,
-  View,
-  Image,
-  makeSymbol,
-  StyleSheet,
-} from 'react-sketchapp';
+import { render,  makeSymbol } from 'react-sketchapp';
+import { Image, View, Text, StyleSheet } from 'react-primitives';
 
 // Import Components
 import RowRegular from './row-regular/row-regular.js'

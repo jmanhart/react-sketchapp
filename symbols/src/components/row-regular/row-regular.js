@@ -30,7 +30,7 @@ export default class RowRegular extends Component{
             <RowDivider />
             <View>
               <View style={rowContent.content}>
-                <RowLeftSideSym     
+                <RowLeftSideSym
                   name="Left Side"
                 />
                 <RowRightSideSym
@@ -39,7 +39,7 @@ export default class RowRegular extends Component{
               </View>
             </View>
         </View>
-        
+
       </View>
 
     )
