@@ -12,11 +12,11 @@ To start:
 
 -------
 
-##### styleguide/
+### styleguide/
 
 Initial proof of concept working with static shapes and copy. This is based off of the example file in the Airbnb repo.
 
 
-##### symbols/
+### symbols/
 
 Work on building a symbol library with nested symbols up to 3 layers deep.
