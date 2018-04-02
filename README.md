@@ -1,5 +1,5 @@
  ### 💎+ ⚛️ Making cool shit in sketch using react!
-Test work using the React-Sketch App project created by Airbnb.
+Test work using the React-Sketch App project created by [Airbnb](http://airbnb.io/react-sketchapp/).
 
 -------
 
