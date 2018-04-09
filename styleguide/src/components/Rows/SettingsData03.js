@@ -27,6 +27,14 @@ export default settingsGroup = [
         leftSideString: "Setting One",
         rightSideType: "chevron",
         rightSideString: "",
+        dividerBottomType:"inset",
+      },
+      {
+        dividerTopType: "inset",
+        leftSideType: "copy",
+        leftSideString: "Setting One",
+        rightSideType: "chevron",
+        rightSideString: "",
         dividerBottomType:"full",
       },
     ]

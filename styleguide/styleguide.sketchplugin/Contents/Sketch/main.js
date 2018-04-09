@@ -756,6 +756,82 @@ module.exports = reactProdInvariant;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+var _render = __webpack_require__(55);
+
+var _Platform = __webpack_require__(161);
+
+var _Platform2 = _interopRequireDefault(_Platform);
+
+var _stylesheet = __webpack_require__(17);
+
+var _stylesheet2 = _interopRequireDefault(_stylesheet);
+
+var _Document = __webpack_require__(162);
+
+var _Document2 = _interopRequireDefault(_Document);
+
+var _Page = __webpack_require__(163);
+
+var _Page2 = _interopRequireDefault(_Page);
+
+var _Artboard = __webpack_require__(164);
+
+var _Artboard2 = _interopRequireDefault(_Artboard);
+
+var _Image = __webpack_require__(77);
+
+var _Image2 = _interopRequireDefault(_Image);
+
+var _RedBox = __webpack_require__(75);
+
+var _RedBox2 = _interopRequireDefault(_RedBox);
+
+var _Svg = __webpack_require__(165);
+
+var _Svg2 = _interopRequireDefault(_Svg);
+
+var _View = __webpack_require__(46);
+
+var _View2 = _interopRequireDefault(_View);
+
+var _Text = __webpack_require__(76);
+
+var _Text2 = _interopRequireDefault(_Text);
+
+var _TextStyles = __webpack_require__(72);
+
+var _TextStyles2 = _interopRequireDefault(_TextStyles);
+
+var _symbol = __webpack_require__(32);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  render: _render.render,
+  renderToJSON: _render.renderToJSON,
+  StyleSheet: _stylesheet2.default,
+  Document: _Document2.default,
+  Page: _Page2.default,
+  Artboard: _Artboard2.default,
+  Image: _Image2.default,
+  RedBox: _RedBox2.default,
+  Svg: _Svg2.default,
+  Text: _Text2.default,
+  TextStyles: _TextStyles2.default,
+  View: _View2.default,
+  Platform: _Platform2.default,
+  makeSymbol: _symbol.makeSymbol,
+  injectSymbols: _symbol.injectSymbols,
+  makeSymbolByName: _symbol.makeSymbolByName
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /*
 object-assign
 (c) Sindre Sorhus
@@ -847,82 +923,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _render = __webpack_require__(55);
-
-var _Platform = __webpack_require__(161);
-
-var _Platform2 = _interopRequireDefault(_Platform);
-
-var _stylesheet = __webpack_require__(17);
-
-var _stylesheet2 = _interopRequireDefault(_stylesheet);
-
-var _Document = __webpack_require__(162);
-
-var _Document2 = _interopRequireDefault(_Document);
-
-var _Page = __webpack_require__(163);
-
-var _Page2 = _interopRequireDefault(_Page);
-
-var _Artboard = __webpack_require__(164);
-
-var _Artboard2 = _interopRequireDefault(_Artboard);
-
-var _Image = __webpack_require__(77);
-
-var _Image2 = _interopRequireDefault(_Image);
-
-var _RedBox = __webpack_require__(75);
-
-var _RedBox2 = _interopRequireDefault(_RedBox);
-
-var _Svg = __webpack_require__(165);
-
-var _Svg2 = _interopRequireDefault(_Svg);
-
-var _View = __webpack_require__(46);
-
-var _View2 = _interopRequireDefault(_View);
-
-var _Text = __webpack_require__(76);
-
-var _Text2 = _interopRequireDefault(_Text);
-
-var _TextStyles = __webpack_require__(72);
-
-var _TextStyles2 = _interopRequireDefault(_TextStyles);
-
-var _symbol = __webpack_require__(32);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = {
-  render: _render.render,
-  renderToJSON: _render.renderToJSON,
-  StyleSheet: _stylesheet2.default,
-  Document: _Document2.default,
-  Page: _Page2.default,
-  Artboard: _Artboard2.default,
-  Image: _Image2.default,
-  RedBox: _RedBox2.default,
-  Svg: _Svg2.default,
-  Text: _Text2.default,
-  TextStyles: _TextStyles2.default,
-  View: _View2.default,
-  Platform: _Platform2.default,
-  makeSymbol: _symbol.makeSymbol,
-  injectSymbols: _symbol.injectSymbols,
-  makeSymbolByName: _symbol.makeSymbolByName
-};
 
 /***/ }),
 /* 8 */
@@ -1114,7 +1114,7 @@ var makeSymbolMaster = exports.makeSymbolMaster = function makeSymbolMaster(fram
 
 var _prodInvariant = __webpack_require__(15);
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
@@ -2011,6 +2011,12 @@ function makeSvgLayer(layout, name, svg) {
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(189);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -2040,12 +2046,6 @@ var ReactCurrentOwner = {
 module.exports = ReactCurrentOwner;
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(189);
-
-/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2060,9 +2060,9 @@ module.exports = __webpack_require__(189);
 
 
 
-var _assign = __webpack_require__(6);
+var _assign = __webpack_require__(7);
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 
 var warning = __webpack_require__(3);
 var canDefineProperty = __webpack_require__(27);
@@ -3298,7 +3298,7 @@ module.exports = {};
 
 
 
-var _assign = __webpack_require__(6);
+var _assign = __webpack_require__(7);
 
 var ReactBaseClasses = __webpack_require__(48);
 var ReactChildren = __webpack_require__(87);
@@ -3513,7 +3513,7 @@ module.exports = emptyObject;
 
 
 var _prodInvariant = __webpack_require__(5),
-    _assign = __webpack_require__(6);
+    _assign = __webpack_require__(7);
 
 var CallbackQueue = __webpack_require__(57);
 var PooledClass = __webpack_require__(37);
@@ -5139,9 +5139,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -5214,7 +5214,7 @@ var rowHeader = _reactSketchapp.StyleSheet.create({
 
 
 var _prodInvariant = __webpack_require__(15),
-    _assign = __webpack_require__(6);
+    _assign = __webpack_require__(7);
 
 var ReactNoopUpdateQueue = __webpack_require__(49);
 
@@ -5531,7 +5531,7 @@ module.exports = getIteratorFn;
 
 
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 var ReactComponentTreeHook = __webpack_require__(9);
 var ReactElement = __webpack_require__(14);
 
@@ -5784,7 +5784,7 @@ module.exports = ReactElementValidator;
 var emptyFunction = __webpack_require__(19);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
-var assign = __webpack_require__(6);
+var assign = __webpack_require__(7);
 
 var ReactPropTypesSecret = __webpack_require__(54);
 var checkPropTypes = __webpack_require__(97);
@@ -6824,7 +6824,7 @@ module.exports = ReactEmptyComponent;
 
 
 var _prodInvariant = __webpack_require__(5),
-    _assign = __webpack_require__(6);
+    _assign = __webpack_require__(7);
 
 var ReactCompositeComponent = __webpack_require__(115);
 var ReactEmptyComponent = __webpack_require__(59);
@@ -7116,7 +7116,7 @@ module.exports = ReactHostComponent;
 
 var _prodInvariant = __webpack_require__(5);
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 var REACT_ELEMENT_TYPE = __webpack_require__(122);
 
 var getIteratorFn = __webpack_require__(123);
@@ -8474,9 +8474,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 var _LeftSide = __webpack_require__(190);
 
@@ -8486,7 +8486,7 @@ var _RightSide = __webpack_require__(191);
 
 var _RightSide2 = _interopRequireDefault(_RightSide);
 
-var _Divider = __webpack_require__(192);
+var _Divider = __webpack_require__(193);
 
 var _Divider2 = _interopRequireDefault(_Divider);
 
@@ -8673,9 +8673,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -8771,9 +8771,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -8859,6 +8859,13 @@ exports["default"] = settingsGroup = [{
     leftSideString: "Setting One",
     rightSideType: "chevron",
     rightSideString: "",
+    dividerBottomType: "inset"
+  }, {
+    dividerTopType: "inset",
+    leftSideType: "copy",
+    leftSideString: "Setting One",
+    rightSideType: "chevron",
+    rightSideString: "",
     dividerBottomType: "full"
   }]
 }];
@@ -8875,7 +8882,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
 var _designSystem = __webpack_require__(186);
 
@@ -9590,7 +9597,7 @@ module.exports = PooledClass;
 
 var _prodInvariant = __webpack_require__(15);
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 var REACT_ELEMENT_TYPE = __webpack_require__(50);
 
 var getIteratorFn = __webpack_require__(51);
@@ -10297,7 +10304,7 @@ module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 
 
-var _assign = __webpack_require__(6);
+var _assign = __webpack_require__(7);
 
 var emptyObject = __webpack_require__(28);
 var _invariant = __webpack_require__(1);
@@ -11283,7 +11290,7 @@ module.exports = __webpack_require__(103);
 
 
 var _prodInvariant = __webpack_require__(5),
-    _assign = __webpack_require__(6);
+    _assign = __webpack_require__(7);
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -11425,7 +11432,7 @@ module.exports = ReactTestRenderer;
 
 
 
-var _assign = __webpack_require__(6);
+var _assign = __webpack_require__(7);
 
 var ReactUpdates = __webpack_require__(29);
 var Transaction = __webpack_require__(38);
@@ -12219,7 +12226,7 @@ var ReactComponentEnvironment = __webpack_require__(36);
 var ReactInstanceMap = __webpack_require__(39);
 var ReactInstrumentation = __webpack_require__(30);
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 var ReactReconciler = __webpack_require__(22);
 var ReactChildReconciler = __webpack_require__(114);
 
@@ -12820,11 +12827,11 @@ module.exports = ReactChildReconciler;
 
 
 var _prodInvariant = __webpack_require__(5),
-    _assign = __webpack_require__(6);
+    _assign = __webpack_require__(7);
 
 var React = __webpack_require__(25);
 var ReactComponentEnvironment = __webpack_require__(36);
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 var ReactErrorUtils = __webpack_require__(116);
 var ReactInstanceMap = __webpack_require__(39);
 var ReactInstrumentation = __webpack_require__(30);
@@ -14185,7 +14192,7 @@ module.exports = flattenChildren;
 
 
 var _prodInvariant = __webpack_require__(5),
-    _assign = __webpack_require__(6);
+    _assign = __webpack_require__(7);
 
 var React = __webpack_require__(25);
 var ReactReconciler = __webpack_require__(22);
@@ -14354,7 +14361,7 @@ module.exports = getHostComponentFromComposite;
  */
 
 
-var _assign = __webpack_require__(6);
+var _assign = __webpack_require__(7);
 
 var CallbackQueue = __webpack_require__(57);
 var PooledClass = __webpack_require__(37);
@@ -14488,7 +14495,7 @@ module.exports = ReactTestReconcileTransaction;
 
 var _prodInvariant = __webpack_require__(5);
 
-var ReactCurrentOwner = __webpack_require__(12);
+var ReactCurrentOwner = __webpack_require__(13);
 var ReactInstanceMap = __webpack_require__(39);
 var ReactInstrumentation = __webpack_require__(30);
 var ReactUpdates = __webpack_require__(29);
@@ -31967,7 +31974,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
 var _SettingsGroup = __webpack_require__(188);
 
@@ -31985,7 +31992,7 @@ var _SupportText = __webpack_require__(81);
 
 var _SupportText2 = _interopRequireDefault(_SupportText);
 
-var _NavBar = __webpack_require__(193);
+var _NavBar = __webpack_require__(194);
 
 var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -32097,7 +32104,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
 var _SettingsRow = __webpack_require__(79);
 
@@ -32199,7 +32206,7 @@ exports['default'] = SettingsGroup;
 /* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
 var Circle = _reactSketchapp.Svg.Circle,
     Ellipse = _reactSketchapp.Svg.Ellipse,
@@ -32250,9 +32257,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -32403,11 +32410,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
-var _CheckMark = __webpack_require__(194);
+var _CheckMark = __webpack_require__(192);
 
 var _CheckMark2 = _interopRequireDefault(_CheckMark);
 
@@ -32561,9 +32568,133 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CheckMark = function (_Component) {
+  _inherits(CheckMark, _Component);
+
+  function CheckMark() {
+    _classCallCheck(this, CheckMark);
+
+    return _possibleConstructorReturn(this, (CheckMark.__proto__ || Object.getPrototypeOf(CheckMark)).apply(this, arguments));
+  }
+
+  _createClass(CheckMark, [{
+    key: 'render',
+    value: function () {
+      function render() {
+        if (this.props.checkMarkType === "on") {
+          return _react2['default'].createElement(
+            _reactSketchapp.View,
+            { style: chevron.container },
+            _react2['default'].createElement(
+              _reactPrimitivesSvg.Svg,
+              { width: '22px', height: '22px' },
+              _react2['default'].createElement(
+                _reactPrimitivesSvg.G,
+                { id: 'Symbols', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd' },
+                _react2['default'].createElement(
+                  _reactPrimitivesSvg.G,
+                  { id: 'O/Check-Circle-(On)', transform: 'translate(-15.000000, -11.000000)' },
+                  _react2['default'].createElement(
+                    _reactPrimitivesSvg.G,
+                    { id: 'Float', transform: 'translate(15.000000, 11.000000)' },
+                    _react2['default'].createElement(_reactPrimitivesSvg.Circle, { id: 'Circle', fill: '#11A9ED', cx: '11', cy: '11', r: '11' }),
+                    _react2['default'].createElement(_reactPrimitivesSvg.Polyline, { id: 'Check', stroke: '#FFFFFF', 'stroke-width': '2', points: '5.5 11.5 9 15 17 7' })
+                  )
+                )
+              )
+            )
+          );
+        }
+        if (this.props.checkMarkType === "off") {
+          return _react2['default'].createElement(
+            _reactSketchapp.View,
+            { style: chevron.container },
+            _react2['default'].createElement(
+              _reactPrimitivesSvg.Svg,
+              { width: '22px', height: '22px' },
+              _react2['default'].createElement(
+                _reactPrimitivesSvg.G,
+                { id: 'Symbols', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd' },
+                _react2['default'].createElement(
+                  _reactPrimitivesSvg.G,
+                  { id: 'O/Check-Circle-(Off)', transform: 'translate(-15.000000, -11.000000)', fill: '#FFFFFF' },
+                  _react2['default'].createElement(_reactPrimitivesSvg.Path, { d: 'M26,33 C19.9248678,33 15,28.0751322 15,22 C15,15.9248678 19.9248678,11 26,11 C32.0751322,11 37,15.9248678 37,22 C37,28.0751322 32.0751322,33 26,33 Z M26,32 C31.5228475,32 36,27.5228475 36,22 C36,16.4771525 31.5228475,12 26,12 C20.4771525,12 16,16.4771525 16,22 C16,27.5228475 20.4771525,32 26,32 Z', id: 'Circle' })
+                )
+              )
+            )
+          );
+        }
+      }
+
+      return render;
+    }()
+  }]);
+
+  return CheckMark;
+}(_react.Component);
+
+exports['default'] = CheckMark;
+
+
+{/* Chevron Styles */}
+var chevron = _reactSketchapp.StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    //backgroundColor:'blue',
+    marginRight: 22
+  }
+});
+
+{/* Label Styles */}
+var label = _reactSketchapp.StyleSheet.create({
+  container: {
+    height: 44,
+    alignSelf: 'center',
+    alignItems: 'flex-end',
+    justifyContent: 'center'
+    // backgroundColor:'teal',
+  },
+  copy: {
+    color: 'white',
+    fontSize: 17,
+    alignSelf: 'flex-start',
+    fontFamily: 'SF UI Text',
+    marginLeft: 15
+  }
+});
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(6);
+
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -32651,7 +32782,7 @@ var divider = _reactSketchapp.StyleSheet.create({
     */}
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -32664,9 +32795,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSketchapp = __webpack_require__(7);
+var _reactSketchapp = __webpack_require__(6);
 
-var _reactPrimitivesSvg = __webpack_require__(13);
+var _reactPrimitivesSvg = __webpack_require__(12);
 
 var _Chevron = __webpack_require__(80);
 
@@ -32782,130 +32913,6 @@ var navBar = _reactSketchapp.StyleSheet.create({
     fontSize: 15
   }
 
-});
-
-/***/ }),
-/* 194 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactSketchapp = __webpack_require__(7);
-
-var _reactPrimitivesSvg = __webpack_require__(13);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CheckMark = function (_Component) {
-  _inherits(CheckMark, _Component);
-
-  function CheckMark() {
-    _classCallCheck(this, CheckMark);
-
-    return _possibleConstructorReturn(this, (CheckMark.__proto__ || Object.getPrototypeOf(CheckMark)).apply(this, arguments));
-  }
-
-  _createClass(CheckMark, [{
-    key: 'render',
-    value: function () {
-      function render() {
-        if (this.props.checkMarkType === "on") {
-          return _react2['default'].createElement(
-            _reactSketchapp.View,
-            { style: chevron.container },
-            _react2['default'].createElement(
-              _reactPrimitivesSvg.Svg,
-              { width: '22px', height: '22px' },
-              _react2['default'].createElement(
-                _reactPrimitivesSvg.G,
-                { id: 'Symbols', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd' },
-                _react2['default'].createElement(
-                  _reactPrimitivesSvg.G,
-                  { id: 'O/Check-Circle-(On)', transform: 'translate(-15.000000, -11.000000)' },
-                  _react2['default'].createElement(
-                    _reactPrimitivesSvg.G,
-                    { id: 'Float', transform: 'translate(15.000000, 11.000000)' },
-                    _react2['default'].createElement(_reactPrimitivesSvg.Circle, { id: 'Circle', fill: '#11A9ED', cx: '11', cy: '11', r: '11' }),
-                    _react2['default'].createElement(_reactPrimitivesSvg.Polyline, { id: 'Check', stroke: '#FFFFFF', 'stroke-width': '2', points: '5.5 11.5 9 15 17 7' })
-                  )
-                )
-              )
-            )
-          );
-        }
-        if (this.props.checkMarkType === "off") {
-          return _react2['default'].createElement(
-            _reactSketchapp.View,
-            { style: chevron.container },
-            _react2['default'].createElement(
-              _reactPrimitivesSvg.Svg,
-              { width: '22px', height: '22px' },
-              _react2['default'].createElement(
-                _reactPrimitivesSvg.G,
-                { id: 'Symbols', stroke: 'none', 'stroke-width': '1', fill: 'none', 'fill-rule': 'evenodd' },
-                _react2['default'].createElement(
-                  _reactPrimitivesSvg.G,
-                  { id: 'O/Check-Circle-(Off)', transform: 'translate(-15.000000, -11.000000)', fill: '#FFFFFF' },
-                  _react2['default'].createElement(_reactPrimitivesSvg.Path, { d: 'M26,33 C19.9248678,33 15,28.0751322 15,22 C15,15.9248678 19.9248678,11 26,11 C32.0751322,11 37,15.9248678 37,22 C37,28.0751322 32.0751322,33 26,33 Z M26,32 C31.5228475,32 36,27.5228475 36,22 C36,16.4771525 31.5228475,12 26,12 C20.4771525,12 16,16.4771525 16,22 C16,27.5228475 20.4771525,32 26,32 Z', id: 'Circle' })
-                )
-              )
-            )
-          );
-        }
-      }
-
-      return render;
-    }()
-  }]);
-
-  return CheckMark;
-}(_react.Component);
-
-exports['default'] = CheckMark;
-
-
-{/* Chevron Styles */}
-var chevron = _reactSketchapp.StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    //backgroundColor:'blue',
-    marginRight: 22
-  }
-});
-
-{/* Label Styles */}
-var label = _reactSketchapp.StyleSheet.create({
-  container: {
-    height: 44,
-    alignSelf: 'center',
-    alignItems: 'flex-end',
-    justifyContent: 'center'
-    // backgroundColor:'teal',
-  },
-  copy: {
-    color: 'white',
-    fontSize: 17,
-    alignSelf: 'flex-start',
-    fontFamily: 'SF UI Text',
-    marginLeft: 15
-  }
 });
 
 /***/ })

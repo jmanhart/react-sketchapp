@@ -1,6 +1,6 @@
 export const rowHeights = {
-  dude: 10,
-  regular: 44,
+  dude: 60,
+  regular: 60,
   mega: 100
 }
 

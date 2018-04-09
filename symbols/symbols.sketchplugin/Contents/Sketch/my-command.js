@@ -10524,8 +10524,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var rowHeights = exports.rowHeights = {
-  dude: 10,
-  regular: 44,
+  dude: 60,
+  regular: 60,
   mega: 100
 };
 
@@ -10973,7 +10973,7 @@ var SettingsGroupSym = (0, _reactSketchapp.makeSymbol)(_SettingsGroup2['default'
 var Document = function Document() {
   return _react2['default'].createElement(
     _reactSketchapp.Artboard,
-    { name: 'Swatches', style: { display: 'flex' } },
+    { name: 'Settings row', style: { display: 'flex' } },
     _react2['default'].createElement(SettingsGroupSym, null)
   );
 };

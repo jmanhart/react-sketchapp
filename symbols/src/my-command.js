@@ -18,7 +18,7 @@ import SettingsGroup from './components/SettingsGroup.js'
 const SettingsGroupSym = makeSymbol(SettingsGroup, 'settings / row');
 
 const Document = () => (
-  <Artboard name="Swatches" style={{ display: 'flex' }}>
+  <Artboard name="Settings row" style={{ display: 'flex' }}>
     <SettingsGroupSym />
   </Artboard>
 );

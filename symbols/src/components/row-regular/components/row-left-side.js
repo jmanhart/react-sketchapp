@@ -37,7 +37,6 @@ const leftSide = StyleSheet.create({
     justifyContent:'flex-start',
     alignItems: 'center',
     flexDirection: 'row',
-
   },
   label:{
     marginLeft: 15,
